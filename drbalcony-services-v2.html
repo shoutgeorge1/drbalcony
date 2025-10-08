@@ -1,0 +1,348 @@
+<!-- How to paste into WP: Copy this entire block into a Custom HTML block in WordPress -->
+<section class="drb-services-v2" aria-labelledby="services-heading">
+  <style>
+    .drb-services-v2 {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: clamp(60px, 8vw, 100px) clamp(20px, 4vw, 40px);
+      background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .drb-services-v2::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(255, 140, 0, 0.03) 0%, rgba(255, 140, 0, 0.01) 100%);
+      pointer-events: none;
+    }
+    
+    .drb-services-v2 .section-header {
+      text-align: center;
+      margin-bottom: clamp(40px, 6vw, 60px);
+      position: relative;
+      z-index: 1;
+    }
+    
+    .drb-services-v2 .section-title {
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 700;
+      color: #1a1a1a;
+      margin: 0 0 20px 0;
+      line-height: 1.2;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    }
+    
+    .drb-services-v2 .section-kicker {
+      font-size: clamp(18px, 3vw, 22px);
+      color: #666;
+      margin: 0;
+      line-height: 1.4;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .drb-services-v2 .services-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      margin-top: 50px;
+      position: relative;
+      z-index: 1;
+    }
+    
+    @media (min-width: 768px) {
+      .drb-services-v2 .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 28px;
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .drb-services-v2 .services-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 32px;
+      }
+    }
+    
+    .drb-services-v2 .service-card {
+      background: #ffffff;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      border-radius: 20px;
+      padding: 32px;
+      transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+      cursor: pointer;
+    }
+    
+    .drb-services-v2 .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #ff8c00, #ff6b00);
+      transform: scaleX(0);
+      transition: transform 0.4s ease;
+    }
+    
+    .drb-services-v2 .service-card:hover,
+    .drb-services-v2 .service-card:focus-within {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+      border-color: rgba(255, 140, 0, 0.2);
+    }
+    
+    .drb-services-v2 .service-card:hover::before {
+      transform: scaleX(1);
+    }
+    
+    .drb-services-v2 .service-card.featured {
+      background: linear-gradient(135deg, #ff8c00 0%, #ff6b00 100%);
+      color: #fff;
+      border-color: #ff8c00;
+      position: relative;
+    }
+    
+    .drb-services-v2 .service-card.featured::before {
+      display: none;
+    }
+    
+    @media (min-width: 1024px) {
+      .drb-services-v2 .service-card.featured {
+        grid-column: span 2;
+      }
+    }
+    
+    .drb-services-v2 .service-card.featured:hover,
+    .drb-services-v2 .service-card.featured:focus-within {
+      transform: translateY(-12px);
+      box-shadow: 0 20px 50px rgba(255, 140, 0, 0.3);
+    }
+    
+    .drb-services-v2 .service-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #ff8c00, #ff6b00);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      font-size: 36px;
+      color: white;
+      transition: all 0.4s ease;
+      box-shadow: 0 8px 25px rgba(255, 140, 0, 0.2);
+    }
+    
+    .drb-services-v2 .service-card:hover .service-icon {
+      transform: scale(1.1) rotate(5deg);
+    }
+    
+    .drb-services-v2 .service-card.featured .service-icon {
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    .drb-services-v2 .service-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin: 0 0 16px 0;
+      line-height: 1.3;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    }
+    
+    .drb-services-v2 .service-card.featured .service-title {
+      color: #fff;
+    }
+    
+    .drb-services-v2 .service-description {
+      font-size: 16px;
+      color: #666;
+      line-height: 1.6;
+      margin: 0 0 20px 0;
+    }
+    
+    .drb-services-v2 .service-card.featured .service-description {
+      color: rgba(255, 255, 255, 0.9);
+    }
+    
+    .drb-services-v2 .service-link {
+      color: #ff8c00;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s ease;
+      padding: 12px 20px;
+      background: rgba(255, 140, 0, 0.1);
+      border-radius: 12px;
+    }
+    
+    .drb-services-v2 .service-link:hover {
+      color: #e67e00;
+      background: rgba(255, 140, 0, 0.15);
+      transform: translateX(4px);
+    }
+    
+    .drb-services-v2 .service-card.featured .service-link {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+    }
+    
+    .drb-services-v2 .service-card.featured .service-link:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+    
+    .drb-services-v2 .featured-badge {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      backdrop-filter: blur(10px);
+    }
+    
+    @media (prefers-reduced-motion: reduce) {
+      .drb-services-v2 .service-card {
+        transition: none;
+      }
+      
+      .drb-services-v2 .service-card:hover,
+      .drb-services-v2 .service-card:focus-within {
+        transform: none;
+      }
+      
+      .drb-services-v2 .service-card:hover .service-icon {
+        transform: none;
+      }
+    }
+    
+    /* Focus styles for accessibility */
+    .drb-services-v2 .service-card:focus-within {
+      outline: 3px solid #ff8c00;
+      outline-offset: 2px;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .drb-services-v2 .service-card {
+        padding: 24px;
+      }
+      
+      .drb-services-v2 .service-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 28px;
+      }
+      
+      .drb-services-v2 .service-title {
+        font-size: 20px;
+      }
+    }
+  </style>
+  
+  <div class="section-header">
+    <h2 id="services-heading" class="section-title">Our Services</h2>
+    <p class="section-kicker">Full-service SB 721 and SB 326 inspections with design-to-permit repair support. 5,000+ properties achieved compliance.</p>
+  </div>
+  
+  <div class="services-grid">
+    <!-- Featured Card: Design Repair Services -->
+    <div class="service-card featured" itemscope itemtype="https://schema.org/Service">
+      <span class="featured-badge">Featured</span>
+      <span class="service-icon">🛠️</span>
+      <h3 class="service-title" itemprop="name">Design & Repair Services</h3>
+      <p class="service-description" itemprop="description">From stamped repair details to contractor-ready scopes—streamline bids, costs, and timelines with engineered plans for SB-326 and SB-721 compliance.</p>
+      <a href="/comprehensive-guide-to-balcony-repair-costs-assistance-and-best-practices/" class="service-link">View Guide →</a>
+    </div>
+    
+    <!-- SB-326 HOA Inspections -->
+    <div class="service-card" itemscope itemtype="https://schema.org/Service">
+      <span class="service-icon">🏢</span>
+      <h3 class="service-title" itemprop="name">SB-326 HOA Inspections</h3>
+      <p class="service-description" itemprop="description">Comprehensive balcony and EEE inspections for condominiums and HOAs, aligned with SB-326 timelines and reporting standards.</p>
+      <a href="/what-is-the-california-senate-bill-326/" class="service-link">Learn More →</a>
+    </div>
+    
+    <!-- SB-721 Apartment Inspections -->
+    <div class="service-card" itemscope itemtype="https://schema.org/Service">
+      <span class="service-icon">🏘️</span>
+      <h3 class="service-title" itemprop="name">SB-721 Apartment Inspections</h3>
+      <p class="service-description" itemprop="description">Deadline-driven SB-721 inspections for apartments with clear findings, repair scopes, and owner-ready reports.</p>
+      <a href="/sb-721-inspection-requirements-for-california-apartment-buildings/" class="service-link">Schedule Now →</a>
+    </div>
+    
+    <!-- Load & Materials Testing -->
+    <div class="service-card" itemscope itemtype="https://schema.org/Service">
+      <span class="service-icon">🧪</span>
+      <h3 class="service-title" itemprop="name">Load & Materials Testing</h3>
+      <p class="service-description" itemprop="description">Targeted testing for wood, steel, and connectors to validate safety, lifespan, and compliance decisions for exterior elevated elements.</p>
+      <a href="/services/" class="service-link">Learn More →</a>
+    </div>
+    
+    <!-- Prioritization & Budgeting -->
+    <div class="service-card" itemscope itemtype="https://schema.org/Service">
+      <span class="service-icon">🧮</span>
+      <h3 class="service-title" itemprop="name">Prioritization & Budgeting</h3>
+      <p class="service-description" itemprop="description">Phase work intelligently: separate urgent hazards from preventive maintenance to control costs and downtime for HOA & apartment owners.</p>
+      <a href="/contact-us/" class="service-link">Get Estimate →</a>
+    </div>
+    
+    <!-- HOA Board Support -->
+    <div class="service-card" itemscope itemtype="https://schema.org/Service">
+      <span class="service-icon">🧭</span>
+      <h3 class="service-title" itemprop="name">HOA Board Support</h3>
+      <p class="service-description" itemprop="description">Board packets, Q&A, and clear next steps—make approvals simple and transparent for all stakeholders during balcony inspections.</p>
+      <a href="/contact-us/" class="service-link">Contact Us →</a>
+    </div>
+    
+    <!-- Owner Communication -->
+    <div class="service-card" itemscope itemtype="https://schema.org/Service">
+      <span class="service-icon">✉️</span>
+      <h3 class="service-title" itemprop="name">Owner Communication</h3>
+      <p class="service-description" itemprop="description">Templates and guidance to notify residents, schedule access, and minimize disruption during SB-326 and SB-721 inspections.</p>
+      <a href="/services/" class="service-link">Get Templates →</a>
+    </div>
+    
+    <!-- Compliance Reporting -->
+    <div class="service-card" itemscope itemtype="https://schema.org/Service">
+      <span class="service-icon">📑</span>
+      <h3 class="service-title" itemprop="name">Compliance Reporting</h3>
+      <p class="service-description" itemprop="description">Signed, timestamped, and archive-ready reports for AHJ or records—built to stand up to audits and renewals for California properties.</p>
+      <a href="/services/" class="service-link">View Samples →</a>
+    </div>
+  </div>
+</section>
+
+<!-- 
+QA CHECKLIST:
+[ ] 8 cards render correctly at 320px, 768px, 1024px, 1440px
+[ ] Keyboard tab order + visible focus
+[ ] No CLS on hover effects
+[ ] Contrast >= WCAG AA
+[ ] Section validates as a single block in WP
+[ ] Optional internal links marked as TODOs
+
+TODO: Add internal links to:
+- SB-326 page: /services/sb326-inspections/
+- SB-721 page: /services/sb721-inspections/
+- Contact page: /contact/
+- Services page: /services/
+-->

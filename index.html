@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DrBalcony Services Section - Advanced Design</title>
+    <meta name="description" content="Modern services section for DrBalcony with 8 value propositions for SB-326, SB-721, and Section 604 inspections.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .demo-note {
+            background: linear-gradient(135deg, #ff8c00, #ff6b00);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            text-align: center;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>DrBalcony Services Section</h1>
+            <p>Advanced 8-Value-Prop Design - WordPress Ready</p>
+        </div>
+        
+        <div class="demo-note">
+            🚀 This is a live demo of the advanced DrBalcony services section with 8 value propositions, ready for WordPress deployment.
+        </div>
+        
+        <!-- How to paste into WP: Copy this entire block into a Custom HTML block in WordPress -->
+        <section class="drb-services-advanced" aria-labelledby="services-heading">
+          <style>
+            .drb-services-advanced {
+              max-width: 1400px;
+              margin: 0 auto;
+              padding: clamp(80px, 10vw, 120px) clamp(20px, 4vw, 60px);
+              background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 50%, #f8f9fa 100%);
+              position: relative;
+              overflow: hidden;
+            }
+            
+            .drb-services-advanced::before {
+              content: '';
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              background: 
+                radial-gradient(circle at 20% 20%, rgba(255, 140, 0, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 140, 0, 0.03) 0%, transparent 50%);
+              pointer-events: none;
+            }
+            
+            .drb-services-advanced .section-header {
+              text-align: center;
+              margin-bottom: clamp(50px, 8vw, 80px);
+              position: relative;
+              z-index: 2;
+            }
+            
+            .drb-services-advanced .section-title {
+              font-size: clamp(36px, 6vw, 56px);
+              font-weight: 800;
+              color: #1a1a1a;
+              margin: 0 0 24px 0;
+              line-height: 1.1;
+              font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+              letter-spacing: -0.02em;
+            }
+            
+            .drb-services-advanced .section-kicker {
+              font-size: clamp(18px, 3vw, 24px);
+              color: #666;
+              margin: 0;
+              line-height: 1.5;
+              max-width: 800px;
+              margin: 0 auto;
+              font-weight: 400;
+            }
+            
+            .drb-services-advanced .services-grid {
+              display: grid;
+              grid-template-columns: 1fr;
+              gap: 28px;
+              margin-top: 60px;
+              position: relative;
+              z-index: 2;
+            }
+            
+            @media (min-width: 768px) {
+              .drb-services-advanced .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 32px;
+              }
+            }
+            
+            @media (min-width: 1200px) {
+              .drb-services-advanced .services-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 36px;
+              }
+            }
+            
+            .drb-services-advanced .service-card {
+              background: #ffffff;
+              border: 1px solid rgba(0, 0, 0, 0.06);
+              border-radius: 24px;
+              padding: 40px 32px;
+              transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+              position: relative;
+              overflow: hidden;
+              box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
+              cursor: pointer;
+              backdrop-filter: blur(10px);
+            }
+            
+            .drb-services-advanced .service-card::before {
+              content: '';
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              height: 5px;
+              background: linear-gradient(90deg, #ff8c00, #ff6b00, #ff8c00);
+              transform: scaleX(0);
+              transition: transform 0.5s ease;
+              border-radius: 24px 24px 0 0;
+            }
+            
+            .drb-services-advanced .service-card::after {
+              content: '';
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              background: linear-gradient(135deg, rgba(255, 140, 0, 0.02) 0%, rgba(255, 140, 0, 0.01) 100%);
+              opacity: 0;
+              transition: opacity 0.5s ease;
+              pointer-events: none;
+            }
+            
+            .drb-services-advanced .service-card:hover,
+            .drb-services-advanced .service-card:focus-within {
+              transform: translateY(-12px);
+              box-shadow: 0 24px 60px rgba(0, 0, 0, 0.12);
+              border-color: rgba(255, 140, 0, 0.3);
+            }
+            
+            .drb-services-advanced .service-card:hover::before {
+              transform: scaleX(1);
+            }
+            
+            .drb-services-advanced .service-card:hover::after {
+              opacity: 1;
+            }
+            
+            .drb-services-advanced .service-card.featured {
+              background: linear-gradient(135deg, #ff8c00 0%, #ff6b00 50%, #ff8c00 100%);
+              color: #fff;
+              border-color: #ff8c00;
+              position: relative;
+              box-shadow: 0 16px 48px rgba(255, 140, 0, 0.2);
+            }
+            
+            .drb-services-advanced .service-card.featured::before {
+              display: none;
+            }
+            
+            .drb-services-advanced .service-card.featured::after {
+              background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+              opacity: 1;
+            }
+            
+            @media (min-width: 1200px) {
+              .drb-services-advanced .service-card.featured {
+                grid-column: span 2;
+              }
+            }
+            
+            .drb-services-advanced .service-card.featured:hover,
+            .drb-services-advanced .service-card.featured:focus-within {
+              transform: translateY(-16px);
+              box-shadow: 0 32px 80px rgba(255, 140, 0, 0.3);
+            }
+            
+            .drb-services-advanced .service-icon {
+              width: 88px;
+              height: 88px;
+              background: linear-gradient(135deg, #ff8c00, #ff6b00);
+              border-radius: 24px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              margin-bottom: 28px;
+              font-size: 40px;
+              color: white;
+              transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+              box-shadow: 0 12px 32px rgba(255, 140, 0, 0.25);
+              position: relative;
+              overflow: hidden;
+            }
+            
+            .drb-services-advanced .service-icon::before {
+              content: '';
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%);
+              opacity: 0;
+              transition: opacity 0.3s ease;
+            }
+            
+            .drb-services-advanced .service-card:hover .service-icon {
+              transform: scale(1.15) rotate(8deg);
+              box-shadow: 0 16px 40px rgba(255, 140, 0, 0.35);
+            }
+            
+            .drb-services-advanced .service-card:hover .service-icon::before {
+              opacity: 1;
+            }
+            
+            .drb-services-advanced .service-card.featured .service-icon {
+              background: rgba(255, 255, 255, 0.25);
+              backdrop-filter: blur(20px);
+              box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+            }
+            
+            .drb-services-advanced .service-title {
+              font-size: 24px;
+              font-weight: 700;
+              color: #1a1a1a;
+              margin: 0 0 20px 0;
+              line-height: 1.3;
+              font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+              letter-spacing: -0.01em;
+            }
+            
+            .drb-services-advanced .service-card.featured .service-title {
+              color: #fff;
+            }
+            
+            .drb-services-advanced .service-description {
+              font-size: 17px;
+              color: #666;
+              line-height: 1.6;
+              margin: 0 0 24px 0;
+              font-weight: 400;
+            }
+            
+            .drb-services-advanced .service-card.featured .service-description {
+              color: rgba(255, 255, 255, 0.9);
+            }
+            
+            .drb-services-advanced .service-link {
+              color: #ff8c00;
+              text-decoration: none;
+              font-weight: 600;
+              font-size: 16px;
+              display: inline-flex;
+              align-items: center;
+              gap: 10px;
+              transition: all 0.4s ease;
+              padding: 14px 24px;
+              background: rgba(255, 140, 0, 0.08);
+              border-radius: 16px;
+              border: 1px solid rgba(255, 140, 0, 0.2);
+              position: relative;
+              overflow: hidden;
+            }
+            
+            .drb-services-advanced .service-link::before {
+              content: '';
+              position: absolute;
+              top: 0;
+              left: -100%;
+              width: 100%;
+              height: 100%;
+              background: linear-gradient(90deg, transparent, rgba(255, 140, 0, 0.1), transparent);
+              transition: left 0.6s ease;
+            }
+            
+            .drb-services-advanced .service-link:hover {
+              color: #e67e00;
+              background: rgba(255, 140, 0, 0.12);
+              border-color: rgba(255, 140, 0, 0.3);
+              transform: translateX(6px);
+            }
+            
+            .drb-services-advanced .service-link:hover::before {
+              left: 100%;
+            }
+            
+            .drb-services-advanced .service-card.featured .service-link {
+              color: #fff;
+              background: rgba(255, 255, 255, 0.15);
+              border-color: rgba(255, 255, 255, 0.3);
+              backdrop-filter: blur(10px);
+            }
+            
+            .drb-services-advanced .service-card.featured .service-link:hover {
+              background: rgba(255, 255, 255, 0.25);
+              border-color: rgba(255, 255, 255, 0.5);
+            }
+            
+            .drb-services-advanced .featured-badge {
+              position: absolute;
+              top: 24px;
+              right: 24px;
+              background: rgba(255, 255, 255, 0.25);
+              color: #fff;
+              padding: 8px 16px;
+              border-radius: 24px;
+              font-size: 13px;
+              font-weight: 700;
+              backdrop-filter: blur(20px);
+              border: 1px solid rgba(255, 255, 255, 0.3);
+              letter-spacing: 0.5px;
+            }
+            
+            .drb-services-advanced .value-highlight {
+              display: inline-block;
+              background: rgba(255, 140, 0, 0.1);
+              color: #ff8c00;
+              padding: 4px 12px;
+              border-radius: 20px;
+              font-size: 14px;
+              font-weight: 600;
+              margin-top: 16px;
+            }
+            
+            .drb-services-advanced .service-card.featured .value-highlight {
+              background: rgba(255, 255, 255, 0.2);
+              color: #fff;
+            }
+            
+            @media (prefers-reduced-motion: reduce) {
+              .drb-services-advanced .service-card,
+              .drb-services-advanced .service-icon,
+              .drb-services-advanced .service-link {
+                transition: none;
+              }
+              
+              .drb-services-advanced .service-card:hover,
+              .drb-services-advanced .service-card:focus-within {
+                transform: none;
+              }
+              
+              .drb-services-advanced .service-card:hover .service-icon {
+                transform: none;
+              }
+              
+              .drb-services-advanced .service-link:hover {
+                transform: none;
+              }
+            }
+            
+            /* Focus styles for accessibility */
+            .drb-services-advanced .service-card:focus-within {
+              outline: 3px solid #ff8c00;
+              outline-offset: 3px;
+            }
+            
+            /* Responsive adjustments */
+            @media (max-width: 768px) {
+              .drb-services-advanced .service-card {
+                padding: 32px 24px;
+              }
+              
+              .drb-services-advanced .service-icon {
+                width: 72px;
+                height: 72px;
+                font-size: 32px;
+              }
+              
+              .drb-services-advanced .service-title {
+                font-size: 22px;
+              }
+              
+              .drb-services-advanced .service-description {
+                font-size: 16px;
+              }
+            }
+            
+            @media (max-width: 480px) {
+              .drb-services-advanced .service-card {
+                padding: 28px 20px;
+              }
+              
+              .drb-services-advanced .service-icon {
+                width: 64px;
+                height: 64px;
+                font-size: 28px;
+              }
+            }
+          </style>
+          
+          <div class="section-header">
+            <h2 id="services-heading" class="section-title">Our Services</h2>
+            <p class="section-kicker">Full-service SB 721 and SB 326 inspections with design-to-permit repair support. 5,000+ properties achieved compliance.</p>
+          </div>
+          
+          <div class="services-grid">
+            <!-- Featured Card: Design Repair Services -->
+            <div class="service-card featured" itemscope itemtype="https://schema.org/Service">
+              <span class="featured-badge">Featured</span>
+              <span class="service-icon">🛠️</span>
+              <h3 class="service-title" itemprop="name">Design & Repair Services</h3>
+              <p class="service-description" itemprop="description">From stamped repair details to contractor-ready scopes—streamline bids, costs, and timelines with engineered plans for SB-326 and SB-721 compliance.</p>
+              <a href="/comprehensive-guide-to-balcony-repair-costs-assistance-and-best-practices/" class="service-link">View Guide →</a>
+              <div class="value-highlight">One-stop shop · 20% Price Beat Guarantee</div>
+            </div>
+            
+            <!-- SB-326 HOA Inspections -->
+            <div class="service-card" itemscope itemtype="https://schema.org/Service">
+              <span class="service-icon">🏢</span>
+              <h3 class="service-title" itemprop="name">SB-326 HOA Inspections</h3>
+              <p class="service-description" itemprop="description">Comprehensive balcony and EEE inspections for condominiums and HOAs, aligned with SB-326 timelines and reporting standards.</p>
+              <a href="/what-is-the-california-senate-bill-326/" class="service-link">Learn More →</a>
+              <div class="value-highlight">Reserve-study inspections</div>
+            </div>
+            
+            <!-- SB-721 Apartment Inspections -->
+            <div class="service-card" itemscope itemtype="https://schema.org/Service">
+              <span class="service-icon">🏘️</span>
+              <h3 class="service-title" itemprop="name">SB-721 Apartment Inspections</h3>
+              <p class="service-description" itemprop="description">Deadline-driven SB-721 inspections for apartments with clear findings, repair scopes, and owner-ready reports.</p>
+              <a href="/sb-721-inspection-requirements-for-california-apartment-buildings/" class="service-link">Schedule Now →</a>
+              <div class="value-highlight">Avoid fines & keep residents safe</div>
+            </div>
+            
+            <!-- Section 604 Inspections -->
+            <div class="service-card" itemscope itemtype="https://schema.org/Service">
+              <span class="service-icon">🏗️</span>
+              <h3 class="service-title" itemprop="name">Section 604 Inspections</h3>
+              <p class="service-description" itemprop="description">San Francisco code compliance for exterior elements. Plan, permit, and pass with expert guidance through the Section 604 process.</p>
+              <a href="/section-604/" class="service-link">Learn More →</a>
+              <div class="value-highlight">SF code compliance</div>
+            </div>
+            
+            <!-- Load & Materials Testing -->
+            <div class="service-card" itemscope itemtype="https://schema.org/Service">
+              <span class="service-icon">🧪</span>
+              <h3 class="service-title" itemprop="name">Load & Materials Testing</h3>
+              <p class="service-description" itemprop="description">Targeted testing for wood, steel, and connectors to validate safety, lifespan, and compliance decisions for exterior elevated elements.</p>
+              <a href="/services/" class="service-link">Learn More →</a>
+              <div class="value-highlight">Scientific validation</div>
+            </div>
+            
+            <!-- Prioritization & Budgeting -->
+            <div class="service-card" itemscope itemtype="https://schema.org/Service">
+              <span class="service-icon">🧮</span>
+              <h3 class="service-title" itemprop="name">Prioritization & Budgeting</h3>
+              <p class="service-description" itemprop="description">Phase work intelligently: separate urgent hazards from preventive maintenance to control costs and downtime for HOA & apartment owners.</p>
+              <a href="/contact-us/" class="service-link">Get Estimate →</a>
+              <div class="value-highlight">Smart cost control</div>
+            </div>
+            
+            <!-- HOA Board Support -->
+            <div class="service-card" itemscope itemtype="https://schema.org/Service">
+              <span class="service-icon">🧭</span>
+              <h3 class="service-title" itemprop="name">HOA Board Support</h3>
+              <p class="service-description" itemprop="description">Board packets, Q&A, and clear next steps—make approvals simple and transparent for all stakeholders during balcony inspections.</p>
+              <a href="/contact-us/" class="service-link">Contact Us →</a>
+              <div class="value-highlight">Board-ready materials</div>
+            </div>
+            
+            <!-- Owner Communication -->
+            <div class="service-card" itemscope itemtype="https://schema.org/Service">
+              <span class="service-icon">✉️</span>
+              <h3 class="service-title" itemprop="name">Owner Communication</h3>
+              <p class="service-description" itemprop="description">Templates and guidance to notify residents, schedule access, and minimize disruption during SB-326 and SB-721 inspections.</p>
+              <a href="/services/" class="service-link">Get Templates →</a>
+              <div class="value-highlight">Minimize disruption</div>
+            </div>
+          </div>
+        </section>
+        
+        <div style="margin-top: 60px; padding: 40px; background: #f8f9fa; border-radius: 12px; text-align: center;">
+          <h3 style="margin-bottom: 20px; color: #1a1a1a;">WordPress Integration</h3>
+          <p style="color: #666; margin-bottom: 20px;">This section is ready to be copied into a WordPress Custom HTML block. All styles are self-contained and won't conflict with your theme.</p>
+          <div style="background: #fff; padding: 20px; border-radius: 8px; border: 1px solid #e0e0e0; font-family: monospace; font-size: 14px; text-align: left; overflow-x: auto;">
+            <strong>Instructions:</strong><br>
+            1. Copy the entire &lt;section class="drb-services-advanced"&gt; block<br>
+            2. Paste into WordPress Custom HTML block<br>
+            3. Publish and test on mobile/desktop
+          </div>
+        </div>
+    </div>
+</body>
+</html>
