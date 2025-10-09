@@ -1,0 +1,147 @@
+<!-- Forms Section Block - Insert this as a Custom HTML block -->
+<section style="padding: 60px 0;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 40px; margin-top: 40px;">
+            
+            <!-- Proposal Form -->
+            <div style="background: #fff; padding: 40px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);" id="proposal-form">
+                <h3 style="font-size: 1.5rem; margin-bottom: 20px; color: #2c5aa0;">Get Your FREE Proposal in Less than 24 Hours</h3>
+                <p style="margin-bottom: 20px;">We'll review your request and reach out with a proposal shortly — no cost, no obligation.</p>
+                
+                <form>
+                    <div style="margin-bottom: 20px;">
+                        <label for="property-name" style="display: block; margin-bottom: 5px; font-weight: bold;">Property Name</label>
+                        <input type="text" id="property-name" name="property-name" required style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 5px; font-size: 16px;">
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <label for="full-name" style="display: block; margin-bottom: 5px; font-weight: bold;">Full Name *</label>
+                        <input type="text" id="full-name" name="full-name" required style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 5px; font-size: 16px;">
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <label for="phone" style="display: block; margin-bottom: 5px; font-weight: bold;">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 5px; font-size: 16px;">
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <label for="email" style="display: block; margin-bottom: 5px; font-weight: bold;">Email</label>
+                        <input type="email" id="email" name="email" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 5px; font-size: 16px;">
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <label for="address" style="display: block; margin-bottom: 5px; font-weight: bold;">Property Address</label>
+                        <input type="text" id="address" name="address" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 5px; font-size: 16px;">
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <label for="portfolio-size" style="display: block; margin-bottom: 5px; font-weight: bold;">How many properties do you currently own/manage in your portfolio? *</label>
+                        <select id="portfolio-size" name="portfolio-size" required style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 5px; font-size: 16px;">
+                            <option value="">--- Select Choice ---</option>
+                            <option value="1-10">1-10</option>
+                            <option value="11-20">11-20</option>
+                            <option value="21-50">21-50</option>
+                            <option value="51+">51+</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" style="padding: 15px 30px; background: #ff6b35; color: white; border: none; border-radius: 5px; font-size: 16px; font-weight: bold; cursor: pointer; position: relative; animation: shake 0.5s ease-in-out infinite;">
+                        Get Your Free Proposal
+                        <span style="position: absolute; right: -30px; top: 50%; transform: translateY(-50%); font-size: 20px; color: #ff6b35; animation: bounce 1s ease-in-out infinite;">👉</span>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Compliance Check Form -->
+            <div style="background: #fff; padding: 40px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                <h3 style="font-size: 1.5rem; margin-bottom: 20px; color: #2c5aa0;">Check Your Inspection Exemption Status</h3>
+                <p style="margin-bottom: 20px;">Free, fast, and no obligation. Answer a few questions to see if your property needs an inspection.</p>
+                
+                <form>
+                    <div style="margin-bottom: 20px;">
+                        <label for="state" style="display: block; margin-bottom: 5px; font-weight: bold;">Choose your state *</label>
+                        <select id="state" name="state" required style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 5px; font-size: 16px;">
+                            <option value="">--- Select State ---</option>
+                            <option value="california">California</option>
+                            <option value="other">Other States</option>
+                        </select>
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <label for="property-type" style="display: block; margin-bottom: 5px; font-weight: bold;">What type of property do you manage or own? *</label>
+                        <select id="property-type" name="property-type" required style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 5px; font-size: 16px;">
+                            <option value="">--- Select Property Type ---</option>
+                            <option value="single-family">Single-family Home</option>
+                            <option value="apartment-2-4">Apartment (2-4 units)</option>
+                            <option value="apartment-5-plus">Apartment (5+ units)</option>
+                            <option value="commercial">Commercial Building</option>
+                            <option value="hoa-condo">HOA/Condo Association</option>
+                        </select>
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <label for="eee-elements" style="display: block; margin-bottom: 5px; font-weight: bold;">Does your building have any exterior elevated elements (EEE) 6 feet or more from ground level? *</label>
+                        <select id="eee-elements" name="eee-elements" required style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 5px; font-size: 16px;">
+                            <option value="">--- Select EEE Type ---</option>
+                            <option value="walkway">Walkway</option>
+                            <option value="porches">Porches</option>
+                            <option value="stairway">Stairway</option>
+                            <option value="balcony">Balcony</option>
+                            <option value="deck">Deck</option>
+                        </select>
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <label for="units" style="display: block; margin-bottom: 5px; font-weight: bold;">How Many Units does it have? *</label>
+                        <input type="number" id="units" name="units" required style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 5px; font-size: 16px;">
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <label for="contact-name" style="display: block; margin-bottom: 5px; font-weight: bold;">Full Name *</label>
+                        <input type="text" id="contact-name" name="contact-name" required style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 5px; font-size: 16px;">
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <label for="contact-email" style="display: block; margin-bottom: 5px; font-weight: bold;">Email *</label>
+                        <input type="email" id="contact-email" name="contact-email" required style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 5px; font-size: 16px;">
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <label for="contact-phone" style="display: block; margin-bottom: 5px; font-weight: bold;">Phone Number *</label>
+                        <input type="tel" id="contact-phone" name="contact-phone" required style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 5px; font-size: 16px;">
+                    </div>
+                    
+                    <button type="submit" style="padding: 15px 30px; background: #ff6b35; color: white; border: none; border-radius: 5px; font-size: 16px; font-weight: bold; cursor: pointer; position: relative; animation: shake 0.5s ease-in-out infinite;">
+                        See The Result
+                        <span style="position: absolute; right: -30px; top: 50%; transform: translateY(-50%); font-size: 20px; color: #ff6b35; animation: bounce 1s ease-in-out infinite;">👉</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+// Form submission handlers
+document.querySelectorAll('form').forEach(form => {
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        // Here you would typically send the form data to your backend
+        alert('Thank you for your submission! We will contact you shortly.');
+    });
+});
+</script>
+
+<style>
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-2px); }
+    75% { transform: translateX(2px); }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(-50%) translateY(0); }
+    50% { transform: translateY(-50%) translateY(-5px); }
+}
+</style>
+
