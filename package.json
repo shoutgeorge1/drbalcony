@@ -1,0 +1,13 @@
+{
+  "name": "drbalcony-images",
+  "version": "1.0.0",
+  "description": "Image hosting for DrBalcony and California Ordinance",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'No build step needed'",
+    "start": "echo 'Static site'"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
