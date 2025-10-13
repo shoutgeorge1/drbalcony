@@ -1,0 +1,50 @@
+To: seza@drbalcony.com
+From: george@drbalcony.com
+Subject: Ready-to-Use Email Campaign Links
+
+Hi Seza,
+
+I've created two professional government-style violation notice pages that are perfect for your email campaigns. These look like official government compliance alerts and include interactive exemption quizzes.
+
+**READY-TO-USE LINKS:**
+
+SB-721 Violation Notice (Apartment Buildings):
+https://drbalcony.vercel.app/components/email-sections/sb721-violation-notice.html
+
+SB-327 Violation Notice (Single-Family Homes):
+https://drbalcony.vercel.app/components/email-sections/sb327-violation-notice.html
+
+**HOW TO USE IN MAILCHIMP:**
+
+1. Create a new campaign in MailChimp
+2. Choose your audience (apartment owners vs. single-family homeowners)
+3. Use the appropriate URL as your main link
+4. Write a compelling subject line like:
+   - "URGENT: SB-721 Compliance Notice - Action Required"
+   - "Building Safety Violation Notice - January 1, 2026 Deadline"
+   - "Government Compliance Alert - $50,000+ Penalties"
+
+**WHAT THESE PAGES INCLUDE:**
+- Professional government document styling
+- Urgent deadline messaging (January 1, 2026)
+- Penalty information with specific dollar amounts
+- Interactive exemption quiz with scoring
+- Contact information for Dr. Balcony
+- Mobile-responsive design
+
+**AUDIENCE SEGMENTS:**
+- Apartment building owners → Use SB-721 link
+- Single-family homeowners → Use SB-327 link
+- Mixed audience → Use both links
+
+**TESTING:**
+- Visit the links first to see how they look
+- Test on your phone to make sure they work
+- Send to yourself before sending to your audience
+
+These pages will generate high engagement because they look like official government notices and include interactive features that keep people engaged.
+
+Let me know if you need any changes!
+
+George
+

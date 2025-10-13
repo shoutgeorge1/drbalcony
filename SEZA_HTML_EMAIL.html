@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SB-721 Compliance Alert Email</title>
+    <style>
+        /* Email-safe CSS */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.4;
+            color: #000;
+            background: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .email-header {
+            background: #2c3e50;
+            color: #fff;
+            padding: 15px 20px;
+            border-bottom: 3px solid #1a252f;
+        }
+        
+        .email-from {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        
+        .email-subject {
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        
+        .email-date {
+            font-size: 12px;
+            color: #bdc3c7;
+            margin-top: 5px;
+        }
+        
+        .gov-header {
+            background: #f8f9fa;
+            border-bottom: 2px solid #2c3e50;
+            padding: 20px;
+        }
+        
+        .gov-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .gov-seal {
+            width: 60px;
+            height: 60px;
+            background: #2c3e50;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        .gov-info h1 {
+            font-size: 20px;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        
+        .gov-info p {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .notice-title {
+            font-size: 22px;
+            font-weight: bold;
+            color: #2c3e50;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        
+        .notice-subtitle {
+            font-size: 16px;
+            color: #333;
+            font-weight: 600;
+        }
+        
+        .violation-box {
+            background: #e8f4fd;
+            border: 4px solid #2c3e50;
+            padding: 20px;
+            margin: 20px;
+            text-align: center;
+        }
+        
+        .violation-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #2c3e50;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+        
+        .violation-text {
+            font-size: 16px;
+            font-weight: bold;
+            color: #2c3e50;
+            line-height: 1.4;
+        }
+        
+        .property-info {
+            background: #f9f9f9;
+            border: 2px solid #000;
+            padding: 20px;
+            margin: 20px;
+        }
+        
+        .info-title {
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        
+        .info-grid {
+            display: table;
+            width: 100%;
+            font-size: 14px;
+        }
+        
+        .info-item {
+            display: table-row;
+            border-bottom: 1px solid #ccc;
+        }
+        
+        .info-label {
+            display: table-cell;
+            font-weight: bold;
+            color: #000;
+            padding: 5px 10px 5px 0;
+            width: 40%;
+        }
+        
+        .info-value {
+            display: table-cell;
+            color: #333;
+            padding: 5px 0;
+        }
+        
+        .info-value.non-compliant {
+            color: #2c3e50;
+            font-weight: bold;
+        }
+        
+        .penalty-section {
+            background: #fff;
+            border: 3px solid #2c3e50;
+            margin: 20px;
+            padding: 20px;
+        }
+        
+        .penalty-title {
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .penalty-grid {
+            display: table;
+            width: 100%;
+        }
+        
+        .penalty-row {
+            display: table-row;
+        }
+        
+        .penalty-item {
+            display: table-cell;
+            background: #e8f4fd;
+            border: 2px solid #2c3e50;
+            padding: 15px;
+            text-align: center;
+            width: 50%;
+        }
+        
+        .penalty-amount {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        
+        .penalty-description {
+            font-size: 12px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .compliance-section {
+            background: #fff;
+            border: 2px solid #000;
+            margin: 20px;
+            padding: 20px;
+        }
+        
+        .compliance-title {
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .compliance-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .compliance-list li {
+            background: #f0f0f0;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 8px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        
+        .compliance-list li::before {
+            content: "⚠️ ";
+            color: #2c3e50;
+            font-weight: bold;
+        }
+        
+        .deadline-warning {
+            background: #2c3e50;
+            color: #fff;
+            padding: 20px;
+            margin: 20px;
+            text-align: center;
+            border: 3px solid #1a252f;
+        }
+        
+        .deadline-title {
+            font-size: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #ecf0f1;
+            margin-bottom: 10px;
+        }
+        
+        .deadline-date {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ecf0f1;
+            margin-bottom: 10px;
+        }
+        
+        .deadline-text {
+            font-size: 14px;
+            color: #bdc3c7;
+        }
+        
+        .cta-section {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            margin: 20px;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .cta-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #856404;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+        
+        .cta-text {
+            font-size: 14px;
+            color: #856404;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .cta-button {
+            background: #28a745;
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            display: inline-block;
+            margin: 10px;
+        }
+        
+        .contact-section {
+            background: #f9f9f9;
+            border: 2px solid #000;
+            margin: 20px;
+            padding: 20px;
+        }
+        
+        .contact-title {
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .contact-info {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .contact-info strong {
+            color: #2c3e50;
+            font-weight: bold;
+        }
+        
+        .contact-urgent {
+            background: #e8f4fd;
+            border: 2px solid #2c3e50;
+            padding: 15px;
+            margin: 15px 0;
+            text-align: center;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .footer {
+            background: #000;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-top: 3px solid #c00;
+        }
+        
+        .footer-text {
+            font-size: 12px;
+            color: #ccc;
+            margin-bottom: 10px;
+        }
+        
+        .disclaimer {
+            font-size: 10px;
+            color: #999;
+            line-height: 1.4;
+            margin-top: 15px;
+            padding: 10px;
+            background: #333;
+            border: 1px solid #666;
+        }
+        
+        /* Mobile responsive */
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            
+            .email-container {
+                margin: 0;
+                border: 2px solid #000;
+            }
+            
+            .penalty-grid {
+                display: block;
+            }
+            
+            .penalty-item {
+                display: block;
+                width: 100%;
+                margin-bottom: 10px;
+            }
+            
+            .notice-title {
+                font-size: 20px;
+            }
+            
+            .penalty-amount {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="email-container">
+    <!-- Email Header -->
+    <div class="email-header">
+        <div class="email-from">From: Building Safety Alert <alerts@building-safety-info.com></div>
+        <div class="email-subject">URGENT: SB-721 Compliance Notice - Action Required by January 1, 2026</div>
+        <div class="email-date">Date: December 15, 2024 2:47 PM</div>
+    </div>
+    
+    <!-- Official Header -->
+    <div class="gov-header">
+        <div class="gov-logo">
+            <div class="gov-seal">⚠️</div>
+            <div class="gov-info">
+                <h1>SB-721 Compliance Alert</h1>
+                <p>Building Safety Information Service</p>
+            </div>
+        </div>
+        <div class="notice-title">Important Building Safety Notice</div>
+        <div class="notice-subtitle">SB-721 Compliance Required - Immediate Action Required</div>
+    </div>
+    
+    <!-- Alert Box -->
+    <div class="violation-box">
+        <div class="violation-title">⚠️ SB-721 Compliance Alert ⚠️</div>
+        <div class="violation-text">
+            <strong>Important Notice:</strong> California Senate Bill 721 (SB-721) requires mandatory safety inspections for multi-family properties with 3+ units by <strong>January 1, 2026</strong>.<br>
+            <strong>Action Required:</strong> Property owners must ensure compliance to avoid potential penalties and liability.
+        </div>
+    </div>
+    
+    <!-- Property Information -->
+    <div class="property-info">
+        <div class="info-title">Property Information</div>
+        <div class="info-grid">
+            <div class="info-item">
+                <div class="info-label">Property Type:</div>
+                <div class="info-value">Multi-Family Residential (3+ Units)</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">Compliance Status:</div>
+                <div class="info-value non-compliant">NON-COMPLIANT</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">Deadline:</div>
+                <div class="info-value non-compliant">January 1, 2026</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Penalty Section -->
+    <div class="penalty-section">
+        <div class="penalty-title">Penalties for Non-Compliance</div>
+        <div class="penalty-grid">
+            <div class="penalty-row">
+                <div class="penalty-item">
+                    <div class="penalty-amount">$10,000+</div>
+                    <div class="penalty-description">Per Violation</div>
+                </div>
+                <div class="penalty-item">
+                    <div class="penalty-amount">$500/day</div>
+                    <div class="penalty-description">Daily Fine</div>
+                </div>
+            </div>
+            <div class="penalty-row">
+                <div class="penalty-item">
+                    <div class="penalty-amount">$50,000+</div>
+                    <div class="penalty-description">Maximum Penalty</div>
+                </div>
+                <div class="penalty-item">
+                    <div class="penalty-amount">LIABILITY</div>
+                    <div class="penalty-description">Personal Exposure</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Compliance Requirements -->
+    <div class="compliance-section">
+        <div class="compliance-title">Required Actions to Avoid Penalties</div>
+        <ul class="compliance-list">
+            <li>Schedule SB-721 inspection with licensed structural engineer</li>
+            <li>Complete visual inspection of all exterior elevated elements</li>
+            <li>Conduct moisture testing and structural analysis</li>
+            <li>Obtain compliance certification report</li>
+            <li>Complete any necessary repairs or maintenance</li>
+            <li>Submit compliance documentation to local authorities</li>
+        </ul>
+    </div>
+    
+    <!-- Deadline Warning -->
+    <div class="deadline-warning">
+        <div class="deadline-title">⚠️ Critical Deadline ⚠️</div>
+        <div class="deadline-date">January 1, 2026</div>
+        <div class="deadline-text">
+            Failure to comply by this date will result in immediate penalties and legal action.<br>
+            <strong>Time is running out - Act now to avoid costly violations!</strong>
+        </div>
+    </div>
+    
+    <!-- CTA Section -->
+    <div class="cta-section">
+        <div class="cta-title">🔍 Quick Exemption Check - Find Out if You Qualify</div>
+        <div class="cta-text">
+            <strong>Not all properties require SB-721 inspections.</strong> Take our 2-minute quiz to see if you're exempt and could save thousands!
+        </div>
+        <a href="https://drbalcony.vercel.app/components/email-sections/sb721-violation-notice.html" class="cta-button">
+            CHECK MY EXEMPTION STATUS
+        </a>
+        <br>
+        <a href="https://drbalcony.vercel.app/components/email-sections/sb327-violation-notice.html" class="cta-button">
+            SB-327 EXEMPTION CHECK (Single-Family Homes)
+        </a>
+    </div>
+    
+    <!-- Contact Section -->
+    <div class="contact-section">
+        <div class="contact-title">Authorized Compliance Services</div>
+        <div class="contact-info">
+            <strong>Licensed Structural Engineers Available for Immediate Inspection:</strong><br><br>
+            Phone: <strong>(805) 312-8508</strong><br>
+            Email: <strong>info@drbalcony.com</strong><br>
+            Response Time: <strong>24 hours</strong><br>
+            Services: <strong>SB-721 Inspections, Compliance Reports, Expert Consultation</strong>
+        </div>
+        <div class="contact-urgent">
+            <strong>URGENT: Call now to schedule your inspection and avoid penalties!</strong>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <div class="footer">
+        <div class="footer-text">
+            <strong>Informational Notice:</strong> This document provides information about California Senate Bill 721 (SB-721) requirements for multi-family properties. For official compliance information, consult your local building department or the California Building Standards Commission.
+        </div>
+        
+        <div class="disclaimer">
+            <strong>DISCLAIMER:</strong> This is an informational article from Dr. Balcony, a licensed structural engineering firm providing SB-721 inspection services. This is not an official government document, but rather an informational resource designed to help property owners understand SB-721 requirements. Dr. Balcony is not affiliated with any government agency. For official information regarding SB-721, please consult the California Building Standards Commission or your local building department. Dr. Balcony is a private company providing professional engineering services. All inspection services are provided by licensed professionals in accordance with California state requirements.
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

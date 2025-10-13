@@ -1,0 +1,87 @@
+Hi Seza,
+
+Here's the "Gov't Style Alert" for SB-721 (apartment buildings) - our main focus.
+
+**How to Send HTML Violation Notice via Email**
+
+**CONTEXT:** This is a professional government-style violation notice for SB-721 (multi-family apartment buildings) compliance. It looks like an official government alert with penalties, deadlines, and interactive exemption quiz.
+
+**LIVE LINK FOR REFERENCE:**
+SB-721 Violation Notice: https://drbalcony.vercel.app/components/email-sections/sb721-violation-notice.html
+
+**STEP 1: GET THE HTML CODE**
+1. Open this link: https://drbalcony.vercel.app/components/email-sections/sb721-violation-notice.html
+2. Right-click anywhere on the page
+3. Click "View Page Source" (a new tab will open with the code)
+4. Press Ctrl+A (Windows) or Cmd+A (Mac) to select all the code
+5. Press Ctrl+C (Windows) or Cmd+C (Mac) to copy
+6. The HTML is now copied and ready to paste
+
+**STEP 2: SEND VIA MAILCHIMP (RECOMMENDED)**
+1. Log into Mailchimp
+2. Click "Create" then "Email" then "Regular Campaign"
+3. Select your audience and click "Begin"
+4. Add your subject line (see samples below)
+5. Click "Design Email"
+6. Scroll down and select "Code your own" then "Paste in code"
+7. Right-click in the empty box and click "Paste" (or press Ctrl+V / Cmd+V)
+8. Click "Save and Close"
+9. Click "Preview and Test" and send a test email to yourself
+10. Review the test email to make sure everything looks correct
+11. If everything looks good, click "Send" or "Schedule"
+
+**STEP 3: SEND VIA KIT (CONVERTKIT)**
+1. Log into Kit
+2. Go to "Send" then "Broadcasts"
+3. Click "New Broadcast"
+4. Add your subject line (see samples below)
+5. In the email editor, click the "<>" button in the top-right corner
+6. Right-click in the editor box and click "Paste" (or press Ctrl+V / Cmd+V)
+7. Click the "<>" button again to exit HTML mode
+8. Click "Preview" and send yourself a test email
+9. Review the test to make sure it displays correctly
+10. Select your subscriber list
+11. Click "Send Now" or "Schedule"
+
+**SUBJECT LINE SAMPLES**
+
+**High Urgency:**
+- URGENT: SB-721 Compliance Violation Notice
+- FINAL NOTICE: Balcony Inspection Required by Law
+- IMMEDIATE ACTION REQUIRED: Property Violation Detected
+- 30-DAY DEADLINE: SB-721 Compliance Notice
+- NOTICE OF VIOLATION: Building Code Non-Compliance
+
+**Professional/Formal:**
+- Official Notice: SB-721 Compliance Required
+- Important: Property Inspection Deadline Notice
+- Required Action: California Building Safety Violation
+- SB-721 Compliance Notice for Property Owner
+- Mandatory Building Inspection Notice
+
+**Informative:**
+- Important Update: Your Property Requires Inspection
+- Balcony Safety Inspection Notice - Please Respond
+- Compliance Reminder: SB-721 Inspection Due
+- Building Safety Notice: Inspection Needed
+- Required Property Inspection Notice
+
+**Create Urgency:**
+- Only 30 Days Left: Avoid $500/Day Penalties
+- LAST CHANCE: Avoid Costly SB-721 Violations
+- Time-Sensitive: Protect Your Property Investment
+- 72 Hours to Respond: Property Violation Alert
+
+**TROUBLESHOOTING**
+- If the email looks broken or shows as code: Make sure you copied the entire page source (press Ctrl+A before copying)
+- Verify you selected "Paste in code" option in Mailchimp (not regular paste)
+- If buttons don't work: Send a test email to yourself and click the buttons in the received email
+- If you can't find "View Page Source": Try pressing Ctrl+U (Windows) or Cmd+Option+U (Mac) as a shortcut
+
+**BEST PRACTICES**
+- Always send a test email to yourself before sending to your list
+- Check the email on both desktop and mobile devices
+- Send emails Tuesday through Thursday between 10am and 2pm for best open rates
+- Follow up with reminder emails one week before any stated deadlines
+
+George
