@@ -48,175 +48,185 @@
         
         .email-date {
             font-size: 12px;
-            opacity: 0.8;
+            color: #bdc3c7;
+            margin-top: 5px;
         }
         
         /* Official Government Header */
         .gov-header {
-            background: #1a365d;
-            color: #fff;
+            background: #f8f9fa;
+            border-bottom: 2px solid #2c3e50;
             padding: 20px;
-            text-align: center;
-            border-bottom: 4px solid #2d3748;
         }
         
         .gov-logo {
             display: flex;
             align-items: center;
-            justify-content: center;
+            gap: 15px;
             margin-bottom: 15px;
         }
         
         .gov-seal {
-            font-size: 48px;
-            margin-right: 15px;
+            width: 60px;
+            height: 60px;
+            background: #2c3e50;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 20px;
+            font-weight: bold;
         }
         
         .gov-info h1 {
-            font-size: 28px;
+            font-size: 20px;
+            color: #2c3e50;
             margin-bottom: 5px;
-            text-transform: uppercase;
         }
         
         .gov-info p {
             font-size: 14px;
-            opacity: 0.9;
+            color: #666;
         }
         
         .notice-title {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: bold;
-            margin-bottom: 10px;
+            color: #2c3e50;
             text-transform: uppercase;
+            margin-bottom: 10px;
         }
         
         .notice-subtitle {
-            font-size: 18px;
-            opacity: 0.9;
+            font-size: 16px;
+            color: #333;
+            font-weight: 600;
         }
         
-        /* Alert Box */
+        /* Violation Box */
         .violation-box {
-            background: #dc2626;
-            color: #fff;
+            background: #e8f4fd;
+            border: 4px solid #2c3e50;
             padding: 20px;
             margin: 20px;
-            border-radius: 8px;
-            border: 3px solid #991b1b;
+            text-align: center;
         }
         
         .violation-title {
-            font-size: 24px;
+            font-size: 20px;
             font-weight: bold;
-            text-align: center;
-            margin-bottom: 15px;
+            color: #2c3e50;
             text-transform: uppercase;
+            margin-bottom: 15px;
         }
         
         .violation-text {
             font-size: 16px;
-            line-height: 1.6;
+            font-weight: bold;
+            color: #2c3e50;
+            line-height: 1.4;
         }
         
         /* Property Information */
         .property-info {
-            background: #f8f9fa;
-            border: 2px solid #dee2e6;
-            margin: 20px;
+            background: #f9f9f9;
+            border: 2px solid #000;
             padding: 20px;
-            border-radius: 8px;
+            margin: 20px;
         }
         
         .info-title {
-            font-size: 20px;
+            font-size: 16px;
             font-weight: bold;
-            color: #2c3e50;
-            margin-bottom: 15px;
             text-transform: uppercase;
+            margin-bottom: 15px;
+            color: #2c3e50;
         }
         
         .info-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 15px;
+            font-size: 14px;
         }
         
         .info-item {
-            display: flex;
-            flex-direction: column;
+            border-bottom: 1px solid #ccc;
+            padding: 5px 0;
         }
         
         .info-label {
             font-weight: bold;
-            color: #495057;
-            margin-bottom: 5px;
+            color: #000;
         }
         
         .info-value {
-            color: #212529;
-            font-size: 16px;
+            color: #333;
         }
         
-        .non-compliant {
-            color: #dc2626;
+        .info-value.non-compliant {
+            color: #2c3e50;
             font-weight: bold;
         }
         
-        /* Penalties Section */
-        .penalties-section {
-            background: #fff3cd;
-            border: 2px solid #ffc107;
+        /* Penalty Section */
+        .penalty-section {
+            background: #fff;
+            border: 3px solid #2c3e50;
             margin: 20px;
             padding: 20px;
-            border-radius: 8px;
         }
         
-        .penalties-title {
-            font-size: 22px;
+        .penalty-title {
+            font-size: 18px;
             font-weight: bold;
-            color: #856404;
-            margin-bottom: 15px;
             text-transform: uppercase;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .penalty-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
         }
         
         .penalty-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 0;
-            border-bottom: 1px solid #ffeaa7;
-        }
-        
-        .penalty-item:last-child {
-            border-bottom: none;
-        }
-        
-        .penalty-description {
-            font-size: 16px;
-            color: #856404;
+            background: #e8f4fd;
+            border: 2px solid #2c3e50;
+            padding: 15px;
+            text-align: center;
         }
         
         .penalty-amount {
-            font-size: 18px;
+            font-size: 24px;
             font-weight: bold;
-            color: #dc2626;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        
+        .penalty-description {
+            font-size: 12px;
+            font-weight: bold;
+            color: #2c3e50;
         }
         
         /* Compliance Requirements */
         .compliance-section {
-            background: #e8f5e8;
-            border: 2px solid #28a745;
+            background: #fff;
+            border: 2px solid #000;
             margin: 20px;
             padding: 20px;
-            border-radius: 8px;
         }
         
         .compliance-title {
-            font-size: 20px;
+            font-size: 16px;
             font-weight: bold;
-            color: #155724;
-            margin-bottom: 15px;
             text-transform: uppercase;
+            color: #2c3e50;
+            margin-bottom: 15px;
         }
         
         .compliance-list {
@@ -225,52 +235,137 @@
         }
         
         .compliance-list li {
-            padding: 8px 0;
-            border-bottom: 1px solid #c3e6cb;
-            font-size: 16px;
-            color: #155724;
-        }
-        
-        .compliance-list li:last-child {
-            border-bottom: none;
-        }
-        
-        .compliance-list li:before {
-            content: "✓ ";
-            color: #28a745;
+            background: #f0f0f0;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 8px;
+            font-size: 14px;
             font-weight: bold;
         }
         
-        /* Exemption Quiz Section */
-        .exemption-section {
-            background: #f8f9fa;
-            border: 2px solid #6c757d;
+        .compliance-list li::before {
+            content: "⚠️ ";
+            color: #2c3e50;
+            font-weight: bold;
+        }
+        
+        /* Deadline Warning */
+        .deadline-warning {
+            background: #2c3e50;
+            color: #fff;
+            padding: 20px;
+            margin: 20px;
+            text-align: center;
+            border: 3px solid #1a252f;
+        }
+        
+        .deadline-title {
+            font-size: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #ecf0f1;
+            margin-bottom: 10px;
+        }
+        
+        .deadline-date {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ecf0f1;
+            margin-bottom: 10px;
+        }
+        
+        .deadline-text {
+            font-size: 14px;
+            color: #bdc3c7;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            background: #f9f9f9;
+            border: 2px solid #000;
             margin: 20px;
             padding: 20px;
-            border-radius: 8px;
+        }
+        
+        .contact-title {
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .contact-info {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .contact-info strong {
+            color: #2c3e50;
+            font-weight: bold;
+        }
+        
+        .contact-urgent {
+            background: #e8f4fd;
+            border: 2px solid #2c3e50;
+            padding: 15px;
+            margin: 15px 0;
+            text-align: center;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        /* Exemption Section */
+        .exemption-section {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            margin: 20px;
+            padding: 20px;
         }
         
         .exemption-title {
-            font-size: 20px;
+            font-size: 16px;
             font-weight: bold;
-            color: #495057;
-            margin-bottom: 10px;
+            color: #856404;
+            margin-bottom: 15px;
             text-transform: uppercase;
         }
         
-        .exemption-subtitle {
-            font-size: 16px;
-            color: #6c757d;
+        .exemption-text {
+            font-size: 14px;
+            color: #856404;
+            line-height: 1.6;
             margin-bottom: 20px;
+        }
+        
+        .exemption-cta {
+            text-align: center;
+        }
+        
+        .exemption-btn {
+            background: #28a745;
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            display: inline-block;
+            transition: background 0.3s;
+        }
+        
+        .exemption-btn:hover {
+            background: #218838;
         }
         
         /* Quiz Widget */
         .quiz-widget {
             background: #fff;
-            border: 2px solid #dee2e6;
+            border: 2px solid #2c3e50;
             border-radius: 8px;
-            padding: 20px;
-            margin-top: 15px;
+            padding: 25px;
+            margin: 20px 0;
         }
         
         .quiz-title {
@@ -282,7 +377,7 @@
         }
         
         .quiz-form {
-            max-width: 600px;
+            max-width: 500px;
             margin: 0 auto;
         }
         
@@ -293,140 +388,121 @@
         .quiz-question label {
             display: block;
             font-weight: bold;
-            margin-bottom: 8px;
             color: #2c3e50;
+            margin-bottom: 8px;
+            font-size: 14px;
         }
         
         .quiz-question select {
             width: 100%;
             padding: 10px;
-            border: 2px solid #dee2e6;
-            border-radius: 4px;
-            font-size: 16px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
             background: #fff;
         }
         
         .quiz-question select:focus {
-            border-color: #007bff;
+            border-color: #2c3e50;
             outline: none;
         }
         
-        .quiz-button {
-            background: #007bff;
-            color: #fff;
-            border: none;
-            padding: 12px 30px;
-            font-size: 16px;
-            font-weight: bold;
-            border-radius: 6px;
-            cursor: pointer;
+        .quiz-submit {
             width: 100%;
-            margin-top: 10px;
-        }
-        
-        .quiz-button:hover {
-            background: #0056b3;
-        }
-        
-        .quiz-result {
-            margin-top: 20px;
-            padding: 15px;
-            border-radius: 6px;
-            text-align: center;
-            font-weight: bold;
-            display: none;
-        }
-        
-        .quiz-result.exempt {
-            background: #d4edda;
-            color: #155724;
-            border: 2px solid #c3e6cb;
-        }
-        
-        .quiz-result.not-exempt {
-            background: #f8d7da;
-            color: #721c24;
-            border: 2px solid #f5c6cb;
-        }
-        
-        /* Contact Section */
-        .contact-section {
-            background: #e3f2fd;
-            border: 2px solid #2196f3;
-            margin: 20px;
-            padding: 20px;
-            border-radius: 8px;
-        }
-        
-        .contact-title {
-            font-size: 20px;
-            font-weight: bold;
-            color: #0d47a1;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-        }
-        
-        .contact-info {
-            font-size: 16px;
-            color: #0d47a1;
-            line-height: 1.6;
-        }
-        
-        .contact-urgent {
-            background: #ff5722;
+            background: #2c3e50;
             color: #fff;
             padding: 15px;
-            border-radius: 6px;
-            text-align: center;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
             font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        
+        .quiz-submit:hover {
+            background: #1a252f;
+        }
+        
+        .quiz-results {
+            margin-top: 25px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border: 2px solid #28a745;
+        }
+        
+        .result-box h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .result-cta {
+            text-align: center;
             margin-top: 15px;
         }
         
         /* Official Footer */
         .official-footer {
-            background: #f8f9fa;
-            border-top: 3px solid #dee2e6;
+            background: #000;
+            color: #fff;
             padding: 20px;
-            margin-top: 20px;
+            text-align: center;
+            border-top: 3px solid #c00;
         }
         
         .footer-text {
-            font-size: 14px;
-            color: #6c757d;
-            margin-bottom: 15px;
-            line-height: 1.5;
+            font-size: 12px;
+            color: #ccc;
+            margin-bottom: 10px;
         }
         
         .disclaimer {
-            font-size: 12px;
-            color: #6c757d;
+            font-size: 10px;
+            color: #999;
             line-height: 1.4;
-            border-top: 1px solid #dee2e6;
-            padding-top: 15px;
+            margin-top: 15px;
+            padding: 10px;
+            background: #333;
+            border: 1px solid #666;
         }
         
         /* Responsive Design */
         @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
             .violation-notice {
                 margin: 0;
-                border: none;
-                box-shadow: none;
+                border: 2px solid #000;
             }
             
-            .info-grid {
+            .info-grid,
+            .penalty-grid {
                 grid-template-columns: 1fr;
-            }
-            
-            .gov-info h1 {
-                font-size: 24px;
             }
             
             .notice-title {
                 font-size: 20px;
             }
             
-            .violation-title {
+            .penalty-amount {
                 font-size: 20px;
+            }
+        }
+        
+        /* Print Styles */
+        @media print {
+            body {
+                background: #fff;
+                padding: 0;
+            }
+            
+            .violation-notice {
+                box-shadow: none;
+                border: 2px solid #000;
             }
         }
     </style>
@@ -482,20 +558,26 @@
         </div>
     </div>
     
-    <!-- Penalties Section -->
-    <div class="penalties-section">
-        <div class="penalties-title">⚠️ Penalties for Non-Compliance ⚠️</div>
-        <div class="penalty-item">
-            <div class="penalty-description">Per Violation Fine</div>
-            <div class="penalty-amount">$10,000+</div>
-        </div>
-        <div class="penalty-item">
-            <div class="penalty-description">Daily Fine (Per Day)</div>
-            <div class="penalty-amount">$500</div>
-        </div>
-        <div class="penalty-item">
-            <div class="penalty-description">Maximum Penalty</div>
-            <div class="penalty-amount">$50,000+</div>
+    <!-- Penalty Section -->
+    <div class="penalty-section">
+        <div class="penalty-title">Penalties for Non-Compliance</div>
+        <div class="penalty-grid">
+            <div class="penalty-item">
+                <div class="penalty-amount">$10,000+</div>
+                <div class="penalty-description">Per Violation</div>
+            </div>
+            <div class="penalty-item">
+                <div class="penalty-amount">$500/day</div>
+                <div class="penalty-description">Daily Fine</div>
+            </div>
+            <div class="penalty-item">
+                <div class="penalty-amount">$50,000+</div>
+                <div class="penalty-description">Maximum Penalty</div>
+            </div>
+            <div class="penalty-item">
+                <div class="penalty-amount">LIABILITY</div>
+                <div class="penalty-description">Personal Exposure</div>
+            </div>
         </div>
     </div>
     
@@ -512,10 +594,20 @@
         </ul>
     </div>
     
-    <!-- Exemption Quiz Section -->
+    <!-- Deadline Warning -->
+    <div class="deadline-warning">
+        <div class="deadline-title">⚠️ Critical Deadline ⚠️</div>
+        <div class="deadline-date">January 1, 2026</div>
+        <div class="deadline-text">
+            Failure to comply by this date will result in immediate penalties and legal action.<br>
+            <strong>Time is running out - Act now to avoid costly violations!</strong>
+        </div>
+    </div>
+    
+    <!-- Exemption Quiz Widget -->
     <div class="exemption-section">
         <div class="exemption-title">🔍 Quick Exemption Check - Find Out if You Qualify</div>
-        <div class="exemption-subtitle">
+        <div class="exemption-text">
             <strong>Not all properties require SB-326 inspections.</strong> Take our 2-minute quiz to see if you're exempt and could save thousands!
         </div>
         
@@ -528,27 +620,29 @@
                     <select name="units" required>
                         <option value="">Select number of units</option>
                         <option value="1-2">1-2 units (Likely Exempt)</option>
-                        <option value="3-5">3-5 units (May Require Inspection)</option>
-                        <option value="6+">6+ units (Inspection Required)</option>
+                        <option value="3-4">3-4 units</option>
+                        <option value="5+">5+ units</option>
                     </select>
                 </div>
                 
                 <div class="quiz-question">
-                    <label>Does your property have exterior elevated elements (balconies, decks, walkways)?</label>
-                    <select name="elevated" required>
-                        <option value="">Select option</option>
-                        <option value="no">No elevated elements (Likely Exempt)</option>
-                        <option value="yes">Yes, has elevated elements</option>
-                        <option value="unknown">Not sure</option>
+                    <label>What is your building's primary construction material?</label>
+                    <select name="construction" required>
+                        <option value="">Select construction type</option>
+                        <option value="concrete">Concrete (Likely Exempt)</option>
+                        <option value="steel">Steel (Likely Exempt)</option>
+                        <option value="wood">Wood-framed</option>
+                        <option value="mixed">Mixed materials</option>
                     </select>
                 </div>
                 
                 <div class="quiz-question">
-                    <label>Are the elevated elements more than 6 feet above ground?</label>
-                    <select name="height" required>
+                    <label>Do you have exterior elevated elements (balconies, decks) 6+ feet high?</label>
+                    <select name="elements" required>
                         <option value="">Select option</option>
-                        <option value="no">No, under 6 feet (Likely Exempt)</option>
-                        <option value="yes">Yes, 6+ feet high</option>
+                        <option value="none">No elevated elements (Likely Exempt)</option>
+                        <option value="under6">Yes, but under 6 feet high (Likely Exempt)</option>
+                        <option value="over6">Yes, 6+ feet high</option>
                     </select>
                 </div>
                 
@@ -562,16 +656,26 @@
                     </select>
                 </div>
                 
-                <button type="button" class="quiz-button" onclick="checkExemption()">Check My Exemption Status</button>
+                <div class="quiz-results" id="quiz-results" style="display: none;">
+                    <div class="result-box">
+                        <h3>Your Exemption Status:</h3>
+                        <div id="result-text"></div>
+                        <div class="result-cta">
+                            <a href="mailto:info@drbalcony.com?subject=Exemption Check Results" class="exemption-btn">
+                                📧 Get Free Professional Assessment
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <button type="submit" class="quiz-submit">Check My Exemption Status</button>
             </form>
-            
-            <div id="quiz-result" class="quiz-result"></div>
         </div>
     </div>
     
     <!-- Contact Section -->
     <div class="contact-section">
-        <div class="contact-title">📞 Licensed Structural Engineers Available</div>
+        <div class="contact-title">Authorized Compliance Services</div>
         <div class="contact-info">
             <strong>Licensed Structural Engineers Available for Immediate Inspection:</strong><br><br>
             Phone: <strong>(805) 312-8508</strong><br>
@@ -597,45 +701,76 @@
 </div>
 
 <script>
-function checkExemption() {
-    const units = document.querySelector('select[name="units"]').value;
-    const elevated = document.querySelector('select[name="elevated"]').value;
-    const height = document.querySelector('select[name="height"]').value;
-    const recent = document.querySelector('select[name="recent"]').value;
+// Exemption Quiz Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const quizForm = document.querySelector('.quiz-form');
+    const resultsDiv = document.getElementById('quiz-results');
+    const resultText = document.getElementById('result-text');
     
-    let score = 0;
-    let result = '';
+    quizForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const formData = new FormData(quizForm);
+        const units = formData.get('units');
+        const construction = formData.get('construction');
+        const elements = formData.get('elements');
+        const recent = formData.get('recent');
+        
+        let exemptionScore = 0;
+        let resultMessage = '';
+        
+        // Calculate exemption score
+        if (units === '1-2') exemptionScore += 3;
+        if (construction === 'concrete' || construction === 'steel') exemptionScore += 2;
+        if (elements === 'none' || elements === 'under6') exemptionScore += 2;
+        if (recent === 'yes') exemptionScore += 1;
+        
+        // Determine result
+        if (exemptionScore >= 4) {
+            resultMessage = `
+                <div style="color: #28a745; font-weight: bold; text-align: center; padding: 15px; background: #d4edda; border: 2px solid #28a745; border-radius: 5px;">
+                    🎉 <strong>LIKELY EXEMPT!</strong><br>
+                    Based on your answers, you may qualify for an exemption and could save thousands on unnecessary inspections.
+                </div>
+            `;
+        } else if (exemptionScore >= 2) {
+            resultMessage = `
+                <div style="color: #ffc107; font-weight: bold; text-align: center; padding: 15px; background: #fff3cd; border: 2px solid #ffc107; border-radius: 5px;">
+                    ⚠️ <strong>POSSIBLY EXEMPT</strong><br>
+                    You may qualify for an exemption, but a professional assessment is recommended to confirm.
+                </div>
+            `;
+        } else {
+            resultMessage = `
+                <div style="color: #dc3545; font-weight: bold; text-align: center; padding: 15px; background: #f8d7da; border: 2px solid #dc3545; border-radius: 5px;">
+                    📋 <strong>INSPECTION LIKELY REQUIRED</strong><br>
+                    Based on your answers, you will likely need an SB-326 inspection to ensure compliance.
+                </div>
+            `;
+        }
+        
+        resultText.innerHTML = resultMessage;
+        resultsDiv.style.display = 'block';
+        
+        // Scroll to results
+        resultsDiv.scrollIntoView({ behavior: 'smooth' });
+    });
     
-    // Scoring logic
-    if (units === '1-2') score += 3;
-    if (units === '3-5') score += 1;
-    if (units === '6+') score += 0;
-    
-    if (elevated === 'no') score += 3;
-    if (elevated === 'yes') score += 0;
-    if (elevated === 'unknown') score += 1;
-    
-    if (height === 'no') score += 2;
-    if (height === 'yes') score += 0;
-    
-    if (recent === 'yes') score += 3;
-    if (recent === 'no') score += 0;
-    if (recent === 'unknown') score += 1;
-    
-    // Determine result
-    if (score >= 8) {
-        result = '🎉 LIKELY EXEMPT! You may not need SB-326 inspections. Contact us to confirm your exemption status and save thousands on unnecessary inspections.';
-        document.getElementById('quiz-result').className = 'quiz-result exempt';
-    } else if (score >= 5) {
-        result = '⚠️ MAY REQUIRE INSPECTION. Your property might need SB-326 compliance. Contact us for a professional assessment to determine your exact requirements.';
-        document.getElementById('quiz-result').className = 'quiz-result not-exempt';
-    } else {
-        result = '🚨 INSPECTION REQUIRED. Your property likely requires SB-326 compliance. Contact us immediately to schedule your inspection and avoid penalties.';
-        document.getElementById('quiz-result').className = 'quiz-result not-exempt';
+    // Add subtle effects
+    const violationBox = document.querySelector('.violation-box');
+    if (violationBox) {
+        setInterval(() => {
+            violationBox.style.backgroundColor = '#e8f4fd';
+            setTimeout(() => {
+                violationBox.style.backgroundColor = '#e8f4fd';
+            }, 200);
+        }, 3000);
     }
-    
-    document.getElementById('quiz-result').innerHTML = result;
-    document.getElementById('quiz-result').style.display = 'block';
+});
+
+// Add print functionality
+function printNotice() {
+    window.print();
 }
 </script>
 
