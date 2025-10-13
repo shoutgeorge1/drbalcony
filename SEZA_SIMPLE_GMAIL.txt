@@ -1,4 +1,4 @@
-To: seza@drbalcony.com
+To: zeza@drbalcony.com
 From: george@drbalcony.com
 Subject: Government-Style Email Templates Ready
 
@@ -8,11 +8,11 @@ I made two professional government-style violation notice pages for your email c
 
 LIVE LINKS:
 
-SB-326 & SB-721 (Apartment Buildings):
-https://drbalcony.vercel.app/components/email-sections/sb721-violation-notice.html
+SB-326 (Balcony Inspections):
+https://drbalcony.vercel.app/components/email-sections/sb326-violation-notice.html
 
-SB-327 (Single-Family Homes):
-https://drbalcony.vercel.app/components/email-sections/sb327-violation-notice.html
+SB-721 (Multi-Family Property Inspections):
+https://drbalcony.vercel.app/components/email-sections/sb721-violation-notice.html
 
 HOW TO USE IN MAILCHIMP:
 
@@ -54,9 +54,9 @@ WHAT THESE PAGES INCLUDE:
 - Mobile-friendly design
 
 WHO TO SEND TO:
-- Apartment building owners (use first link)
-- Single-family homeowners (use second link)
+- Apartment building owners
 - Property managers
+- Multi-family property investors
 
 BEST PRACTICES:
 - Always test first by sending to yourself
