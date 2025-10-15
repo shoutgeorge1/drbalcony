@@ -359,89 +359,6 @@
             background: #218838;
         }
         
-        /* Quiz Widget */
-        .quiz-widget {
-            background: #fff;
-            border: 2px solid #2c3e50;
-            border-radius: 8px;
-            padding: 25px;
-            margin: 20px 0;
-        }
-        
-        .quiz-title {
-            font-size: 18px;
-            font-weight: bold;
-            color: #2c3e50;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        
-        .quiz-form {
-            max-width: 500px;
-            margin: 0 auto;
-        }
-        
-        .quiz-question {
-            margin-bottom: 20px;
-        }
-        
-        .quiz-question label {
-            display: block;
-            font-weight: bold;
-            color: #2c3e50;
-            margin-bottom: 8px;
-            font-size: 14px;
-        }
-        
-        .quiz-question select {
-            width: 100%;
-            padding: 10px;
-            border: 2px solid #ddd;
-            border-radius: 5px;
-            font-size: 14px;
-            background: #fff;
-        }
-        
-        .quiz-question select:focus {
-            border-color: #2c3e50;
-            outline: none;
-        }
-        
-        .quiz-submit {
-            width: 100%;
-            background: #2c3e50;
-            color: #fff;
-            padding: 15px;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            margin-top: 20px;
-        }
-        
-        .quiz-submit:hover {
-            background: #1a252f;
-        }
-        
-        .quiz-results {
-            margin-top: 25px;
-            padding: 20px;
-            background: #f8f9fa;
-            border-radius: 8px;
-            border: 2px solid #28a745;
-        }
-        
-        .result-box h3 {
-            color: #2c3e50;
-            margin-bottom: 15px;
-            text-align: center;
-        }
-        
-        .result-cta {
-            text-align: center;
-            margin-top: 15px;
-        }
         
         /* Official Footer */
         .official-footer {
@@ -604,72 +521,17 @@
         </div>
     </div>
     
-    <!-- Exemption Quiz Widget -->
+    <!-- Exemption Section -->
     <div class="exemption-section">
         <div class="exemption-title">🔍 Quick Exemption Check - Find Out if You Qualify</div>
         <div class="exemption-text">
-            <strong>Not all properties require SB-326 inspections.</strong> Take our 2-minute quiz to see if you're exempt and could save thousands!
+            <strong>Not all properties require SB-326 inspections.</strong> Get a free professional assessment to see if you're exempt and could save thousands!
         </div>
         
-        <!-- Exemption Quiz Widget -->
-        <div class="quiz-widget">
-            <div class="quiz-title">SB-326 Exemption Qualification Quiz</div>
-            <form class="quiz-form">
-                <div class="quiz-question">
-                    <label>How many units does your property have?</label>
-                    <select name="units" required>
-                        <option value="">Select number of units</option>
-                        <option value="1-2">1-2 units (Likely Exempt)</option>
-                        <option value="3-4">3-4 units</option>
-                        <option value="5+">5+ units</option>
-                    </select>
-                </div>
-                
-                <div class="quiz-question">
-                    <label>What is your building's primary construction material?</label>
-                    <select name="construction" required>
-                        <option value="">Select construction type</option>
-                        <option value="concrete">Concrete (Likely Exempt)</option>
-                        <option value="steel">Steel (Likely Exempt)</option>
-                        <option value="wood">Wood-framed</option>
-                        <option value="mixed">Mixed materials</option>
-                    </select>
-                </div>
-                
-                <div class="quiz-question">
-                    <label>Do you have exterior elevated elements (balconies, decks) 6+ feet high?</label>
-                    <select name="elements" required>
-                        <option value="">Select option</option>
-                        <option value="none">No elevated elements (Likely Exempt)</option>
-                        <option value="under6">Yes, but under 6 feet high (Likely Exempt)</option>
-                        <option value="over6">Yes, 6+ feet high</option>
-                    </select>
-                </div>
-                
-                <div class="quiz-question">
-                    <label>Have you had a recent SB-326 inspection?</label>
-                    <select name="recent" required>
-                        <option value="">Select option</option>
-                        <option value="yes">Yes, within last 6 years (Likely Compliant)</option>
-                        <option value="no">No, never had one</option>
-                        <option value="unknown">Not sure</option>
-                    </select>
-                </div>
-                
-                <div class="quiz-results" id="quiz-results" style="display: none;">
-                    <div class="result-box">
-                        <h3>Your Exemption Status:</h3>
-                        <div id="result-text"></div>
-                        <div class="result-cta">
-                            <a href="mailto:info@drbalcony.com?subject=Exemption Check Results" class="exemption-btn">
-                                📧 Get Free Professional Assessment
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <button type="submit" class="quiz-submit">Check My Exemption Status</button>
-            </form>
+        <div class="exemption-cta">
+            <a href="https://drbalcony.com/sb326-inspection-exemption/" class="exemption-btn" target="_blank">
+                🚀 Get Free SB-326 Exemption Assessment
+            </a>
         </div>
     </div>
     
@@ -701,73 +563,6 @@
 </div>
 
 <script>
-// Exemption Quiz Functionality
-document.addEventListener('DOMContentLoaded', function() {
-    const quizForm = document.querySelector('.quiz-form');
-    const resultsDiv = document.getElementById('quiz-results');
-    const resultText = document.getElementById('result-text');
-    
-    quizForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const formData = new FormData(quizForm);
-        const units = formData.get('units');
-        const construction = formData.get('construction');
-        const elements = formData.get('elements');
-        const recent = formData.get('recent');
-        
-        let exemptionScore = 0;
-        let resultMessage = '';
-        
-        // Calculate exemption score
-        if (units === '1-2') exemptionScore += 3;
-        if (construction === 'concrete' || construction === 'steel') exemptionScore += 2;
-        if (elements === 'none' || elements === 'under6') exemptionScore += 2;
-        if (recent === 'yes') exemptionScore += 1;
-        
-        // Determine result
-        if (exemptionScore >= 4) {
-            resultMessage = `
-                <div style="color: #28a745; font-weight: bold; text-align: center; padding: 15px; background: #d4edda; border: 2px solid #28a745; border-radius: 5px;">
-                    🎉 <strong>LIKELY EXEMPT!</strong><br>
-                    Based on your answers, you may qualify for an exemption and could save thousands on unnecessary inspections.
-                </div>
-            `;
-        } else if (exemptionScore >= 2) {
-            resultMessage = `
-                <div style="color: #ffc107; font-weight: bold; text-align: center; padding: 15px; background: #fff3cd; border: 2px solid #ffc107; border-radius: 5px;">
-                    ⚠️ <strong>POSSIBLY EXEMPT</strong><br>
-                    You may qualify for an exemption, but a professional assessment is recommended to confirm.
-                </div>
-            `;
-        } else {
-            resultMessage = `
-                <div style="color: #dc3545; font-weight: bold; text-align: center; padding: 15px; background: #f8d7da; border: 2px solid #dc3545; border-radius: 5px;">
-                    📋 <strong>INSPECTION LIKELY REQUIRED</strong><br>
-                    Based on your answers, you will likely need an SB-326 inspection to ensure compliance.
-                </div>
-            `;
-        }
-        
-        resultText.innerHTML = resultMessage;
-        resultsDiv.style.display = 'block';
-        
-        // Scroll to results
-        resultsDiv.scrollIntoView({ behavior: 'smooth' });
-    });
-    
-    // Add subtle effects
-    const violationBox = document.querySelector('.violation-box');
-    if (violationBox) {
-        setInterval(() => {
-            violationBox.style.backgroundColor = '#e8f4fd';
-            setTimeout(() => {
-                violationBox.style.backgroundColor = '#e8f4fd';
-            }, 200);
-        }, 3000);
-    }
-});
-
 // Add print functionality
 function printNotice() {
     window.print();
