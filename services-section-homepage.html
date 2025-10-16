@@ -1,13 +1,15 @@
 <!-- How to paste into WP: Copy this entire block into a Custom HTML block in WordPress -->
 <section class="drb-final-unified" aria-labelledby="services-heading">
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
     .drb-final-unified {
       max-width: 1400px;
       margin: 0 auto;
       padding: clamp(80px, 10vw, 120px) clamp(20px, 4vw, 60px);
-      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      background: linear-gradient(135deg, #0a1230 0%, #0b1e52 55%, #12397f 100%);
       position: relative;
       overflow: hidden;
+      font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     }
     
     .drb-final-unified::before {
@@ -36,7 +38,7 @@
       color: #ffffff;
       margin: 0 0 24px 0;
       line-height: 1.1;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
       letter-spacing: -0.02em;
     }
     
@@ -93,7 +95,7 @@
       left: 0;
       right: 0;
       height: 5px;
-      background: linear-gradient(90deg, #ff8c00, #ff6b00, #ff8c00);
+      background: linear-gradient(90deg, #FF783E, #e66b35, #FF783E);
       transform: scaleX(0);
       transition: transform 0.5s ease;
       border-radius: 24px 24px 0 0;
@@ -106,7 +108,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: linear-gradient(135deg, rgba(255, 140, 0, 0.05) 0%, rgba(255, 140, 0, 0.02) 100%);
+      background: linear-gradient(135deg, rgba(255, 120, 62, 0.05) 0%, rgba(255, 120, 62, 0.02) 100%);
       opacity: 0;
       transition: opacity 0.5s ease;
       pointer-events: none;
@@ -116,7 +118,7 @@
     .drb-final-unified .service-card:focus-within {
       transform: translateY(-12px);
       box-shadow: 0 24px 60px rgba(0, 0, 0, 0.2);
-      border-color: rgba(255, 140, 0, 0.4);
+      border-color: rgba(255, 120, 62, 0.4);
     }
     
     .drb-final-unified .service-card:hover::before {
@@ -128,11 +130,11 @@
     }
     
     .drb-final-unified .service-card.highlighted {
-      background: linear-gradient(135deg, #ff8c00 0%, #ff6b00 50%, #ff8c00 100%);
+      background: linear-gradient(135deg, #FF783E 0%, #e66b35 50%, #FF783E 100%);
       color: #fff;
-      border-color: #ff8c00;
+      border-color: #FF783E;
       position: relative;
-      box-shadow: 0 16px 48px rgba(255, 140, 0, 0.3);
+      box-shadow: 0 16px 48px rgba(255, 120, 62, 0.3);
     }
     
     .drb-final-unified .service-card.highlighted::before {
@@ -147,13 +149,13 @@
     .drb-final-unified .service-card.highlighted:hover,
     .drb-final-unified .service-card.highlighted:focus-within {
       transform: translateY(-16px);
-      box-shadow: 0 32px 80px rgba(255, 140, 0, 0.4);
+      box-shadow: 0 32px 80px rgba(255, 120, 62, 0.4);
     }
     
     .drb-final-unified .service-icon {
       width: 88px;
       height: 88px;
-      background: linear-gradient(135deg, #ff8c00, #ff6b00);
+      background: linear-gradient(135deg, #FF783E, #e66b35);
       border-radius: 24px;
       display: flex;
       align-items: center;
@@ -162,7 +164,7 @@
       font-size: 40px;
       color: white;
       transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      box-shadow: 0 12px 32px rgba(255, 140, 0, 0.3);
+      box-shadow: 0 12px 32px rgba(255, 120, 62, 0.3);
       position: relative;
       overflow: hidden;
     }
@@ -181,7 +183,7 @@
     
     .drb-final-unified .service-card:hover .service-icon {
       transform: scale(1.15) rotate(8deg);
-      box-shadow: 0 16px 40px rgba(255, 140, 0, 0.4);
+      box-shadow: 0 16px 40px rgba(255, 120, 62, 0.4);
     }
     
     .drb-final-unified .service-card:hover .service-icon::before {
@@ -195,12 +197,12 @@
     }
     
     .drb-final-unified .service-title {
-      font-size: 24px;
+      font-size: 26px;
       font-weight: 700;
       color: #1a1a1a;
       margin: 0 0 20px 0;
       line-height: 1.3;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
       letter-spacing: -0.01em;
     }
     
@@ -209,7 +211,7 @@
     }
     
     .drb-final-unified .service-description {
-      font-size: 17px;
+      font-size: 18px;
       color: #666;
       line-height: 1.6;
       margin: 0 0 24px 0;
@@ -221,18 +223,18 @@
     }
     
     .drb-final-unified .service-link {
-      color: #ff8c00;
+      color: #FF783E;
       text-decoration: none;
       font-weight: 600;
-      font-size: 16px;
+      font-size: 17px;
       display: inline-flex;
       align-items: center;
       gap: 10px;
       transition: all 0.4s ease;
-      padding: 14px 24px;
-      background: rgba(255, 140, 0, 0.08);
+      padding: 16px 28px;
+      background: rgba(255, 120, 62, 0.08);
       border-radius: 16px;
-      border: 1px solid rgba(255, 140, 0, 0.2);
+      border: 1px solid rgba(255, 120, 62, 0.2);
       position: relative;
       overflow: hidden;
     }
@@ -244,14 +246,14 @@
       left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 140, 0, 0.1), transparent);
+      background: linear-gradient(90deg, transparent, rgba(255, 120, 62, 0.1), transparent);
       transition: left 0.6s ease;
     }
     
     .drb-final-unified .service-link:hover {
-      color: #e67e00;
-      background: rgba(255, 140, 0, 0.12);
-      border-color: rgba(255, 140, 0, 0.3);
+      color: #e66b35;
+      background: rgba(255, 120, 62, 0.12);
+      border-color: rgba(255, 120, 62, 0.3);
       transform: translateX(6px);
     }
     
@@ -288,11 +290,11 @@
     
     .drb-final-unified .value-highlight {
       display: inline-block;
-      background: rgba(255, 140, 0, 0.1);
-      color: #ff8c00;
-      padding: 4px 12px;
+      background: rgba(255, 120, 62, 0.1);
+      color: #FF783E;
+      padding: 6px 14px;
       border-radius: 20px;
-      font-size: 14px;
+      font-size: 15px;
       font-weight: 600;
       margin-top: 16px;
     }
@@ -325,20 +327,45 @@
     
     /* Focus styles for accessibility */
     .drb-final-unified .service-card:focus-within {
-      outline: 3px solid #ff8c00;
+      outline: 3px solid #FF783E;
       outline-offset: 3px;
     }
     
     /* Responsive adjustments */
     @media (max-width: 768px) {
       .drb-final-unified .service-card {
+        padding: 36px 28px;
+      }
+      
+      .drb-final-unified .service-icon {
+        width: 76px;
+        height: 76px;
+        font-size: 34px;
+      }
+      
+      .drb-final-unified .service-title {
+        font-size: 24px;
+      }
+      
+      .drb-final-unified .service-description {
+        font-size: 17px;
+      }
+      
+      .drb-final-unified .service-link {
+        font-size: 16px;
+        padding: 14px 24px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .drb-final-unified .service-card {
         padding: 32px 24px;
       }
       
       .drb-final-unified .service-icon {
-        width: 72px;
-        height: 72px;
-        font-size: 32px;
+        width: 68px;
+        height: 68px;
+        font-size: 30px;
       }
       
       .drb-final-unified .service-title {
@@ -348,17 +375,10 @@
       .drb-final-unified .service-description {
         font-size: 16px;
       }
-    }
-    
-    @media (max-width: 480px) {
-      .drb-final-unified .service-card {
-        padding: 28px 20px;
-      }
       
-      .drb-final-unified .service-icon {
-        width: 64px;
-        height: 64px;
-        font-size: 28px;
+      .drb-final-unified .service-link {
+        font-size: 15px;
+        padding: 12px 20px;
       }
     }
   </style>
@@ -402,7 +422,7 @@
       <span class="service-icon">📋</span>
       <h3 class="service-title" itemprop="name">Compliance Assurance</h3>
       <p class="service-description" itemprop="description">Meet state regulations and avoid fines.</p>
-      <a href="https://drbalcony.com/services/" class="service-link">Learn More →</a>
+      <a href="https://drbalcony.com/sb326-inspection-exemption/" class="service-link">Check Compliance →</a>
       <div class="value-highlight">State regulation compliance</div>
     </div>
     
@@ -411,7 +431,7 @@
       <span class="service-icon">📊</span>
       <h3 class="service-title" itemprop="name">Financial Planning</h3>
       <p class="service-description" itemprop="description">Inspection reports for accurate repair budgeting.</p>
-      <a href="https://drbalcony.com/contact-us/" class="service-link">Get Estimate →</a>
+      <a href="https://drbalcony.com/balcony-inspection-cost-calculator/" class="service-link">Get Estimate →</a>
       <div class="value-highlight">Accurate repair budgeting</div>
     </div>
     
@@ -429,7 +449,7 @@
       <span class="service-icon">🛡️</span>
       <h3 class="service-title" itemprop="name">Liability Reduction</h3>
       <p class="service-description" itemprop="description">Minimize liability risks with professional inspections.</p>
-      <a href="https://drbalcony.com/services/" class="service-link">Learn More →</a>
+      <a href="https://drbalcony.com/contact-us/" class="service-link">Get Protection →</a>
       <div class="value-highlight">Professional risk management</div>
     </div>
   </div>
