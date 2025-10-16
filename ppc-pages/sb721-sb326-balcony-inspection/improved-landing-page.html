@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SB-721 & SB-326 Balcony Inspection Requirements | DrBalcony®</title>
+    <meta name="description" content="Licensed structural engineers provide comprehensive SB-721 and SB-326 balcony inspections. Fast turnaround, transparent reporting, and statewide coverage. Get your free proposal today.">
+    
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Orange Banner with Close Functionality */
+        .compliance-banner {
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+            color: white;
+            padding: 12px 0;
+            text-align: center;
+            position: relative;
+            display: block;
+        }
+        
+        .compliance-banner.hidden {
+            display: none;
+        }
+        
+        .banner-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .banner-close {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            padding: 5px 10px;
+            border-radius: 3px;
+            transition: background 0.3s;
+        }
+        
+        .banner-close:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        
+        /* Header */
+        .header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2c5aa0;
+        }
+        
+        .phone {
+            color: #2c5aa0;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2c5aa0, #1e3a5f);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+            position: relative;
+        }
+        
+        .btn-primary {
+            background: #ff6b35;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #e55a2b;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .btn-secondary:hover {
+            background: white;
+            color: #2c5aa0;
+        }
+        
+        /* Shaking Animation */
+        .btn-shake {
+            animation: shake 0.5s ease-in-out infinite;
+        }
+        
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-2px); }
+            75% { transform: translateX(2px); }
+        }
+        
+        /* Pointing Arrow */
+        .pointing-arrow {
+            position: absolute;
+            right: -30px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 20px;
+            color: #ff6b35;
+            animation: bounce 1s ease-in-out infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(-50%) translateY(0); }
+            50% { transform: translateY(-50%) translateY(-5px); }
+        }
+        
+        /* Trust Signals */
+        .trust-signals {
+            background: #f8f9fa;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .trust-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        
+        /* Limited Time Offer */
+        .offer-section {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            padding: 30px;
+            margin: 40px 0;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .countdown-item {
+            background: #2c5aa0;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            min-width: 60px;
+        }
+        
+        .countdown-number {
+            font-size: 24px;
+            font-weight: bold;
+            display: block;
+        }
+        
+        .countdown-label {
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+        
+        /* Video Section */
+        .video-section {
+            padding: 60px 0;
+            background: #f8f9fa;
+        }
+        
+        .video-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .video-placeholder {
+            background: #ddd;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        /* Consequences Section */
+        .consequences {
+            padding: 60px 0;
+        }
+        
+        .consequences-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .consequence-card {
+            text-align: center;
+            padding: 30px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .consequence-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        /* Process Section */
+        .process-section {
+            padding: 60px 0;
+            background: #f8f9fa;
+        }
+        
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .process-step {
+            text-align: center;
+            padding: 30px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .step-number {
+            background: #2c5aa0;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        .process-step .btn {
+            margin-top: 15px;
+            padding: 10px 20px;
+            font-size: 14px;
+        }
+        
+        /* Forms Section */
+        .forms-section {
+            padding: 60px 0;
+        }
+        
+        .forms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .form-container {
+            background: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .form-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #2c5aa0;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #2c5aa0;
+        }
+        
+        /* Calculator Widget */
+        .calculator-widget {
+            background: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin: 40px 0;
+        }
+        
+        .calculator-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #2c5aa0;
+            text-align: center;
+        }
+        
+        .calculator-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .calculator-link-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid #e9ecef;
+            transition: all 0.3s ease;
+        }
+        
+        .calculator-link-card:hover {
+            border-color: #2c5aa0;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .calculator-link-card h3 {
+            color: #2c5aa0;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .calculator-link-card p {
+            margin-bottom: 20px;
+            color: #666;
+        }
+        
+        /* Compliance Links */
+        .compliance-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .compliance-link-item {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .compliance-link-item:hover {
+            border-color: #2c5aa0;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .compliance-link-item h4 {
+            color: #2c5aa0;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .compliance-link-item p {
+            margin-bottom: 15px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        /* Why Choose Section */
+        .why-choose {
+            padding: 60px 0;
+            background: #f8f9fa;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .feature-card {
+            text-align: center;
+            padding: 30px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 60px 0;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .testimonial-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .testimonial-rating {
+            color: #ffc107;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            color: #2c5aa0;
+        }
+        
+        /* Review Badges */
+        .review-badges {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 40px 0;
+        }
+        
+        .review-badge {
+            background: #fff;
+            padding: 15px 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+            min-width: 150px;
+        }
+        
+        .badge-logo {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+        
+        .badge-rating {
+            font-size: 18px;
+            font-weight: bold;
+            color: #2c5aa0;
+        }
+        
+        .badge-source {
+            font-size: 12px;
+            color: #666;
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            padding: 60px 0;
+            background: #f8f9fa;
+        }
+        
+        .faq-item {
+            background: #fff;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .faq-question {
+            padding: 20px;
+            background: #2c5aa0;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .faq-answer {
+            padding: 20px;
+            display: none;
+        }
+        
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #2c5aa0;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .forms-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .trust-logos {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Orange Banner with Close Functionality -->
+    <div class="compliance-banner" id="complianceBanner">
+        <div class="container">
+            <div class="banner-content">
+                <span>⏰ Time-Sensitive Compliance</span>
+                <span>Compliance Deadline: January 1, 2026</span>
+                <button class="banner-close" onclick="closeBanner()">×</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">DrBalcony®</div>
+                <a href="tel:+18053128508" class="phone">+1 805-312-8508</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Ensure Your California Property Meets SB-721 and SB-326 Requirements</h1>
+            <p>Licensed structural engineers provide comprehensive balcony and deck inspections. Fast turnaround, transparent reporting, and statewide coverage.</p>
+            
+            <div class="cta-buttons">
+                <a href="#proposal-form" class="btn btn-primary btn-shake">
+                    Get Your Free Proposal
+                    <span class="pointing-arrow">👉</span>
+                </a>
+                <a href="tel:+18053128508" class="btn btn-secondary">Call for Immediate Service</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Signals -->
+    <section class="trust-signals">
+        <div class="container">
+            <h2>Trusted by California's Premier HOA & Property Management Associations</h2>
+            <p>DrBalcony® holds active memberships in the Community Associations Institute (CAI) and Apartment Association of Orange County (AAOC) — exclusive professional organizations with strict member requirements providing access to cutting-edge education, legislative updates, and industry best practices.</p>
+        </div>
+    </section>
+
+    <!-- Limited Time Offer -->
+    <section class="offer-section">
+        <div class="container">
+            <h2>LIMITED TIME - ⏰ Special Offer</h2>
+            <h3>Save 15% on Your SB-721 or SB-326 Inspection</h3>
+            <p>Book your inspection before the offer expires and receive 15% off our standard rates.</p>
+            <p><strong>Example: Save $360 on a typical 24-unit property inspection ($2,400 standard rate).</strong></p>
+            
+            <div class="countdown">
+                <div class="countdown-item">
+                    <span class="countdown-number" id="days">00</span>
+                    <span class="countdown-label">Days</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="hours">00</span>
+                    <span class="countdown-label">Hours</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="minutes">00</span>
+                    <span class="countdown-label">Minutes</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="seconds">00</span>
+                    <span class="countdown-label">Seconds</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="video-section">
+        <div class="container">
+            <div class="video-container">
+                <h2>Understanding SB-721 Requirements</h2>
+                <p>Watch this 90-second overview of California's balcony inspection requirements.</p>
+                <div class="video-placeholder">
+                    <p>📹 Video: SB-721 Requirements Overview</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Consequences Section -->
+    <section class="consequences">
+        <div class="container">
+            <h2>What Happens If You Miss the Deadline?</h2>
+            <p>Understanding potential consequences helps property owners prioritize timely inspections.</p>
+            
+            <div class="consequences-grid">
+                <div class="consequence-card">
+                    <div class="consequence-icon">🛡️</div>
+                    <h3>Insurance Coverage Issues</h3>
+                    <p>Many insurance carriers require proof of current inspections. Non-compliance may affect coverage.</p>
+                </div>
+                
+                <div class="consequence-card">
+                    <div class="consequence-icon">⚖️</div>
+                    <h3>Municipal Violations</h3>
+                    <p>Local building departments may issue notices of violation for non-compliant properties.</p>
+                </div>
+                
+                <div class="consequence-card">
+                    <div class="consequence-icon">💸</div>
+                    <h3>Emergency Repair Costs</h3>
+                    <p>Delaying inspections can allow minor issues to escalate into major structural problems.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+        <div class="container">
+            <h2>Our Inspection Process</h2>
+            <p>We make California balcony compliance straightforward and stress-free.</p>
+            
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Free Compliance Assessment</h3>
+                    <p>Use our comprehensive resources to determine if your property requires an inspection.</p>
+                    <a href="https://drbalcony.com/balcony-inspection-checklists/" class="btn btn-secondary">View Checklists</a>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Get Your Proposal</h3>
+                    <p>Receive a detailed proposal with transparent pricing for your specific property.</p>
+                    <a href="https://drbalcony.com/services/" class="btn btn-secondary">View Services</a>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Schedule Inspection</h3>
+                    <p>Our licensed engineers coordinate with you for convenient inspection timing.</p>
+                    <a href="https://drbalcony.com/contact-us/" class="btn btn-secondary">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Forms Section -->
+    <section class="forms-section" id="forms">
+        <div class="container">
+            <div class="forms-grid">
+                <!-- Proposal Form -->
+                <div class="form-container" id="proposal-form">
+                    <h3 class="form-title">Get Your FREE Proposal in Less than 24 Hours</h3>
+                    <p>We'll review your request and reach out with a proposal shortly — no cost, no obligation.</p>
+                    
+                    <form>
+                        <div class="form-group">
+                            <label for="property-name">Property Name</label>
+                            <input type="text" id="property-name" name="property-name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="full-name">Full Name *</label>
+                            <input type="text" id="full-name" name="full-name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="address">Property Address</label>
+                            <input type="text" id="address" name="address">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="portfolio-size">How many properties do you currently own/manage in your portfolio? *</label>
+                            <select id="portfolio-size" name="portfolio-size" required>
+                                <option value="">--- Select Choice ---</option>
+                                <option value="1-10">1-10</option>
+                                <option value="11-20">11-20</option>
+                                <option value="21-50">21-50</option>
+                                <option value="51+">51+</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-shake">
+                            Get Your Free Proposal
+                            <span class="pointing-arrow">👉</span>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Compliance Check Links -->
+                <div class="form-container">
+                    <h3 class="form-title">Check Your Inspection Requirements</h3>
+                    <p>Use our comprehensive resources to determine if your property needs an inspection and what's required.</p>
+                    
+                    <div class="compliance-links">
+                        <div class="compliance-link-item">
+                            <h4>📋 Inspection Checklists</h4>
+                            <p>Download our detailed checklists to understand exactly what inspectors look for during SB-721 and SB-326 inspections.</p>
+                            <a href="https://drbalcony.com/balcony-inspection-checklists/" class="btn btn-primary btn-shake">
+                                View Checklists
+                                <span class="pointing-arrow">👉</span>
+                            </a>
+                        </div>
+                        
+                        <div class="compliance-link-item">
+                            <h4>🏢 California Inspection Requirements</h4>
+                            <p>Learn about all California balcony inspection requirements and determine if your property is affected.</p>
+                            <a href="https://drbalcony.com/balcony-inspections-in-california/" class="btn btn-primary btn-shake">
+                                View Requirements
+                                <span class="pointing-arrow">👉</span>
+                            </a>
+                        </div>
+                        
+                        <div class="compliance-link-item">
+                            <h4>📞 Get Expert Consultation</h4>
+                            <p>Still unsure? Speak directly with our licensed engineers for a free consultation.</p>
+                            <a href="https://drbalcony.com/contact-us/" class="btn btn-secondary">
+                                Contact Us
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cost Calculator Links -->
+    <section class="calculator-widget">
+        <div class="container">
+            <h2 class="calculator-title">Get Your Inspection Cost Estimate</h2>
+            <p>Choose the right inspection type for your property and get accurate pricing information.</p>
+            
+            <div class="calculator-links">
+                <div class="calculator-link-card">
+                    <h3>SB-721 Inspections (Apartments)</h3>
+                    <p>For apartment buildings and multifamily rental properties with 3+ units</p>
+                    <a href="https://drbalcony.com/sb721-inspection/" class="btn btn-primary btn-shake">
+                        Get SB-721 Pricing
+                        <span class="pointing-arrow">👉</span>
+                    </a>
+                </div>
+                
+                <div class="calculator-link-card">
+                    <h3>SB-326 Inspections (HOAs/Condos)</h3>
+                    <p>For condominium associations and HOA-managed properties</p>
+                    <a href="https://drbalcony.com/sb326-inspection/" class="btn btn-primary btn-shake">
+                        Get SB-326 Pricing
+                        <span class="pointing-arrow">👉</span>
+                    </a>
+                </div>
+                
+                <div class="calculator-link-card">
+                    <h3>All Inspection Services</h3>
+                    <p>Complete overview of all our balcony inspection services and pricing</p>
+                    <a href="https://drbalcony.com/services/" class="btn btn-secondary">
+                        View All Services
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Section -->
+    <section class="why-choose">
+        <div class="container">
+            <h2>Why Choose DrBalcony®?</h2>
+            <p>We don't just inspect—we use our proprietary BalconyScope™ methodology to ensure nothing is missed.</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎓</div>
+                    <h3>Licensed Engineers</h3>
+                    <p>All inspections by CA-licensed structural engineers</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>BalconyScope™ Process</h3>
+                    <p>Proprietary 7-step inspection methodology</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>AI Project Tracking</h3>
+                    <p>Real-time updates via our mobile app</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>24-Hour Proposals</h3>
+                    <p>Free estimates delivered next business day</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>What Our Clients Say</h2>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text">"Joseph came out and did our inspection, he did an amazing job, he was very efficient and polite, all of my tenants who met him had great things to say about his professionalism."</p>
+                    <p class="testimonial-author">- Renee, Claraday Apartments</p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text">"Rico was very helpful in getting my balcony inspections completed in a timely manner. The process was smooth from start to finish. Thank you!"</p>
+                    <p class="testimonial-author">- Gino Poore, Property Owner</p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text">"Very thorough and very detailed inspection with many pictures and easy to understand details. Very professional and friendly staff. Great choice."</p>
+                    <p class="testimonial-author">- Barbara Morden, HOA Board Member</p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text">"Reasonably priced, a competitor quoted almost double. The inspector was punctual and professional!"</p>
+                    <p class="testimonial-author">- Charles Im, Property Manager</p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text">"Every part of the process went super smoothly and I'm very happy with the detailed final report as well. Would definitely recommend."</p>
+                    <p class="testimonial-author">- Verified Customer, HOA</p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text">"Great service at a great price! DrBalcony was a great choice to provide the necessary documentation to meet California laws on balconies."</p>
+                    <p class="testimonial-author">- Verified Customer</p>
+                </div>
+            </div>
+            
+            <!-- Review Badges -->
+            <div class="review-badges">
+                <div class="review-badge">
+                    <div class="badge-logo">⭐</div>
+                    <div class="badge-rating">4.6/5</div>
+                    <div class="badge-source">Google Reviews</div>
+                </div>
+                
+                <div class="review-badge">
+                    <div class="badge-logo">🏆</div>
+                    <div class="badge-rating">A+ Rating</div>
+                    <div class="badge-source">Better Business Bureau</div>
+                </div>
+                
+                <div class="review-badge">
+                    <div class="badge-logo">👍</div>
+                    <div class="badge-rating">4.8/5</div>
+                    <div class="badge-source">Yelp</div>
+                </div>
+                
+                <div class="review-badge">
+                    <div class="badge-logo">🏅</div>
+                    <div class="badge-rating">Top Rated</div>
+                    <div class="badge-source">Angi</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    What properties require SB-721 or SB-326 inspections?
+                </div>
+                <div class="faq-answer">
+                    <p>SB-721 applies to apartments and multifamily rental properties with 3+ units. SB-326 applies to condominiums and HOAs.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    How often do inspections need to be performed?
+                </div>
+                <div class="faq-answer">
+                    <p>Initial inspections by January 1, 2025. SB-721 requires inspections every 6 years; SB-326 every 9 years.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    What does the inspection include?
+                </div>
+                <div class="faq-answer">
+                    <p>Comprehensive inspection of all exterior elevated elements including balconies, decks, stairways, and railings.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    How much do inspections cost?
+                </div>
+                <div class="faq-answer">
+                    <p>Most inspections range from $1,500 to $5,000 depending on property size and complexity.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    What happens if issues are found?
+                </div>
+                <div class="faq-answer">
+                    <p>We provide a detailed report with prioritized recommendations. You'll have time to plan repairs, and we can connect you with qualified contractors.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    How long does the process take?
+                </div>
+                <div class="faq-answer">
+                    <p>On-site inspections typically complete in 1-3 days. Comprehensive reports are delivered within 5-7 business days.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 DrBalcony®. Licensed California Structural Engineers.</p>
+            <p>SB-721 and SB-326 compliance inspections for apartments, condos, and HOAs throughout California.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Banner close functionality
+        function closeBanner() {
+            document.getElementById('complianceBanner').classList.add('hidden');
+        }
+
+        // Countdown timer
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const deadline = new Date('2026-01-01').getTime();
+            const distance = deadline - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+
+            if (distance < 0) {
+                document.getElementById('days').textContent = '00';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+            }
+        }
+
+        // Update countdown every second
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Removed calculator functionality - now using external links
+
+        // FAQ toggle functionality
+        function toggleFAQ(element) {
+            const faqItem = element.parentElement;
+            faqItem.classList.toggle('active');
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form submission handlers
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                // Here you would typically send the form data to your backend
+                alert('Thank you for your submission! We will contact you shortly.');
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+

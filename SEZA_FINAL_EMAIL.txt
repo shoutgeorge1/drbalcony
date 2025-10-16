@@ -1,0 +1,89 @@
+To: seza@drbalcony.com
+From: george@drbalcony.com
+Subject: SB-721 Government-Style Violation Notice - Ready to Use
+
+Hi Seza,
+
+I've created a professional government-style violation notice for SB-326 & SB-721 (apartment buildings) that's perfect for your email campaigns. This looks like an official government compliance alert with penalties, deadlines, and interactive exemption quiz.
+
+**LIVE LINKS:**
+
+SB-326 & SB-721 Violation Notice (Apartment Buildings):
+https://drbalcony.vercel.app/components/email-sections/sb721-violation-notice.html
+
+SB-327 Violation Notice (Single-Family Homes):
+https://drbalcony.vercel.app/components/email-sections/sb327-violation-notice.html
+
+**NOTE:** The first link covers both SB-326 (balcony inspections) and SB-721 (multi-family property inspections) for apartment buildings - our main target market. The second link is for SB-327 (single-family homes) if needed.
+
+**HOW TO USE IN MAILCHIMP:**
+
+1. **Get the HTML Code:**
+   - Open the link above
+   - Right-click anywhere on the page
+   - Click "View Page Source"
+   - Press Ctrl+A to select all, then Ctrl+C to copy
+
+2. **Create Campaign:**
+   - Log into Mailchimp
+   - Click "Create" → "Email" → "Regular Campaign"
+   - Select your audience and click "Begin"
+   - Add your subject line (see samples below)
+   - Click "Design Email"
+   - Scroll down and select "Code your own" → "Paste in code"
+   - Paste the HTML code (Ctrl+V)
+   - Click "Save and Close"
+
+3. **Test and Send:**
+   - Click "Preview and Test" and send to yourself
+   - Review on both desktop and mobile
+   - If everything looks good, click "Send"
+
+**SUBJECT LINE SAMPLES:**
+
+**High Urgency:**
+- URGENT: SB-326 & SB-721 Compliance Violation Notice
+- FINAL NOTICE: Balcony Inspection Required by Law
+- IMMEDIATE ACTION REQUIRED: Property Violation Detected
+- 30-DAY DEADLINE: SB-326 & SB-721 Compliance Notice
+
+**Professional:**
+- Official Notice: SB-326 & SB-721 Compliance Required
+- Important: Property Inspection Deadline Notice
+- Required Action: California Building Safety Violation
+- Mandatory Building Inspection Notice
+
+**Create Urgency:**
+- Only 30 Days Left: Avoid $500/Day Penalties
+- LAST CHANCE: Avoid Costly SB-326 & SB-721 Violations
+- Time-Sensitive: Protect Your Property Investment
+
+**WHAT THIS PAGE INCLUDES:**
+- Professional government document styling
+- Urgent deadline messaging (January 1, 2026)
+- Penalty information ($10,000+ per violation, $500/day daily fine)
+- Interactive exemption quiz with scoring
+- Contact information for Dr. Balcony
+- Mobile-responsive design
+
+**TARGET AUDIENCE:**
+- Apartment building owners
+- Property managers
+- Multi-family property investors
+
+**BEST PRACTICES:**
+- Always test first by sending to yourself
+- Check on both desktop and mobile devices
+- Send Tuesday through Thursday between 10am and 2pm
+- Follow up with reminder emails one week before deadlines
+
+This will generate high engagement because it looks like an official government notice and includes interactive features that keep people engaged.
+
+Let me know if you need any changes!
+
+George
+
+---
+Dr. Balcony
+Phone: (805) 312-8508
+Email: info@drbalcony.com

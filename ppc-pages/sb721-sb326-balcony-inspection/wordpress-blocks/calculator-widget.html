@@ -1,0 +1,85 @@
+<!-- Calculator Widget Block - Insert this as a Custom HTML block -->
+<section style="background: #fff; padding: 40px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); margin: 40px 0;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+        <h2 style="font-size: 1.5rem; margin-bottom: 20px; color: #2c5aa0; text-align: center;">Calculate Your SB-721 & SB-326 Inspection Cost</h2>
+        <p style="text-align: center; margin-bottom: 30px;">Get an instant estimate with our Balcony Inspection Cost Calculator. Input your property details and receive accurate pricing — takes less than 2 minutes.</p>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 20px;">
+            <div>
+                <label for="calc-building-type" style="display: block; margin-bottom: 5px; font-weight: bold;">Building Type:</label>
+                <select id="calc-building-type" name="calc-building-type" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 5px; font-size: 16px;">
+                    <option value="sb721">SB-721 (Apartments)</option>
+                    <option value="sb326">SB-326 (HOAs/Condos)</option>
+                </select>
+            </div>
+            
+            <div>
+                <label for="calc-units" style="display: block; margin-bottom: 5px; font-weight: bold;">Number of Units *</label>
+                <input type="number" id="calc-units" name="calc-units" required style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 5px; font-size: 16px;">
+            </div>
+            
+            <div>
+                <label for="calc-email" style="display: block; margin-bottom: 5px; font-weight: bold;">Email Address *</label>
+                <input type="email" id="calc-email" name="calc-email" required style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 5px; font-size: 16px;">
+            </div>
+            
+            <div>
+                <label for="calc-phone" style="display: block; margin-bottom: 5px; font-weight: bold;">Phone Number *</label>
+                <input type="tel" id="calc-phone" name="calc-phone" required style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 5px; font-size: 16px;">
+            </div>
+        </div>
+        
+        <div style="text-align: center;">
+            <button onclick="calculateCost()" style="padding: 15px 30px; background: #ff6b35; color: white; border: none; border-radius: 5px; font-size: 16px; font-weight: bold; cursor: pointer; position: relative; animation: shake 0.5s ease-in-out infinite;">
+                Calculate Cost
+                <span style="position: absolute; right: -30px; top: 50%; transform: translateY(-50%); font-size: 20px; color: #ff6b35; animation: bounce 1s ease-in-out infinite;">👉</span>
+            </button>
+        </div>
+        
+        <div id="calculator-result" style="background: #f8f9fa; padding: 20px; border-radius: 5px; text-align: center; font-size: 1.2rem; font-weight: bold; color: #2c5aa0; margin-top: 20px; display: none;">
+            <p>Estimated Cost: <span id="estimated-cost">$0</span></p>
+            <p>Based on <span id="unit-count">0</span> units for <span id="inspection-type">SB-721</span> inspection</p>
+        </div>
+    </div>
+</section>
+
+<script>
+function calculateCost() {
+    const buildingType = document.getElementById('calc-building-type').value;
+    const units = parseInt(document.getElementById('calc-units').value);
+    
+    if (!units || units < 1) {
+        alert('Please enter a valid number of units');
+        return;
+    }
+
+    // Simple cost calculation (this would be more sophisticated in production)
+    let baseCost = 0;
+    if (buildingType === 'sb721') {
+        baseCost = 100 + (units * 50); // $100 base + $50 per unit
+    } else {
+        baseCost = 150 + (units * 75); // $150 base + $75 per unit
+    }
+
+    document.getElementById('estimated-cost').textContent = '$' + baseCost.toLocaleString();
+    document.getElementById('unit-count').textContent = units;
+    document.getElementById('inspection-type').textContent = buildingType === 'sb721' ? 'SB-721' : 'SB-326';
+    document.getElementById('calculator-result').style.display = 'block';
+}
+</script>
+
+<style>
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-2px); }
+    75% { transform: translateX(2px); }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(-50%) translateY(0); }
+    50% { transform: translateY(-50%) translateY(-5px); }
+}
+</style>
+
+
+

@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SB-721 Balcony Inspection/EEE for California Apartments - DrBalcony®</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        /* Mobile-First Responsive Styles */
+        @media (max-width: 768px) {
+            section {
+                padding: 40px 16px !important;
+            }
+            
+            h1, h2 {
+                font-size: 28px !important;
+            }
+            
+            h3 {
+                font-size: 20px !important;
+            }
+            
+            .faq-item summary {
+                font-size: 16px !important;
+            }
+            
+            .hero-cta-buttons,
+            .cost-grid,
+            .why-grid,
+            .testimonial-grid,
+            .icon-grid {
+                flex-direction: column !important;
+                grid-template-columns: 1fr !important;
+            }
+            
+            .hero-cta-buttons a,
+            .final-cta-buttons a {
+                width: 100%;
+                text-align: center;
+            }
+            
+            table {
+                font-size: 14px;
+            }
+            
+            table th, table td {
+                padding: 8px !important;
+            }
+        }
+        
+        @media (max-width: 390px) {
+            section {
+                padding: 32px 12px !important;
+            }
+            
+            h1 {
+                font-size: 24px !important;
+            }
+            
+            h2 {
+                font-size: 22px !important;
+            }
+            
+            p {
+                font-size: 15px !important;
+            }
+        }
+        
+        /* FAQ Accordion */
+        .faq-item[open] .faq-icon {
+            transform: rotate(45deg);
+        }
+        
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-item summary {
+            list-style: none;
+        }
+        
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+        
+        /* Button Hover Effects */
+        .btn-primary {
+            background: #FF783E;
+            color: #fff;
+            padding: 18px 36px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background: #e66b35;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 120, 62, 0.3);
+        }
+        
+        .btn-secondary {
+            background: #fff;
+            color: #0a1230;
+            padding: 18px 36px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background: #f5f5f5;
+            transform: translateY(-2px);
+        }
+        
+        /* Shaking Animation */
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-2px); }
+            20%, 40%, 60%, 80% { transform: translateX(2px); }
+        }
+        
+        .btn-shake {
+            animation: shake 0.5s ease-in-out;
+        }
+        
+        .btn-urgent {
+            background: #FF4444;
+            color: #fff;
+            padding: 18px 36px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-urgent:hover {
+            background: #e63939;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 68, 68, 0.4);
+        }
+        
+        .btn-urgent::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .btn-urgent:hover::before {
+            left: 100%;
+        }
+        
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Form Styles */
+        .quiz-form {
+            background: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .quiz-form input,
+        .quiz-form select,
+        .quiz-form textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            margin-bottom: 16px;
+            font-size: 16px;
+        }
+        
+        .quiz-form button {
+            width: 100%;
+            padding: 16px;
+            background: #FF783E;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .quiz-form button:hover {
+            background: #e66b35;
+        }
+        
+        /* What We Inspect Hover Effects */
+        .icon-grid > div:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 48px rgba(0,0,0,0.15) !important;
+            border-color: rgba(255, 120, 62, 0.3) !important;
+        }
+        
+        .icon-grid > div:hover > div:first-child {
+            transform: scale(1.1);
+            box-shadow: 0 12px 32px rgba(255, 120, 62, 0.4) !important;
+        }
+        
+    </style>
+</head>
+<body>
+
+<!-- Hero Section with Deadline Urgency -->
+<div id="hero-section" style="position:relative; top:-100px;" aria-hidden="true"></div>
+
+<section style="background: linear-gradient(135deg, #0a1230 0%, #0b1e52 55%, #12397f 100%); color: #fff; padding: 60px 20px 40px; text-align: center;">
+  <div style="max-width: 1200px; margin: 0 auto;">
+    
+    <!-- Deadline Alert -->
+    <div style="display: inline-block; background: rgba(255, 120, 62, 0.2); border: 2px solid #FF783E; border-radius: 8px; padding: 12px 24px; margin-bottom: 20px;">
+      <strong style="color: #FF783E; font-size: 14px; text-transform: uppercase; letter-spacing: 1px;">⚠️ Compliance Deadline</strong>
+      <p style="margin: 8px 0 0; font-size: 18px; font-weight: 600;">January 1, 2026 – First SB-721 Inspection Due</p>
+    </div>
+
+    <h1 style="font-size: clamp(40px, 6vw, 72px); font-weight: 800; line-height: 1.2; margin: 0 0 20px;">
+      California SB-721 Balcony Inspection/EEE for Apartments
+    </h1>
+    
+    <p style="font-size: clamp(18px, 2.5vw, 24px); max-width: 700px; margin: 0 auto 30px; opacity: 0.95;">
+      Mandatory inspections for all multi-family properties with 3+ units. Don't risk fines, liability, or emergency repairs—get compliant now.
+    </p>
+
+    <!-- Dual CTA Buttons -->
+    <div class="hero-cta-buttons" style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 30px;">
+      <a href="#check-eligibility" class="btn-primary">
+        ✓ Check If You Qualify
+      </a>
+      <a href="#cost-calculator" class="btn-secondary">
+        💰 Get Cost Estimate
+      </a>
+    </div>
+
+    <!-- Trust Badges -->
+    <div style="display: flex; gap: 24px; justify-content: center; align-items: center; flex-wrap: wrap; margin-top: 30px;">
+      <div style="text-align: center;">
+        <p style="font-size: 32px; font-weight: 800; margin: 0; color: #FF783E;">5000+</p>
+        <p style="font-size: 14px; margin: 4px 0 0; opacity: 0.9;">Inspections Completed</p>
+      </div>
+      <div style="width: 1px; height: 40px; background: rgba(255,255,255,0.3);"></div>
+      <div style="text-align: center;">
+        <p style="font-size: 32px; font-weight: 800; margin: 0; color: #FF783E;">100+</p>
+        <p style="font-size: 14px; margin: 4px 0 0; opacity: 0.9;">5-Star Reviews</p>
+      </div>
+      <div style="width: 1px; height: 40px; background: rgba(255,255,255,0.3);"></div>
+      <div style="text-align: center;">
+        <p style="font-size: 32px; font-weight: 800; margin: 0; color: #FF783E;">20%</p>
+        <p style="font-size: 14px; margin: 4px 0 0; opacity: 0.9;">Price Beat Guarantee</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- What is SB-721 -->
+<div id="what-is-sb721" style="position:relative; top:-100px;" aria-hidden="true"></div>
+
+<section style="padding: 80px 20px; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e0 100%); position: relative; overflow: hidden;">
+  <!-- Background Elements -->
+  <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: linear-gradient(135deg, rgba(255,120,62,0.1), rgba(255,120,62,0.05)); border-radius: 50%;"></div>
+  <div style="position: absolute; bottom: -100px; left: -100px; width: 300px; height: 300px; background: linear-gradient(135deg, rgba(10,18,48,0.1), rgba(10,18,48,0.05)); border-radius: 50%;"></div>
+  
+  <div style="max-width: 1200px; margin: 0 auto; position: relative; z-index: 2;">
+    <div style="text-align: center; margin-bottom: 60px;">
+      <div style="display: inline-block; background: linear-gradient(135deg, #FF783E, #e66b35); color: white; padding: 12px 24px; border-radius: 50px; font-weight: 700; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px;">
+        ⚖️ California Law
+      </div>
+      <h2 style="font-size: clamp(32px, 5vw, 48px); font-weight: 700; margin: 0 0 20px; color: #0a1230;">
+        What is SB-721 Balcony Inspection/EEE & Who Must Comply?
+      </h2>
+      <p style="font-size: 20px; color: #666; max-width: 800px; margin: 0 auto;">
+        Understanding California's mandatory balcony inspection requirements for multi-family properties
+      </p>
+    </div>
+    
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; margin-bottom: 40px;">
+      <div>
+        <div style="background: #fff; border-radius: 20px; padding: 40px; box-shadow: 0 12px 40px rgba(0,0,0,0.1); border: 1px solid rgba(255,120,62,0.1);">
+          <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #FF783E, #e66b35); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px; font-size: 36px;">🏢</div>
+          <h3 style="font-size: 24px; font-weight: 700; margin: 0 0 16px; color: #0a1230;">Who Must Comply?</h3>
+          <p style="font-size: 18px; line-height: 1.6; margin: 0; color: #666;">
+            <strong>SB-721</strong> (passed in 2018) requires regular safety inspections of exterior elevated elements (EEEs) for apartment buildings with <strong>3 or more units</strong>. This includes balconies, decks, stairs, walkways, and railings that are <strong>6+ feet</strong> off the ground.
+          </p>
+        </div>
+      </div>
+      
+      <div>
+        <div style="background: #fff; border-radius: 20px; padding: 40px; box-shadow: 0 12px 40px rgba(0,0,0,0.1); border: 1px solid rgba(255,120,62,0.1);">
+          <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #FF783E, #e66b35); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px; font-size: 36px;">⚠️</div>
+          <h3 style="font-size: 24px; font-weight: 700; margin: 0 0 16px; color: #0a1230;">Critical Deadline</h3>
+          <p style="font-size: 18px; line-height: 1.6; margin: 0; color: #666;">
+            The first inspection deadline is <strong style="color: #FF783E; font-size: 20px;">January 1, 2026</strong>. Missing this deadline can result in fines, liability issues, and difficulty selling or refinancing your property.
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Enhanced Requirements Table -->
+    <div style="background: #fff; border-radius: 20px; padding: 40px; box-shadow: 0 12px 40px rgba(0,0,0,0.1); border: 1px solid rgba(255,120,62,0.1);">
+      <h3 style="font-size: 28px; font-weight: 700; text-align: center; margin: 0 0 30px; color: #0a1230;">SB-721 Requirements Overview</h3>
+      
+      <div style="overflow-x: auto;">
+        <table style="width: 100%; border-collapse: collapse;">
+          <thead>
+            <tr style="background: linear-gradient(135deg, #0a1230, #0b1e52); color: #fff; border-radius: 12px 12px 0 0;">
+              <th style="padding: 20px; text-align: left; border: none; font-size: 18px; font-weight: 600;">Requirement</th>
+              <th style="padding: 20px; text-align: left; border: none; font-size: 18px; font-weight: 600;">Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 20px; border: none; font-weight: 600; color: #0a1230; font-size: 16px;"><strong>Building Type</strong></td>
+              <td style="padding: 20px; border: none; color: #666; font-size: 16px;">Multi-family residential (3+ units)</td>
+            </tr>
+            <tr style="background: #f8fafc; border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 20px; border: none; font-weight: 600; color: #0a1230; font-size: 16px;"><strong>Elements Inspected</strong></td>
+              <td style="padding: 20px; border: none; color: #666; font-size: 16px;">Balconies, decks, stairs, walkways, railings (6+ ft high)</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 20px; border: none; font-weight: 600; color: #0a1230; font-size: 16px;"><strong>First Deadline</strong></td>
+              <td style="padding: 20px; border: none; color: #FF783E; font-size: 18px; font-weight: 700;"><strong>January 1, 2026</strong></td>
+            </tr>
+            <tr style="background: #f8fafc; border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 20px; border: none; font-weight: 600; color: #0a1230; font-size: 16px;"><strong>Frequency</strong></td>
+              <td style="padding: 20px; border: none; color: #666; font-size: 16px;">Every 6 years</td>
+            </tr>
+            <tr>
+              <td style="padding: 20px; border: none; font-weight: 600; color: #0a1230; font-size: 16px;"><strong>Inspector Required</strong></td>
+              <td style="padding: 20px; border: none; color: #666; font-size: 16px;">Licensed architect, civil engineer, or structural engineer</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Check Eligibility Section -->
+<div id="check-eligibility" style="position:relative; top:-100px;" aria-hidden="true"></div>
+
+<section style="padding: 80px 20px; background: linear-gradient(135deg, #0a1230 0%, #0b1e52 55%, #12397f 100%); position: relative; overflow: hidden;">
+  <!-- Background Pattern -->
+  <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><pattern id=\"grain\" width=\"100\" height=\"100\" patternUnits=\"userSpaceOnUse\"><circle cx=\"25\" cy=\"25\" r=\"1\" fill=\"rgba(255,255,255,0.1)\"/><circle cx=\"75\" cy=\"75\" r=\"1\" fill=\"rgba(255,255,255,0.1)\"/><circle cx=\"50\" cy=\"10\" r=\"0.5\" fill=\"rgba(255,255,255,0.05)\"/><circle cx=\"10\" cy=\"60\" r=\"0.5\" fill=\"rgba(255,255,255,0.05)\"/><circle cx=\"90\" cy=\"40\" r=\"0.5\" fill=\"rgba(255,255,255,0.05)\"/></pattern></defs><rect width=\"100\" height=\"100\" fill=\"url(%23grain)\"/></svg>'); opacity: 0.3;"></div>
+  
+  <div style="max-width: 800px; margin: 0 auto; text-align: center; position: relative; z-index: 2;">
+    <h2 style="font-size: clamp(32px, 5vw, 48px); font-weight: 700; margin: 0 0 16px; color: #fff;">
+      Find Out If You Qualify for an Exemption
+    </h2>
+    <p style="font-size: 20px; line-height: 1.6; margin: 0 0 40px; color: rgba(255,255,255,0.9);">
+      Not all properties require a full SB-721 inspection. Take our 2-minute quiz to see if you're exempt or need compliance documentation.
+    </p>
+    
+    <!-- Form with Enhanced Styling -->
+    <div class="quiz-form" style="background: rgba(255,255,255,0.95); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.2); box-shadow: 0 20px 60px rgba(0,0,0,0.3);">
+      <h3 style="margin-bottom: 30px; color: #0a1230; font-size: 28px; font-weight: 700;">2-Minute Compliance Check</h3>
+      
+      <input type="text" placeholder="Property Address" required style="border: 2px solid #e2e8f0; border-radius: 12px; padding: 16px; font-size: 16px; transition: all 0.3s ease;" onfocus="this.style.borderColor='#FF783E'; this.style.boxShadow='0 0 0 3px rgba(255,120,62,0.1)'" onblur="this.style.borderColor='#e2e8f0'; this.style.boxShadow='none'">
+      
+      <select required style="border: 2px solid #e2e8f0; border-radius: 12px; padding: 16px; font-size: 16px; transition: all 0.3s ease;" onfocus="this.style.borderColor='#FF783E'; this.style.boxShadow='0 0 0 3px rgba(255,120,62,0.1)'" onblur="this.style.borderColor='#e2e8f0'; this.style.boxShadow='none'">
+        <option value="">What type of property?</option>
+        <option>Apartment (3-4 units)</option>
+        <option>Apartment (5+ units)</option>
+        <option>Condo/HOA</option>
+        <option>Single-family Home</option>
+      </select>
+      
+      <select required style="border: 2px solid #e2e8f0; border-radius: 12px; padding: 16px; font-size: 16px; transition: all 0.3s ease;" onfocus="this.style.borderColor='#FF783E'; this.style.boxShadow='0 0 0 3px rgba(255,120,62,0.1)'" onblur="this.style.borderColor='#e2e8f0'; this.style.boxShadow='none'">
+        <option value="">Building construction type?</option>
+        <option>Wood-framed</option>
+        <option>Concrete</option>
+        <option>Steel</option>
+        <option>Mixed</option>
+      </select>
+      
+      <input type="text" placeholder="How many units?" required style="border: 2px solid #e2e8f0; border-radius: 12px; padding: 16px; font-size: 16px; transition: all 0.3s ease;" onfocus="this.style.borderColor='#FF783E'; this.style.boxShadow='0 0 0 3px rgba(255,120,62,0.1)'" onblur="this.style.borderColor='#e2e8f0'; this.style.boxShadow='none'">
+      
+      <input type="text" placeholder="Your Name" required style="border: 2px solid #e2e8f0; border-radius: 12px; padding: 16px; font-size: 16px; transition: all 0.3s ease;" onfocus="this.style.borderColor='#FF783E'; this.style.boxShadow='0 0 0 3px rgba(255,120,62,0.1)'" onblur="this.style.borderColor='#e2e8f0'; this.style.boxShadow='none'">
+      <input type="email" placeholder="Email" required style="border: 2px solid #e2e8f0; border-radius: 12px; padding: 16px; font-size: 16px; transition: all 0.3s ease;" onfocus="this.style.borderColor='#FF783E'; this.style.boxShadow='0 0 0 3px rgba(255,120,62,0.1)'" onblur="this.style.borderColor='#e2e8f0'; this.style.boxShadow='none'">
+      <input type="tel" placeholder="Phone Number" required style="border: 2px solid #e2e8f0; border-radius: 12px; padding: 16px; font-size: 16px; transition: all 0.3s ease;" onfocus="this.style.borderColor='#FF783E'; this.style.boxShadow='0 0 0 3px rgba(255,120,62,0.1)'" onblur="this.style.borderColor='#e2e8f0'; this.style.boxShadow='none'">
+      
+      <button type="submit" style="background: linear-gradient(135deg, #FF783E, #e66b35); border: none; border-radius: 12px; padding: 18px; font-size: 18px; font-weight: 700; color: white; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 8px 24px rgba(255,120,62,0.3);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 32px rgba(255,120,62,0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 24px rgba(255,120,62,0.3)'">Get My Results</button>
+    </div>
+  </div>
+</section>
+
+<!-- Cost Transparency Section -->
+<div id="cost-calculator" style="position:relative; top:-100px;" aria-hidden="true"></div>
+
+<section style="padding: 60px 20px; background: #fff;">
+  <div style="max-width: 1200px; margin: 0 auto;">
+    <h2 style="font-size: clamp(32px, 5vw, 48px); font-weight: 700; text-align: center; margin: 0 0 40px; color: #0a1230;">
+      Transparent Pricing & Cost Calculator
+    </h2>
+    
+    <div class="cost-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center;">
+      <div>
+        <h3 style="font-size: 28px; font-weight: 600; margin: 0 0 16px;">What's Included?</h3>
+        <ul style="list-style: none; padding: 0; margin: 0;">
+          <li style="padding: 12px 0; border-bottom: 1px solid #eee; font-size: 18px;">✓ Site visit & visual inspection</li>
+          <li style="padding: 12px 0; border-bottom: 1px solid #eee; font-size: 18px;">✓ Moisture & structural testing</li>
+          <li style="padding: 12px 0; border-bottom: 1px solid #eee; font-size: 18px;">✓ Detailed photo documentation</li>
+          <li style="padding: 12px 0; border-bottom: 1px solid #eee; font-size: 18px;">✓ Compliance-ready report</li>
+          <li style="padding: 12px 0; border-bottom: 1px solid #eee; font-size: 18px;">✓ Free proposal within 24 hours</li>
+        </ul>
+        
+        <div style="margin-top: 24px; padding: 20px; background: #f9f9f9; border-left: 4px solid #FF783E; border-radius: 4px;">
+          <p style="margin: 0; font-size: 18px; line-height: 1.6;">
+            <strong>20% Price Beat Guarantee:</strong> Show us a competitor's quote and we'll beat it by 20%, guaranteed!
+          </p>
+        </div>
+      </div>
+      
+      <div style="text-align: center;">
+        <img src="https://drbalcony.com/wp-content/uploads/2025/10/Generated-Image-October-04-2025-1_05AM.png" alt="Cost calculator preview" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.12);" />
+        <a href="https://drbalcony.com/balcony-inspection-cost-calculator/" class="btn-primary" style="margin-top: 24px;">
+          Calculate Your Cost →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Dr. Balcony (BalconyScope™) -->
+<div id="why-drbalcony" style="position:relative; top:-100px;" aria-hidden="true"></div>
+
+<section style="padding: 60px 20px; background: #0a1230; color: #fff;">
+  <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
+    <h2 style="font-size: clamp(32px, 5vw, 48px); font-weight: 700; margin: 0 0 20px;">
+      Why Choose DrBalcony®?
+    </h2>
+    <p style="font-size: 20px; max-width: 700px; margin: 0 auto 50px; opacity: 0.9;">
+      We don't just inspect—we use our proprietary <strong>BalconyScope™</strong> methodology to ensure nothing is missed.
+    </p>
+    
+    <div class="why-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 32px; margin-bottom: 40px;">
+      <div style="text-align: center; padding: 24px;">
+        <div style="width: 64px; height: 64px; background: #FF783E; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-size: 32px;">
+          ✓
+        </div>
+        <h3 style="font-size: 22px; font-weight: 600; margin: 0 0 12px;">Licensed Engineers</h3>
+        <p style="margin: 0; opacity: 0.9; font-size: 16px;">All inspections by CA-licensed structural engineers</p>
+      </div>
+      
+      <div style="text-align: center; padding: 24px;">
+        <div style="width: 64px; height: 64px; background: #FF783E; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-size: 32px;">
+          🎯
+        </div>
+        <h3 style="font-size: 22px; font-weight: 600; margin: 0 0 12px;">BalconyScope™ Process</h3>
+        <p style="margin: 0; opacity: 0.9; font-size: 16px;">Proprietary 7-step inspection methodology</p>
+      </div>
+      
+      <div style="text-align: center; padding: 24px;">
+        <div style="width: 64px; height: 64px; background: #FF783E; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-size: 32px;">
+          🤖
+        </div>
+        <h3 style="font-size: 22px; font-weight: 600; margin: 0 0 12px;">AI Project Tracking</h3>
+        <p style="margin: 0; opacity: 0.9; font-size: 16px;">Real-time updates via our mobile app</p>
+      </div>
+      
+      <div style="text-align: center; padding: 24px;">
+        <div style="width: 64px; height: 64px; background: #FF783E; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-size: 32px;">
+          ⚡
+        </div>
+        <h3 style="font-size: 22px; font-weight: 600; margin: 0 0 12px;">24-Hour Proposals</h3>
+        <p style="margin: 0; opacity: 0.9; font-size: 16px;">Free estimates delivered next business day</p>
+      </div>
+    </div>
+    
+    <img src="https://drbalcony.com/wp-content/uploads/2025/10/Generated-Image-October-04-2025-12_10AM.png" alt="Dr. Balcony inspection process" style="max-width: 800px; width: 100%; height: auto; border-radius: 12px; margin-top: 20px;" />
+  </div>
+</section>
+
+<!-- Urgent CTA Section -->
+<div id="urgent-cta" style="position:relative; top:-100px;" aria-hidden="true"></div>
+
+<section style="padding: 60px 20px; background: #FF4444; color: #fff; text-align: center;">
+  <div style="max-width: 1000px; margin: 0 auto;">
+    <h2 style="font-size: clamp(32px, 5vw, 48px); font-weight: 700; margin: 0 0 20px;">
+      ⚠️ DEADLINE APPROACHING - ACT NOW!
+    </h2>
+    <p style="font-size: 20px; max-width: 700px; margin: 0 auto 30px; opacity: 0.95;">
+      January 1, 2026 is just around the corner. Don't risk fines, liability, or emergency repairs. Get your SB-721 inspection scheduled today!
+    </p>
+    
+    <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 30px;">
+      <a href="#check-eligibility" class="btn-urgent" id="urgent-btn-1">
+        🚨 Get Your Free Proposal →
+      </a>
+      <a href="tel:+18053128508" class="btn-urgent" id="urgent-btn-2">
+        📞 Call (805) 312-8508
+      </a>
+    </div>
+    
+    <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+      <a href="#cost-calculator" class="btn-primary" id="cost-btn">
+        💰 Get Instant Quote
+      </a>
+      <a href="mailto:info@drbalcony.com" class="btn-secondary" id="email-btn">
+        ✉️ Email Us
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- What Gets Inspected (Icon Grid) -->
+<div id="what-inspected" style="position:relative; top:-100px;" aria-hidden="true"></div>
+
+<section style="padding: 80px 20px; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);">
+  <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
+    <h2 style="font-size: clamp(32px, 5vw, 48px); font-weight: 700; margin: 0 0 20px; color: #0a1230;">
+      What We Inspect
+    </h2>
+    <p style="font-size: 20px; max-width: 700px; margin: 0 auto 50px; color: #333;">
+      Our BalconyScope™ methodology covers every critical component:
+    </p>
+    
+    <div class="icon-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px;">
+      <div style="padding: 32px; background: #fff; border-radius: 16px; box-shadow: 0 8px 32px rgba(0,0,0,0.1); border: 1px solid rgba(255, 120, 62, 0.1); transition: all 0.3s ease; position: relative; overflow: hidden;">
+        <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #FF783E, #e66b35); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 36px; box-shadow: 0 8px 24px rgba(255, 120, 62, 0.3);">🏗️</div>
+        <h3 style="font-size: 20px; font-weight: 700; margin: 0 0 12px; color: #0a1230;">Balconies & Decks</h3>
+        <p style="font-size: 16px; margin: 0; color: #666; line-height: 1.5;">Structural integrity & load-bearing capacity</p>
+      </div>
+      
+      <div style="padding: 32px; background: #fff; border-radius: 16px; box-shadow: 0 8px 32px rgba(0,0,0,0.1); border: 1px solid rgba(255, 120, 62, 0.1); transition: all 0.3s ease; position: relative; overflow: hidden;">
+        <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #FF783E, #e66b35); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 36px; box-shadow: 0 8px 24px rgba(255, 120, 62, 0.3);">🚧</div>
+        <h3 style="font-size: 20px; font-weight: 700; margin: 0 0 12px; color: #0a1230;">Guardrails</h3>
+        <p style="font-size: 16px; margin: 0; color: #666; line-height: 1.5;">Height, spacing, and fastener condition</p>
+      </div>
+      
+      <div style="padding: 32px; background: #fff; border-radius: 16px; box-shadow: 0 8px 32px rgba(0,0,0,0.1); border: 1px solid rgba(255, 120, 62, 0.1); transition: all 0.3s ease; position: relative; overflow: hidden;">
+        <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #FF783E, #e66b35); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 36px; box-shadow: 0 8px 24px rgba(255, 120, 62, 0.3);">💧</div>
+        <h3 style="font-size: 20px; font-weight: 700; margin: 0 0 12px; color: #0a1230;">Waterproofing</h3>
+        <p style="font-size: 16px; margin: 0; color: #666; line-height: 1.5;">Moisture testing & drainage systems</p>
+      </div>
+      
+      <div style="padding: 32px; background: #fff; border-radius: 16px; box-shadow: 0 8px 32px rgba(0,0,0,0.1); border: 1px solid rgba(255, 120, 62, 0.1); transition: all 0.3s ease; position: relative; overflow: hidden;">
+        <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #FF783E, #e66b35); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 36px; box-shadow: 0 8px 24px rgba(255, 120, 62, 0.3);">🪚</div>
+        <h3 style="font-size: 20px; font-weight: 700; margin: 0 0 12px; color: #0a1230;">Joists & Connectors</h3>
+        <p style="font-size: 16px; margin: 0; color: #666; line-height: 1.5;">Hidden structural damage detection</p>
+      </div>
+      
+      <div style="padding: 32px; background: #fff; border-radius: 16px; box-shadow: 0 8px 32px rgba(0,0,0,0.1); border: 1px solid rgba(255, 120, 62, 0.1); transition: all 0.3s ease; position: relative; overflow: hidden;">
+        <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #FF783E, #e66b35); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 36px; box-shadow: 0 8px 24px rgba(255, 120, 62, 0.3);">🪜</div>
+        <h3 style="font-size: 20px; font-weight: 700; margin: 0 0 12px; color: #0a1230;">Stairs & Walkways</h3>
+        <p style="font-size: 16px; margin: 0; color: #666; line-height: 1.5;">Tread condition & handrail stability</p>
+      </div>
+      
+      <div style="padding: 32px; background: #fff; border-radius: 16px; box-shadow: 0 8px 32px rgba(0,0,0,0.1); border: 1px solid rgba(255, 120, 62, 0.1); transition: all 0.3s ease; position: relative; overflow: hidden;">
+        <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #FF783E, #e66b35); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 36px; box-shadow: 0 8px 24px rgba(255, 120, 62, 0.3);">🔩</div>
+        <h3 style="font-size: 20px; font-weight: 700; margin: 0 0 12px; color: #0a1230;">Fasteners</h3>
+        <p style="font-size: 16px; margin: 0; color: #666; line-height: 1.5;">Corrosion & anchor point integrity</p>
+      </div>
+    </div>
+    
+    <!-- CTA after inspection details -->
+    <div style="margin-top: 40px; text-align: center;">
+      <a href="#check-eligibility" class="btn-primary" id="inspect-cta">
+        🔍 Get Your Free Proposal →
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section style="padding: 60px 20px; background: #F3F5F9;">
+  <div style="max-width: 1200px; margin: 0 auto;">
+    <h2 style="font-size: clamp(32px, 5vw, 48px); font-weight: 700; text-align: center; margin: 0 0 40px; color: #0a1230;">
+      What Property Owners Say
+    </h2>
+    
+    <div class="testimonial-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+      <div style="background: #fff; padding: 24px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+        <div style="color: #FFB800; font-size: 20px; margin-bottom: 12px;">★★★★★</div>
+        <p style="font-size: 16px; line-height: 1.6; margin: 0 0 16px; color: #333;">
+          "We thought we needed a full inspection. DrBalcony confirmed we were exempt and saved us tens of thousands."
+        </p>
+        <p style="margin: 0; font-weight: 600; color: #0a1230;">M. Ortiz</p>
+        <p style="margin: 4px 0 0; font-size: 14px; color: #666;">LA Owner</p>
+      </div>
+      
+      <div style="background: #fff; padding: 24px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+        <div style="color: #FFB800; font-size: 20px; margin-bottom: 12px;">★★★★★</div>
+        <p style="font-size: 16px; line-height: 1.6; margin: 0 0 16px; color: #333;">
+          "Buyer's lender asked for SB721. DrBalcony documented that our condo is covered by SB326, not SB721, and the deal closed on time."
+        </p>
+        <p style="margin: 0; font-weight: 600; color: #0a1230;">M. Chang</p>
+        <p style="margin: 4px 0 0; font-size: 14px; color: #666;">San Diego Broker</p>
+      </div>
+      
+      <div style="background: #fff; padding: 24px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+        <div style="color: #FFB800; font-size: 20px; margin-bottom: 12px;">★★★★★</div>
+        <p style="font-size: 16px; line-height: 1.6; margin: 0 0 16px; color: #333;">
+          "Portfolio review was huge. Out of 11 properties, 5 were exempt. We redirected budget to roofs instead of inspections we didn't need."
+        </p>
+        <p style="margin: 0; font-weight: 600; color: #0a1230;">T. Brooks</p>
+        <p style="margin: 4px 0 0; font-size: 14px; color: #666;">Regional PM, Los Angeles</p>
+      </div>
+    </div>
+    
+    <!-- CTA after testimonials -->
+    <div style="margin-top: 40px; text-align: center;">
+      <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+        <a href="#check-eligibility" class="btn-urgent" id="testimonial-cta-1">
+          🚨 Get Your Free Quote
+        </a>
+        <a href="tel:+18053128508" class="btn-primary" id="testimonial-cta-2">
+          📞 Call Now
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<div id="faq" style="position:relative; top:-100px;" aria-hidden="true"></div>
+
+<section style="padding: 60px 20px; background: #fff;">
+  <div style="max-width: 800px; margin: 0 auto;">
+    <h2 style="font-size: clamp(32px, 5vw, 48px); font-weight: 700; text-align: center; margin: 0 0 40px; color: #0a1230;">
+      Frequently Asked Questions
+    </h2>
+    
+    <div class="faq-container">
+      <details class="faq-item" style="margin-bottom: 16px; border: 1px solid #ddd; border-radius: 8px; padding: 20px; background: #F3F5F9;">
+        <summary style="font-size: 18px; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+          What happens if I miss the January 1, 2026 deadline?
+          <span class="faq-icon" style="font-size: 24px; color: #FF783E;">+</span>
+        </summary>
+        <div style="margin-top: 16px; font-size: 16px; line-height: 1.6; color: #333;">
+          <p>Missing the deadline can result in fines from your local jurisdiction, potential liability issues if an accident occurs, and difficulty selling or refinancing your property. We recommend scheduling your inspection at least 60 days before the deadline to allow time for any necessary repairs.</p>
+        </div>
+      </details>
+      
+      <details class="faq-item" style="margin-bottom: 16px; border: 1px solid #ddd; border-radius: 8px; padding: 20px; background: #F3F5F9;">
+        <summary style="font-size: 18px; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+          How much does an SB-721 inspection cost?
+          <span class="faq-icon" style="font-size: 24px; color: #FF783E;">+</span>
+        </summary>
+        <div style="margin-top: 16px; font-size: 16px; line-height: 1.6; color: #333;">
+          <p>Costs vary by building size and complexity, but typically range from $1,500-$5,000 for most properties. Use our cost calculator for an instant estimate. Remember: we beat any competitor quote by 20%!</p>
+        </div>
+      </details>
+      
+      <details class="faq-item" style="margin-bottom: 16px; border: 1px solid #ddd; border-radius: 8px; padding: 20px; background: #F3F5F9;">
+        <summary style="font-size: 18px; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+          Can DrBalcony also do the repairs if issues are found?
+          <span class="faq-icon" style="font-size: 24px; color: #FF783E;">+</span>
+        </summary>
+        <div style="margin-top: 16px; font-size: 16px; line-height: 1.6; color: #333;">
+          <p>To avoid conflicts of interest, we only conduct inspections. However, we can refer you to qualified, licensed contractors from our network who can handle any necessary repairs efficiently.</p>
+        </div>
+      </details>
+      
+      <details class="faq-item" style="margin-bottom: 16px; border: 1px solid #ddd; border-radius: 8px; padding: 20px; background: #F3F5F9;">
+        <summary style="font-size: 18px; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+          How long does the inspection process take?
+          <span class="faq-icon" style="font-size: 24px; color: #FF783E;">+</span>
+        </summary>
+        <div style="margin-top: 16px; font-size: 16px; line-height: 1.6; color: #333;">
+          <p>The on-site inspection typically takes 2-4 hours depending on the number of units and elements. You'll receive your detailed, compliance-ready report within 3-5 business days.</p>
+        </div>
+      </details>
+      
+      <details class="faq-item" style="margin-bottom: 16px; border: 1px solid #ddd; border-radius: 8px; padding: 20px; background: #F3F5F9;">
+        <summary style="font-size: 18px; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+          Do I need an inspection if my building is all concrete or steel?
+          <span class="faq-icon" style="font-size: 24px; color: #FF783E;">+</span>
+        </summary>
+        <div style="margin-top: 16px; font-size: 16px; line-height: 1.6; color: #333;">
+          <p>While SB-721 focuses on wood-framed structures, you may still need documentation proving your exemption status. Take our 2-minute qualification quiz to find out for certain.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section style="padding: 60px 20px; background: linear-gradient(135deg, #0a1230 0%, #0b1e52 55%, #12397f 100%); color: #fff; text-align: center;">
+  <div style="max-width: 800px; margin: 0 auto;">
+    <h2 style="font-size: clamp(32px, 5vw, 48px); font-weight: 700; margin: 0 0 20px;">
+      Don't Wait Until the Deadline
+    </h2>
+    <p style="font-size: 20px; max-width: 600px; margin: 0 auto 30px; opacity: 0.95;">
+      Schedule your SB-721 inspection today and ensure your property is compliant, safe, and protected from liability.
+    </p>
+    
+    <div class="final-cta-buttons" style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+      <a href="#check-eligibility" class="btn-primary">
+        Get Your Free Proposal →
+      </a>
+      <a href="tel:+18053128508" class="btn-secondary">
+        📞 Call +1 (805) 312-8508
+      </a>
+    </div>
+    
+    <img src="https://drbalcony.com/wp-content/uploads/2025/10/Generated-Image-October-04-2025-12_16AM.png" alt="DrBalcony team" style="max-width: 600px; width: 100%; height: auto; border-radius: 12px; margin-top: 40px;" />
+  </div>
+</section>
+
+<script>
+// FAQ Toggle Icons
+document.addEventListener('DOMContentLoaded', function() {
+  const faqItems = document.querySelectorAll('.faq-item');
+  
+  faqItems.forEach(item => {
+    const summary = item.querySelector('summary');
+    const icon = item.querySelector('.faq-icon');
+    
+    summary.addEventListener('click', function() {
+      setTimeout(() => {
+        if (item.hasAttribute('open')) {
+          icon.textContent = '−';
+        } else {
+          icon.textContent = '+';
+        }
+      }, 10);
+    });
+  });
+});
+
+// Smooth Scroll for Anchor Links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      const offset = 100;
+      const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
+      });
+    }
+  });
+});
+
+// Deadline Countdown
+const deadline = new Date('2026-01-01T00:00:00').getTime();
+const now = new Date().getTime();
+const daysLeft = Math.ceil((deadline - now) / (1000 * 60 * 60 * 24));
+
+if (daysLeft > 0) {
+  const deadlineElements = document.querySelectorAll('p');
+  deadlineElements.forEach(el => {
+    if (el.textContent.includes('January 1, 2026')) {
+      el.innerHTML += ` <span style="color: #FF783E; font-weight: 700;">(${daysLeft} days remaining)</span>`;
+    }
+  });
+}
+
+// Shaking Animation for CTA Buttons
+function addShakeAnimation() {
+  const urgentButtons = document.querySelectorAll('.btn-urgent');
+  const primaryButtons = document.querySelectorAll('.btn-primary');
+  
+  // Add shake animation to urgent buttons every 3 seconds
+  setInterval(() => {
+    urgentButtons.forEach(btn => {
+      btn.classList.add('btn-shake');
+      setTimeout(() => {
+        btn.classList.remove('btn-shake');
+      }, 500);
+    });
+  }, 3000);
+  
+  // Add shake animation to primary buttons every 5 seconds
+  setInterval(() => {
+    primaryButtons.forEach(btn => {
+      btn.classList.add('btn-shake');
+      setTimeout(() => {
+        btn.classList.remove('btn-shake');
+      }, 500);
+    });
+  }, 5000);
+}
+
+// Initialize shaking animations
+addShakeAnimation();
+</script>
+
+</body>
+</html>

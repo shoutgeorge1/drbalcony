@@ -1,0 +1,53 @@
+To: seza@drbalcony.com
+From: george@drbalcony.com
+Subject: HTML Email Template Ready - Simple Directions
+
+Hi Seza,
+
+I've created an HTML email template that embeds the full violation notice directly in the email. This approach is much more powerful than just sending links because recipients see the complete government notice immediately in their inbox - no clicking required.
+
+**CONTEXT:**
+These are professional government-style violation notices for SB-721 (apartment buildings) and SB-327 (single-family homes) compliance. They look like official government alerts with penalties, deadlines, and interactive exemption quizzes.
+
+**LIVE LINKS FOR REFERENCE:**
+- SB-721 Violation Notice: https://drbalcony.vercel.app/components/email-sections/sb721-violation-notice.html
+- SB-327 Violation Notice: https://drbalcony.vercel.app/components/email-sections/sb327-violation-notice.html
+
+Here's how to use the HTML template:
+
+**FILE TO USE:** `SEZA_HTML_EMAIL.html`
+
+**HOW TO USE IN MAILCHIMP:**
+
+1. Open MailChimp and create a new campaign
+2. Choose "Custom HTML" as your email type
+3. Open the file SEZA_HTML_EMAIL.html in your browser
+4. Copy all the HTML code (Ctrl+A, Ctrl+C)
+5. Paste into MailChimp's HTML editor
+6. Preview and test on mobile
+7. Send to your audience
+
+**WHAT THIS DOES:**
+Recipients see the full government violation notice immediately in their inbox. No clicking required - all the urgent information, penalties, and deadlines are right there. Looks professional and official, works on mobile, and includes links to both SB-721 and SB-327 exemption quizzes.
+
+**WHO TO SEND TO:**
+- Apartment building owners → Use as-is (SB-721 focus)
+- Single-family homeowners → Use as-is (includes SB-327 link)
+- Mixed audience → Use as-is (includes both links)
+
+**SUBJECT LINES TO USE:**
+- "URGENT: SB-721 Compliance Notice - Action Required"
+- "Building Safety Violation Notice - January 1, 2026 Deadline"
+- "Government Compliance Alert - $50,000+ Penalties"
+
+**BEFORE YOU SEND:**
+- Send to yourself first
+- Check on your phone
+- Make sure all links work
+- Test with a small group before full send
+
+This will get much higher response rates because people see the full impact immediately without having to click through to another page.
+
+Let me know if you need any changes!
+
+George

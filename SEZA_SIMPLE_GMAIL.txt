@@ -1,0 +1,76 @@
+To: zeza@drbalcony.com
+From: george@drbalcony.com
+Subject: Government-Style Email Templates Ready
+
+Hi Seza,
+
+I made two professional government-style violation notice pages for your email campaigns. These look like official government alerts with penalties and deadlines.
+
+LIVE LINKS:
+
+SB-326 (Balcony Inspections):
+https://drbalcony.vercel.app/components/email-sections/sb326-violation-notice.html
+
+SB-721 (Multi-Family Property Inspections):
+https://drbalcony.vercel.app/components/email-sections/sb721-violation-notice.html
+
+HOW TO USE IN MAILCHIMP:
+
+1. Open the link you want to use
+2. Right-click anywhere on the page
+3. Click "View Page Source"
+4. Press Ctrl+A to select all, then Ctrl+C to copy
+5. Go to Mailchimp and create a new campaign
+6. Choose "Code your own" when designing the email
+7. Paste the code (Ctrl+V)
+8. Test by sending to yourself first
+9. Send to your audience
+
+SUBJECT LINES TO USE:
+
+High Urgency:
+- URGENT: Building Safety Violation Notice
+- FINAL NOTICE: Inspection Required by Law
+- IMMEDIATE ACTION REQUIRED: Property Violation
+- 30-DAY DEADLINE: Compliance Notice
+
+Professional:
+- Official Notice: Building Safety Compliance
+- Important: Property Inspection Deadline
+- Required Action: California Building Safety
+- Mandatory Building Inspection Notice
+
+Create Urgency:
+- Only 30 Days Left: Avoid $500/Day Penalties
+- LAST CHANCE: Avoid Costly Violations
+- Time-Sensitive: Protect Your Property
+
+WHAT THESE PAGES INCLUDE:
+- Professional government document styling
+- Urgent deadline messaging (January 1, 2026)
+- Penalty information with dollar amounts
+- Interactive exemption quiz
+- Contact information for Dr. Balcony
+- Mobile-friendly design
+
+WHO TO SEND TO:
+- Apartment building owners
+- Property managers
+- Multi-family property investors
+
+BEST PRACTICES:
+- Always test first by sending to yourself
+- Check on your phone to make sure it looks good
+- Send Tuesday through Thursday between 10am and 2pm
+- Follow up with reminder emails
+
+These will get high response rates because they look like official government notices and include interactive features.
+
+Let me know if you need any changes!
+
+George
+
+---
+Dr. Balcony
+Phone: (805) 312-8508
+Email: info@drbalcony.com

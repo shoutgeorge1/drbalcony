@@ -1,0 +1,1985 @@
+<!-- wp:html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    #drb-ppc-landing {
+      margin: 0 !important;
+      padding: 0 !important;
+      max-width: 100% !important;
+      width: 100% !important;
+      overflow-x: hidden !important;
+      --navy: #051c3e;
+      --navy-light: #0b2c5a;
+      --orange: #ff7b3d;
+      --red: #dc2626;
+      --amber: #f59e0b;
+      --gray-900: #1a202c;
+      --gray-700: #4a5568;
+      --gray-100: #f7fafc;
+      --white: #ffffff;
+      --spacing-xs: 0.5rem;
+      --spacing-sm: 1rem;
+      --spacing-md: 1.5rem;
+      --spacing-lg: 2rem;
+      --spacing-xl: 3rem;
+      --spacing-2xl: 4rem;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+      font-family: 'Poppins', -apple-system, sans-serif !important;
+      font-size: 16px !important;
+      color: var(--gray-900) !important;
+    }
+    #drb-ppc-landing *, #drb-ppc-landing *::before, #drb-ppc-landing *::after { box-sizing: border-box !important; }
+    #drb-ppc-landing img { max-width: 100%; height: auto; display: block; }
+    #drb-ppc-landing a { color: inherit; text-decoration: none; }
+    #drb-ppc-landing button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+    /* Announcement */
+    #drb-ppc-landing .announcement {
+      background: linear-gradient(135deg, var(--amber) 0%, #f97316 100%) !important;
+      color: var(--navy) !important;
+      padding: var(--spacing-sm) var(--spacing-md) !important;
+      text-align: center !important;
+      font-weight: 600 !important;
+      font-size: 14px !important;
+      position: sticky !important;
+      top: 0 !important;
+      z-index: 999 !important;
+      border-bottom: 2px solid #ea580c !important;
+    }
+    #drb-ppc-landing .announcement__content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--spacing-sm);
+      flex-wrap: wrap;
+      position: relative;
+    }
+    #drb-ppc-landing .announcement__text { font-weight: 700 !important; color: var(--navy) !important; }
+    #drb-ppc-landing .announcement__countdown {
+      display: inline-flex;
+      gap: var(--spacing-xs);
+      font-weight: 700 !important;
+      color: var(--navy) !important;
+    }
+    #drb-ppc-landing .announcement__dismiss {
+      background: transparent !important;
+      color: var(--navy) !important;
+      font-size: 20px !important;
+      padding: 0 var(--spacing-xs) !important;
+      font-weight: 700 !important;
+      cursor: pointer !important;
+      position: absolute;
+      right: 0.5rem;
+    }
+
+    /* Header */
+    #drb-ppc-landing .header {
+      background: var(--white) !important;
+      padding: var(--spacing-md) 0 !important;
+      box-shadow: var(--shadow-sm) !important;
+      position: sticky !important;
+      top: 42px !important;
+      z-index: 998 !important;
+    }
+    #drb-ppc-landing .header__inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--spacing-md);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--spacing-md);
+      flex-wrap: wrap;
+    }
+    #drb-ppc-landing .header__logo {
+      color: var(--navy) !important;
+      font-size: 26px !important;
+      font-weight: 800 !important;
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+    }
+    #drb-ppc-landing .header__logo-img { height: 40px; width: auto; }
+    #drb-ppc-landing .header__actions { display: flex; gap: var(--spacing-sm); align-items: center; flex-wrap: wrap; }
+    #drb-ppc-landing .header__phone {
+      color: var(--navy) !important;
+      font-weight: 700 !important;
+      padding: 10px 16px !important;
+      border: 2px solid var(--navy) !important;
+      border-radius: var(--radius-sm) !important;
+      white-space: nowrap;
+      font-size: 14px !important;
+    }
+    #drb-ppc-landing .header__phone:hover { background: var(--navy) !important; color: var(--white) !important; }
+    #drb-ppc-landing .header__link { 
+      color: var(--orange) !important; 
+      font-weight: 600 !important; 
+      padding: 10px var(--spacing-sm);
+      font-size: 14px !important;
+    }
+
+    /* Hero */
+    #drb-ppc-landing .hero { background: var(--navy) !important; color: var(--white) !important; }
+    #drb-ppc-landing .hero__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      max-width: 1400px;
+      margin: 0 auto;
+      min-height: 600px;
+    }
+    #drb-ppc-landing .hero__content {
+      padding: var(--spacing-2xl) var(--spacing-xl);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    #drb-ppc-landing .hero__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--spacing-xs);
+      background: rgba(245, 158, 11, 0.15) !important;
+      border: 2px solid var(--amber) !important;
+      color: var(--amber) !important;
+      padding: var(--spacing-xs) var(--spacing-md) !important;
+      border-radius: var(--radius-sm) !important;
+      font-weight: 700 !important;
+      font-size: 13px !important;
+      text-transform: uppercase;
+      margin-bottom: var(--spacing-md);
+      width: fit-content;
+    }
+    #drb-ppc-landing .hero__title {
+      font-size: clamp(32px, 4.5vw, 52px) !important;
+      font-weight: 800 !important;
+      line-height: 1.15 !important;
+      margin-bottom: var(--spacing-md) !important;
+      color: var(--white) !important;
+    }
+    #drb-ppc-landing .hero__lead {
+      font-size: clamp(17px, 2vw, 20px) !important;
+      margin-bottom: var(--spacing-lg) !important;
+      color: var(--white) !important;
+      opacity: 0.9;
+    }
+    #drb-ppc-landing .hero__actions { display: flex; gap: var(--spacing-md); flex-wrap: wrap; }
+    #drb-ppc-landing .hero__media {
+      background: linear-gradient(135deg, rgba(5, 28, 62, 0.4) 0%, rgba(11, 44, 90, 0.3) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--spacing-md);
+    }
+    #drb-ppc-landing .hero__media img { width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-lg); }
+
+    /* Trust Banner - After Hero */
+    #drb-ppc-landing .trust-banner {
+      background: var(--navy) !important;
+      color: var(--white) !important;
+      padding: 3rem 1.5rem !important;
+      border-top: 2px solid rgba(255, 123, 61, 0.3);
+    }
+    #drb-ppc-landing .trust-banner__container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    #drb-ppc-landing .trust-banner__exclusive {
+      background: linear-gradient(135deg, rgba(255, 123, 61, 0.15) 0%, rgba(255, 123, 61, 0.05) 100%);
+      border: 2px solid var(--orange);
+      border-radius: var(--radius-lg);
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+    #drb-ppc-landing .trust-banner__exclusive h3 {
+      font-size: clamp(22px, 3vw, 32px) !important;
+      font-weight: 800 !important;
+      color: var(--white) !important;
+      margin-bottom: 1rem !important;
+    }
+    #drb-ppc-landing .trust-banner__text {
+      font-size: 16px !important;
+      color: rgba(255, 255, 255, 0.9) !important;
+      line-height: 1.6 !important;
+      max-width: 900px;
+      margin: 0 auto 2.5rem;
+    }
+    #drb-ppc-landing .trust-banner__badges {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+    #drb-ppc-landing .trust-banner__badge {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      background: var(--white);
+      border-radius: var(--radius-md);
+      min-height: 160px;
+    }
+    #drb-ppc-landing .trust-banner__badge img {
+      max-width: 75%;
+      max-height: 80px;
+      width: auto;
+      height: auto;
+    }
+    #drb-ppc-landing .trust-banner__reviews {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      padding-top: 2rem;
+      border-top: 2px solid rgba(255, 255, 255, 0.1);
+    }
+    #drb-ppc-landing .trust-banner__review {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1.5rem 2rem;
+      background: var(--white);
+      border-radius: var(--radius-md);
+      min-width: 200px;
+    }
+    #drb-ppc-landing .trust-banner__review-logo {
+      height: 35px;
+      width: auto;
+      max-width: 120px;
+      margin-bottom: 0.5rem;
+    }
+    #drb-ppc-landing .trust-banner__stars {
+      color: #fbbf24;
+      font-size: 20px;
+      letter-spacing: 2px;
+    }
+    #drb-ppc-landing .trust-banner__rating {
+      font-size: 15px;
+      color: var(--gray-900);
+      font-weight: 700;
+    }
+    #drb-ppc-landing .trust-banner__count {
+      font-size: 13px;
+      color: #64748b;
+    }
+
+    /* Buttons */
+    #drb-ppc-landing .btn {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: var(--spacing-xs) !important;
+      padding: 16px 32px !important;
+      border-radius: var(--radius-md) !important;
+      font-weight: 700 !important;
+      font-size: 17px !important;
+      border: none !important;
+      cursor: pointer !important;
+      text-decoration: none !important;
+      transition: all 0.2s !important;
+    }
+    #drb-ppc-landing .btn--primary {
+      background: var(--orange) !important;
+      color: var(--white) !important;
+      box-shadow: 0 4px 12px rgba(255, 123, 61, 0.3) !important;
+    }
+    #drb-ppc-landing .btn--primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 123, 61, 0.4) !important;
+    }
+    #drb-ppc-landing .btn--secondary {
+      background: transparent !important;
+      color: var(--white) !important;
+      border: 2px solid rgba(255, 255, 255, 0.3) !important;
+    }
+    #drb-ppc-landing .btn--secondary:hover {
+      border-color: var(--white) !important;
+      background: rgba(255, 255, 255, 0.1) !important;
+    }
+/* ADD THIS CSS HERE: */
+#drb-ppc-landing .btn--primary {
+  animation: shake 0.5s ease-in-out infinite;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-2px); }
+  75% { transform: translateX(2px); }
+}
+    /* Section */
+    #drb-ppc-landing .section { padding: var(--spacing-2xl) var(--spacing-md) !important; }
+    #drb-ppc-landing .section__title {
+      font-size: clamp(28px, 3.5vw, 38px) !important;
+      font-weight: 800 !important;
+      color: var(--navy) !important;
+      margin-bottom: var(--spacing-md) !important;
+      text-align: center !important;
+    }
+    #drb-ppc-landing .section__intro {
+      text-align: center !important;
+      max-width: 700px;
+      margin: 0 auto var(--spacing-xl);
+      font-size: 18px !important;
+      color: var(--gray-700) !important;
+      line-height: 1.7 !important;
+    }
+    #drb-ppc-landing .container { max-width: 1200px !important; margin: 0 auto !important; padding: 0 var(--spacing-md) !important; }
+
+    /* Discount */
+    #drb-ppc-landing .discount {
+      background: var(--gray-100) !important;
+      padding: var(--spacing-2xl) var(--spacing-md) !important;
+      display: none;
+    }
+    #drb-ppc-landing .discount[data-variant="discount"] { display: block !important; }
+    #drb-ppc-landing .discount__block {
+      background: linear-gradient(135deg, #fff5f0 0%, #ffe8dc 100%) !important;
+      border: 3px solid var(--orange) !important;
+      border-radius: var(--radius-lg) !important;
+      padding: var(--spacing-xl) !important;
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
+    }
+    #drb-ppc-landing .discount__ribbon {
+      position: absolute;
+      top: 20px;
+      right: -35px;
+      background: var(--red) !important;
+      color: var(--white) !important;
+      padding: 8px 50px !important;
+      font-size: 12px !important;
+      font-weight: 800 !important;
+      transform: rotate(45deg);
+    }
+    #drb-ppc-landing .discount__badge {
+      display: inline-flex;
+      background: linear-gradient(135deg, var(--red), #ea580c) !important;
+      color: var(--white) !important;
+      padding: 8px 20px !important;
+      border-radius: 50px !important;
+      font-weight: 700 !important;
+      margin-bottom: var(--spacing-md);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+    #drb-ppc-landing .discount__title {
+      font-size: clamp(24px, 3vw, 32px) !important;
+      color: var(--navy) !important;
+      margin-bottom: var(--spacing-md) !important;
+      font-weight: 800 !important;
+    }
+    #drb-ppc-landing .discount__text {
+      font-size: 17px !important;
+      color: var(--gray-900) !important;
+      margin-bottom: var(--spacing-md) !important;
+    }
+    #drb-ppc-landing .discount__highlight {
+      background: var(--white) !important;
+      border-left: 4px solid var(--orange) !important;
+      padding: var(--spacing-md) !important;
+      margin: var(--spacing-md) 0 !important;
+      border-radius: var(--radius-sm) !important;
+      font-weight: 600 !important;
+      color: var(--navy) !important;
+    }
+    #drb-ppc-landing .discount__timer {
+      background: rgba(220, 38, 38, 0.1) !important;
+      border: 2px solid var(--red) !important;
+      border-radius: var(--radius-md) !important;
+      padding: var(--spacing-md) !important;
+      margin-top: var(--spacing-md);
+      text-align: center;
+    }
+    #drb-ppc-landing .discount__timer-label {
+      font-size: 14px !important;
+      text-transform: uppercase;
+      margin-bottom: var(--spacing-sm);
+      color: var(--red) !important;
+      font-weight: 700 !important;
+    }
+    #drb-ppc-landing .discount__countdown { display: flex; justify-content: center; gap: var(--spacing-md); flex-wrap: wrap; }
+    #drb-ppc-landing .discount__countdown-number {
+      background: linear-gradient(135deg, var(--red), #ea580c) !important;
+      color: var(--white) !important;
+      width: 60px;
+      height: 60px;
+      border-radius: var(--radius-sm) !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px !important;
+      font-weight: 800 !important;
+    }
+    #drb-ppc-landing .discount__countdown-label {
+      font-size: 11px !important;
+      color: var(--gray-700) !important;
+      margin-top: 4px;
+    }
+
+    /* Video */
+    #drb-ppc-landing .video { background: var(--white) !important; }
+    #drb-ppc-landing .video__wrapper { max-width: 900px; margin: 0 auto; }
+    #drb-ppc-landing .video__embed {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+    }
+    #drb-ppc-landing .video__embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+
+    /* Penalty */
+    #drb-ppc-landing .penalty { background: var(--gray-100) !important; }
+    #drb-ppc-landing .penalty__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--spacing-lg);
+      margin-top: var(--spacing-xl);
+    }
+    #drb-ppc-landing .penalty__card {
+      background: var(--white) !important;
+      padding: var(--spacing-xl) !important;
+      border-radius: var(--radius-md) !important;
+      box-shadow: var(--shadow-sm) !important;
+    }
+    #drb-ppc-landing .penalty__card-icon { font-size: 48px !important; margin-bottom: var(--spacing-md); }
+    #drb-ppc-landing .penalty__card h3 {
+      font-size: 20px !important;
+      color: var(--navy) !important;
+      margin-bottom: var(--spacing-sm) !important;
+      font-weight: 700 !important;
+    }
+    #drb-ppc-landing .penalty__card p {
+      font-size: 15px !important;
+      color: var(--gray-700) !important;
+      line-height: 1.7 !important;
+    }
+
+    /* Process */
+    #drb-ppc-landing .process { background: var(--white) !important; }
+    #drb-ppc-landing .process__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--spacing-xl);
+      margin-top: var(--spacing-xl);
+    }
+    #drb-ppc-landing .process__step { position: relative; padding-left: 28px; }
+    #drb-ppc-landing .process__step::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 4px;
+      height: calc(100% - 8px);
+      background: linear-gradient(180deg, var(--amber), transparent);
+    }
+    #drb-ppc-landing .process__number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      background: var(--amber) !important;
+      color: var(--navy) !important;
+      border-radius: 50%;
+      font-weight: 800 !important;
+      font-size: 18px !important;
+      margin-bottom: var(--spacing-md);
+    }
+    #drb-ppc-landing .process__step h3 {
+      font-size: 20px !important;
+      color: var(--navy) !important;
+      margin-bottom: var(--spacing-sm) !important;
+      font-weight: 700 !important;
+    }
+    #drb-ppc-landing .process__step p {
+      font-size: 15px !important;
+      color: var(--gray-700) !important;
+      line-height: 1.7 !important;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 1024px) {
+      #drb-ppc-landing .hero__grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      #drb-ppc-landing .trust-banner {
+        padding: 2.5rem 1rem !important;
+      }
+      #drb-ppc-landing .trust-banner__exclusive {
+        padding: 2rem 1.5rem;
+      }
+      #drb-ppc-landing .trust-banner__badges {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 1rem;
+      }
+    }
+    @media (max-width: 640px) {
+      #drb-ppc-landing .announcement { padding: 8px 12px !important; }
+      #drb-ppc-landing .announcement__content { 
+        gap: 0.5rem;
+        padding-right: 2rem;
+      }
+      #drb-ppc-landing .announcement__text,
+      #drb-ppc-landing .announcement__countdown { font-size: 12px !important; }
+      #drb-ppc-landing .announcement__dismiss { font-size: 18px !important; }
+      
+      #drb-ppc-landing .header { top: 34px !important; }
+      #drb-ppc-landing .header__inner { padding: 0 1rem; }
+      #drb-ppc-landing .header__logo { font-size: 20px !important; }
+      #drb-ppc-landing .header__logo-img { height: 32px; }
+      #drb-ppc-landing .header__phone { font-size: 13px !important; padding: 8px 12px !important; }
+      #drb-ppc-landing .header__link { font-size: 13px !important; padding: 8px 10px; }
+      
+      #drb-ppc-landing .hero__actions { flex-direction: column; width: 100%; }
+      #drb-ppc-landing .hero__actions .btn { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="drb-ppc-landing">
+  
+  <div class="announcement" id="drb-announcement">
+    <div class="announcement__content">
+      <span class="announcement__text">Compliance Deadline: January 1, 2026</span>
+      <span class="announcement__countdown" id="drb-deadline-text"></span>
+      <button class="announcement__dismiss" id="drb-dismiss" aria-label="Dismiss">×</button>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="header__inner">
+      <a href="/" class="header__logo">
+        <img src="https://drbalcony.com/wp-content/uploads/2025/08/cropped-drbalcony-favicon-300x300.webp" alt="DrBalcony®" class="header__logo-img">
+        <span>DrBalcony®</span>
+      </a>
+      <nav class="header__actions">
+        <a href="tel:(800)123-4567" class="header__phone">(800) 123-4567</a>
+        <a href="#drb-quiz-section" class="header__link">Property Exempt?</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero__grid">
+      <div class="hero__content">
+        <div class="hero__badge"><span>⏰</span><span>Time-Sensitive Compliance</span></div>
+        <h1 class="hero__title">Stay Compliant with SB-721 & SB-326 — California Balcony Inspections</h1>
+        <p class="hero__lead">Protect your property and avoid penalties. Our licensed engineers provide detailed balcony and deck inspections, fast results, and statewide service.</p>
+        <div class="hero__actions">
+          <a href="#quick-contact" class="btn btn--primary">Get Your Free Proposal</a>
+          <a href="tel:(800)123-4567" class="btn btn--secondary">Call for Immediate Service</a>
+        </div>
+      </div>
+      <div class="hero__media">
+        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1600&q=80" alt="California apartment building">
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Banner - Inserted Right After Hero -->
+  <section class="trust-banner">
+    <div class="trust-banner__container">
+      <div class="trust-banner__exclusive">
+        <h3>Trusted by California's Premier HOA & Property Management Associations</h3>
+        <p class="trust-banner__text">DrBalcony® holds active memberships in the Community Associations Institute (CAI) and Apartment Association of Orange County (AAOC) — exclusive professional organizations with strict member requirements providing access to cutting-edge education, legislative updates, and industry best practices.</p>
+
+        <div class="trust-banner__badges">
+          <div class="trust-banner__badge">
+            <img src="https://drbalcony.com/wp-content/uploads/2025/10/download-1-2-300x125.webp" alt="CAI Bay Area" loading="lazy">
+          </div>
+          <div class="trust-banner__badge">
+            <img src="https://drbalcony.com/wp-content/uploads/2025/10/download-150x150.webp" alt="CAI California" loading="lazy">
+          </div>
+          <div class="trust-banner__badge">
+            <img src="https://drbalcony.com/wp-content/uploads/2025/10/images-150x150.webp" alt="CAI Member" loading="lazy">
+          </div>
+          <div class="trust-banner__badge">
+            <img src="https://drbalcony.com/wp-content/uploads/2025/10/hoa-management-logo-300x135.webp" alt="HOA Management" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section discount" data-variant="discount">
+    <div class="container">
+      <div class="discount__block">
+        <div class="discount__ribbon">LIMITED TIME</div>
+        <div class="discount__badge"><span>⏰</span><span>Special Offer</span></div>
+        <h2 class="discount__title">Save 15% on Your Inspection</h2>
+        <p class="discount__text">Book your SB-721 or SB-326 inspection before the offer expires and receive 15% off our standard rates.</p>
+        <div class="discount__highlight">Example: Save $360 on a typical 24-unit property inspection ($2,400 standard rate).</div>
+        <div class="discount__timer">
+          <div class="discount__timer-label">Offer Ends In:</div>
+          <div class="discount__countdown">
+            <div><div class="discount__countdown-number" id="drb-discount-days">00</div><div class="discount__countdown-label">Days</div></div>
+            <div><div class="discount__countdown-number" id="drb-discount-hours">00</div><div class="discount__countdown-label">Hours</div></div>
+            <div><div class="discount__countdown-number" id="drb-discount-minutes">00</div><div class="discount__countdown-label">Minutes</div></div>
+            <div><div class="discount__countdown-number" id="drb-discount-seconds">00</div><div class="discount__countdown-label">Seconds</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<script>
+  // Discount timer - runs immediately after discount HTML
+  (function() {
+    var discountEnd = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000);
+    
+    function updateDiscount() {
+      var dEl = document.getElementById('drb-discount-days');
+      var hEl = document.getElementById('drb-discount-hours');
+      var mEl = document.getElementById('drb-discount-minutes');
+      var sEl = document.getElementById('drb-discount-seconds');
+      
+      if (!dEl || !hEl || !mEl || !sEl) return;
+      
+      var now = new Date().getTime();
+      var dist = discountEnd - now;
+      if (dist < 0) return;
+      
+      var d = Math.floor(dist / (1000 * 60 * 60 * 24));
+      var h = Math.floor((dist % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var m = Math.floor((dist % (1000 * 60 * 60)) / (1000 * 60));
+      var s = Math.floor((dist % (1000 * 60)) / 1000);
+      
+      dEl.textContent = String(d).padStart(2, '0');
+      hEl.textContent = String(h).padStart(2, '0');
+      mEl.textContent = String(m).padStart(2, '0');
+      sEl.textContent = String(s).padStart(2, '0');
+    }
+    
+    updateDiscount();
+    setInterval(updateDiscount, 1000);
+  })();
+  </script>
+
+  <section class="section video">
+    <div class="container">
+      <h2 class="section__title">Understanding SB-721 Requirements</h2>
+      <p class="section__intro">Watch this 90-second overview of California's balcony inspection requirements.</p>
+      <div class="video__wrapper">
+        <div class="video__embed">
+<iframe 
+  src="https://www.youtube-nocookie.com/embed/kL4emMxo54c?loop=1&playlist=kL4emMxo54c&rel=0&modestbranding=1" 
+  title="SB-721 Requirements" 
+  allowfullscreen>
+</iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section penalty">
+    <div class="container">
+      <h2 class="section__title">What Happens If You Miss the Deadline?</h2>
+      <p class="section__intro">Understanding potential consequences helps property owners prioritize timely inspections.</p>
+      <div class="penalty__grid">
+        <div class="penalty__card">
+          <div class="penalty__card-icon">🛡️</div>
+          <h3>Insurance Coverage Issues</h3>
+          <p>Many insurance carriers require proof of current inspections. Non-compliance may affect coverage.</p>
+        </div>
+        <div class="penalty__card">
+          <div class="penalty__card-icon">⚖️</div>
+          <h3>Municipal Violations</h3>
+          <p>Local building departments may issue notices of violation for non-compliant properties.</p>
+        </div>
+        <div class="penalty__card">
+          <div class="penalty__card-icon">💸</div>
+          <h3>Emergency Repair Costs</h3>
+          <p>Delaying inspections can allow minor issues to escalate into major structural problems.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section process">
+    <div class="container">
+      <h2 class="section__title">Our Inspection Process</h2>
+      <p class="section__intro">We make California balcony compliance straightforward and stress-free.</p>
+      <div class="process__grid">
+        <div class="process__step">
+          <div class="process__number">1</div>
+          <h3>Free Compliance Assessment</h3>
+          <p>Complete our 2-minute quiz to determine if your property requires an inspection.</p>
+        </div>
+        <div class="process__step">
+          <div class="process__number">2</div>
+          <h3>Schedule On-Site Inspection</h3>
+          <p>Our licensed engineers coordinate with you for convenient inspection timing.</p>
+        </div>
+        <div class="process__step">
+          <div class="process__number">3</div>
+          <h3>Receive Detailed Report</h3>
+          <p>Get comprehensive findings with photo documentation within 5-7 business days.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+(function() {
+  // Deadline countdown
+  var deadline = new Date('2026-01-01T00:00:00').getTime();
+  var deadlineEl = document.getElementById('drb-deadline-text');
+  
+  function updateDeadline() {
+    if (!deadlineEl) return;
+    var now = new Date().getTime();
+    var dist = deadline - now;
+    if (dist < 0) { 
+      deadlineEl.textContent = 'Deadline Passed'; 
+      return; 
+    }
+    var d = Math.floor(dist / (1000 * 60 * 60 * 24));
+    var h = Math.floor((dist % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var m = Math.floor((dist % (1000 * 60 * 60)) / (1000 * 60));
+    var s = Math.floor((dist % (1000 * 60)) / 1000);
+    deadlineEl.textContent = d + 'd ' + h + 'h ' + m + 'm ' + s + 's';
+  }
+  
+  updateDeadline();
+  setInterval(updateDeadline, 1000);
+
+  // Dismiss button functionality
+  var dismissBtn = document.getElementById('drb-dismiss');
+  var announcement = document.getElementById('drb-announcement');
+  if (dismissBtn && announcement) {
+    dismissBtn.addEventListener('click', function() { 
+      announcement.style.display = 'none'; 
+    });
+  }
+  
+})();
+</script>
+
+</body>
+</html>
+<!-- /wp:html -->
+
+<!-- wp:html -->
+<style>
+  #quick-contact {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%) !important;
+    padding: 4rem 1.5rem !important;
+    border-top: 3px solid #ff7b3d;
+  }
+  #quick-contact .contact-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  #quick-contact h2 {
+    font-size: clamp(28px, 4vw, 40px) !important;
+    font-weight: 800 !important;
+    color: #051c3e !important;
+    margin-bottom: 1.5rem !important;
+    text-align: center !important;
+  }
+  #quick-contact .contact-subtitle {
+    font-size: 18px !important;
+    color: #4a5568 !important;
+    text-align: center !important;
+    max-width: 600px;
+    margin: 0 auto 3rem;
+  }
+  #quick-contact .contact-form {
+    background: #ffffff !important;
+    padding: 3rem !important;
+    border-radius: 16px !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12) !important;
+  }
+</style>
+<!-- /wp:html -->
+
+<!-- wp:shortcode -->
+<div id="quick-contact">
+  [wpforms id="14358"]
+</div>
+<!-- /wp:shortcode -->
+
+<!-- wp:html -->
+</div>
+  </div>
+</div>
+<!-- /wp:html -->
+
+<!-- wp:html -->
+<style>
+  #drb-quiz-section {
+    background: linear-gradient(135deg, #051c3e 0%, #0b2c5a 100%) !important;
+    color: #ffffff !important;
+    padding: 4rem 1.5rem !important;
+  }
+  #drb-quiz-section .quiz-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  #drb-quiz-section h2 {
+    font-size: clamp(28px, 4vw, 40px) !important;
+    font-weight: 800 !important;
+    margin-bottom: 0.5rem !important;
+    color: #ffffff !important;
+  }
+  #drb-quiz-section .quiz-sub {
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    color: #f59e0b !important;
+    margin-bottom: 1.5rem !important;
+  }
+  #drb-quiz-section .quiz-lead {
+    font-size: 17px !important;
+    line-height: 1.7 !important;
+    margin-bottom: 2rem !important;
+    opacity: 0.9;
+    color: #ffffff !important;
+  }
+
+  /* WPForms Page Indicator - Orange Circle Numbers */
+  #drb-quiz-section .wpforms-page-indicator-page-number {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 50px !important;
+    height: 50px !important;
+    background: #FF783E !important;
+    color: white !important;
+    border-radius: 50% !important;
+    font-weight: 800 !important;
+    font-size: 1.5rem !important;
+    margin: 0 auto 0.5rem !important;
+    border: none !important;
+  }
+
+  /* Step Titles */
+  #drb-quiz-section .wpforms-page-indicator-page-title {
+    color: white !important;
+    font-size: 1rem !important;
+    font-weight: 700 !important;
+    display: block !important;
+  }
+
+  /* Page Indicator Container */
+  #drb-quiz-section .wpforms-page-indicator.circles {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 2rem !important;
+    margin: 2rem 0 3rem !important;
+    border: none !important;
+    background: transparent !important;
+  }
+
+  #drb-quiz-section .wpforms-page-indicator.circles .wpforms-page-indicator-page {
+    flex: 0 1 auto !important;
+    text-align: center !important;
+  }
+
+  /* Desktop optimization for quiz form */
+  @media (min-width: 768px) {
+    #drb-quiz-section .wpforms-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    
+    #drb-quiz-section .wpforms-field {
+      margin-bottom: 28px !important;
+    }
+    
+    #drb-quiz-section .wpforms-field-radio li {
+      margin-bottom: 14px !important;
+    }
+    
+    #drb-quiz-section input[type="radio"] {
+      width: 20px;
+      height: 20px;
+      margin-right: 12px;
+    }
+    
+    #drb-quiz-section .wpforms-submit-container {
+      max-width: 400px;
+      margin: 32px auto 0;
+    }
+    
+    #drb-quiz-section button[type="submit"] {
+      width: 100% !important;
+    }
+  }
+
+  @media (max-width: 767px) {
+    #drb-quiz-section {
+      padding: 4rem 1rem !important;
+    }
+    
+    #drb-quiz-section .wpforms-container {
+      padding: 0 16px;
+    }
+    
+    #drb-quiz-section .wpforms-page-indicator.circles {
+      gap: 1rem !important;
+    }
+  }
+</style>
+<div id="drb-quiz-section">
+  <div class="quiz-inner">
+    <h2>Inspection Exempted?</h2>
+    <p class="quiz-sub">2-Minute SB-721 / SB-326 Compliance Check</p>
+    <p class="quiz-lead">Free, fast, and no obligation. Answer a few questions to see if your property needs an inspection.</p>
+  </div>
+</div>
+<!-- /wp:html -->
+
+<!-- wp:html -->
+<style>
+/* Desktop optimization for quiz form */
+@media (min-width: 768px) {
+  #drb-quiz-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  
+  #drb-quiz-section .wpforms-field {
+    margin-bottom: 28px !important;
+  }
+  
+  #drb-quiz-section .wpforms-field-radio li {
+    margin-bottom: 14px !important;
+  }
+  
+  #drb-quiz-section input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+  }
+  
+  #drb-quiz-section .wpforms-submit-container {
+    max-width: 400px;
+    margin: 32px auto 0;
+  }
+  
+  #drb-quiz-section button[type="submit"] {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 767px) {
+  #drb-quiz-section {
+    padding: 0 16px;
+  }
+}
+</style>
+<!-- /wp:html -->
+
+<!-- wp:shortcode -->
+<div id="drb-quiz-section">
+  [wpforms id="11239"]
+</div>
+<!-- /wp:shortcode -->
+
+<!-- wp:html -->
+<style>
+  /* Calculator CTA */
+  #drb-calc-section {
+    background: #f7fafc !important;
+    padding: 4rem 1.5rem !important;
+  }
+  #drb-calc-section .calc-cta {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    background: linear-gradient(135deg, #1e3a5f 0%, #051c3e 100%) !important;
+    border-radius: 16px !important;
+    padding: 4rem !important;
+    color: #ffffff !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12) !important;
+  }
+  #drb-calc-section .calc-cta h2 {
+    font-size: clamp(24px, 3vw, 32px) !important;
+    font-weight: 800 !important;
+    margin-bottom: 1.5rem !important;
+    color: #ffffff !important;
+  }
+  #drb-calc-section .calc-cta p {
+    font-size: 17px !important;
+    line-height: 1.7 !important;
+    margin-bottom: 2rem !important;
+    color: #ffffff !important;
+  }
+  #drb-calc-section .calc-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    padding: 16px 32px !important;
+    background: #ffffff !important;
+    color: #051c3e !important;
+    font-weight: 700 !important;
+    font-size: 17px !important;
+    border-radius: 12px !important;
+    text-decoration: none !important;
+    transition: all 0.2s !important;
+  }
+  #drb-calc-section .calc-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2) !important;
+  }
+  #drb-calc-section .calc-media img {
+    width: 90%;
+    max-width: 500px;
+    border-radius: 12px;
+    margin: 0 auto;
+  }
+
+  /* Trust Section */
+  #drb-trust-section {
+    background: #051c3e !important;
+    color: #ffffff !important;
+    padding: 4rem 1.5rem !important;
+  }
+  #drb-trust-section .trust-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  #drb-trust-section h2 {
+    font-size: clamp(28px, 3.5vw, 38px) !important;
+    font-weight: 800 !important;
+    color: #ffffff !important;
+    margin-bottom: 1.5rem !important;
+    text-align: center !important;
+  }
+  #drb-trust-section .trust-intro {
+    text-align: center !important;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    font-size: 18px !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+  }
+  #drb-trust-section .trust-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    margin-bottom: 4rem;
+  }
+  #drb-trust-section .trust-item {
+    text-align: center;
+    padding: 2rem !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-radius: 12px !important;
+  }
+  #drb-trust-section .trust-icon {
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 123, 61, 0.2) !important;
+    border: 2px solid #ff7b3d !important;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px !important;
+    margin: 0 auto 1.5rem;
+  }
+  #drb-trust-section .trust-item h3 {
+    font-size: 20px !important;
+    color: #ffffff !important;
+    margin-bottom: 0.5rem !important;
+    font-weight: 700 !important;
+  }
+  #drb-trust-section .trust-item p {
+    font-size: 15px !important;
+    color: rgba(255, 255, 255, 0.8) !important;
+    line-height: 1.6 !important;
+  }
+
+  /* Trust Badges */
+  #drb-trust-section .trust-exclusive {
+    background: linear-gradient(135deg, rgba(255, 123, 61, 0.15) 0%, rgba(255, 123, 61, 0.05) 100%);
+    border: 2px solid #ff7b3d;
+    border-radius: 16px;
+    padding: 4rem 2rem;
+    margin-top: 4rem;
+    text-align: center;
+  }
+  #drb-trust-section .trust-exclusive h3 {
+    font-size: clamp(24px, 3.5vw, 36px) !important;
+    font-weight: 800 !important;
+    color: #ffffff !important;
+    margin-bottom: 1.5rem !important;
+  }
+  #drb-trust-section .trust-exclusive-text {
+    font-size: 17px !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+    line-height: 1.7 !important;
+    max-width: 900px;
+    margin: 0 auto 3rem;
+  }
+  #drb-trust-section .trust-badges-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+  #drb-trust-section .trust-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: #ffffff;
+    border-radius: 12px;
+    min-height: 180px;
+  }
+  #drb-trust-section .trust-badge img {
+    max-width: 160px;
+    max-height: 70px;
+    width: auto;
+    height: auto;
+  }
+
+  /* Reviews */
+  #drb-trust-section .trust-reviews {
+    margin-top: 4rem;
+    padding-top: 3rem;
+    border-top: 2px solid rgba(255, 255, 255, 0.1);
+  }
+  #drb-trust-section .trust-reviews h3 {
+    text-align: center;
+    font-size: 28px !important;
+    font-weight: 700 !important;
+    color: #ffffff !important;
+    margin-bottom: 3rem !important;
+  }
+  #drb-trust-section .trust-reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+  #drb-trust-section .trust-testimonial {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    color: #1a202c;
+    position: relative;
+  }
+  #drb-trust-section .trust-testimonial::before {
+    content: """;
+    position: absolute;
+    top: 10px;
+    left: 16px;
+    font-size: 48px;
+    color: #ff7b3d;
+    opacity: 0.2;
+    font-family: Georgia, serif;
+  }
+  #drb-trust-section .trust-testimonial-stars {
+    color: #fbbf24;
+    font-size: 16px;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+    position: relative;
+    z-index: 1;
+  }
+  #drb-trust-section .trust-testimonial-text {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #4a5568;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+  }
+  #drb-trust-section .trust-testimonial-author {
+    font-weight: 600;
+    color: #051c3e;
+    font-size: 14px;
+  }
+  #drb-trust-section .trust-review-platforms {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+  #drb-trust-section .trust-review-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 2rem;
+    background: #ffffff;
+    border-radius: 12px;
+    min-width: 200px;
+  }
+  #drb-trust-section .trust-review-logo {
+    height: 40px;
+    width: auto;
+    max-width: 130px;
+    margin-bottom: 0.5rem;
+  }
+  #drb-trust-section .trust-review-stars {
+    color: #fbbf24;
+    font-size: 22px;
+    letter-spacing: 2px;
+  }
+  #drb-trust-section .trust-review-rating {
+    font-size: 15px;
+    color: #1a202c;
+    font-weight: 700;
+  }
+  #drb-trust-section .trust-review-count {
+    font-size: 13px;
+    color: #64748b;
+  }
+
+  /* FAQ Section */
+  #drb-faq-section {
+    background: #f7fafc !important;
+    padding: 4rem 1.5rem !important;
+  }
+  #drb-faq-section .faq-container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  #drb-faq-section h2 {
+    font-size: clamp(28px, 3.5vw, 38px) !important;
+    font-weight: 800 !important;
+    color: #051c3e !important;
+    margin-bottom: 3rem !important;
+    text-align: center !important;
+  }
+  #drb-faq-section .faq-item {
+    background: #ffffff !important;
+    padding: 2rem !important;
+    margin-bottom: 1.5rem;
+    border-radius: 12px !important;
+  }
+  #drb-faq-section .faq-item summary {
+    font-weight: 700 !important;
+    color: #051c3e !important;
+    font-size: 18px !important;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+  }
+  #drb-faq-section .faq-item summary::after {
+    content: "+";
+    font-size: 24px !important;
+    font-weight: 700 !important;
+    color: #ff7b3d !important;
+  }
+  #drb-faq-section .faq-item[open] summary::after {
+    content: "−";
+  }
+  #drb-faq-section .faq-answer {
+    margin-top: 1.5rem;
+    color: #4a5568 !important;
+    font-size: 15px !important;
+    line-height: 1.7 !important;
+  }
+
+  /* Final CTA */
+  #drb-final-cta {
+    background: linear-gradient(135deg, #051c3e 0%, #0b2c5a 100%) !important;
+    color: #ffffff !important;
+    text-align: center;
+    padding: 4rem 1.5rem !important;
+  }
+  #drb-final-cta h2 {
+    font-size: clamp(28px, 4vw, 42px) !important;
+    font-weight: 800 !important;
+    margin-bottom: 1.5rem !important;
+    color: #ffffff !important;
+  }
+  #drb-final-cta p {
+    font-size: 18px !important;
+    margin-bottom: 3rem !important;
+    color: #ffffff !important;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #drb-final-cta .final-actions {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  #drb-final-cta .btn-primary {
+    display: inline-flex !important;
+    padding: 16px 32px !important;
+    background: #ff7b3d !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    font-size: 17px !important;
+    border-radius: 12px !important;
+    text-decoration: none !important;
+    transition: all 0.2s !important;
+  }
+  #drb-final-cta .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 123, 61, 0.4) !important;
+  }
+  #drb-final-cta .btn-secondary {
+    display: inline-flex !important;
+    padding: 16px 32px !important;
+    background: transparent !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    font-size: 17px !important;
+    border: 2px solid rgba(255, 255, 255, 0.3) !important;
+    border-radius: 12px !important;
+    text-decoration: none !important;
+    transition: all 0.2s !important;
+  }
+  #drb-final-cta .btn-secondary:hover {
+    border-color: #ffffff !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+  }
+
+  /* Footer */
+  #drb-footer {
+    background: #1a202c !important;
+    color: #ffffff !important;
+    padding: 3rem 1.5rem !important;
+    text-align: center;
+  }
+  #drb-footer p {
+    font-size: 14px !important;
+    color: #ffffff !important;
+    margin-bottom: 0.5rem;
+    opacity: 0.8;
+  }
+
+  @media (max-width: 1024px) {
+    #drb-calc-section .calc-cta {
+      grid-template-columns: 1fr;
+    }
+  }
+  @media (max-width: 640px) {
+    #drb-final-cta .final-actions {
+      flex-direction: column;
+    }
+    #drb-final-cta .btn-primary,
+    #drb-final-cta .btn-secondary {
+      width: 100%;
+    }
+  }
+</style>
+
+<!-- Calculator CTA -->
+<div id="drb-calc-section">
+  <style>
+    #drb-calc-section {
+      background: #f7fafc !important;
+      padding: 4rem 1.5rem !important;
+    }
+    
+    #drb-calc-section .calc-cta {
+      background: linear-gradient(135deg, #061C3D 0%, #0A2951 100%) !important;
+      border-radius: 16px;
+      padding: 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+      color: white;
+      box-shadow: 0 4px 20px rgba(6, 28, 61, 0.15);
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    #drb-calc-section .calc-cta h2 {
+      color: white;
+      margin: 0 0 1rem 0;
+      font-size: 2rem;
+      font-weight: 600;
+    }
+    
+    #drb-calc-section .calc-cta p {
+      color: rgba(255, 255, 255, 0.9);
+      margin: 0 0 1.5rem 0;
+      line-height: 1.6;
+      font-size: 1rem;
+    }
+    
+    #drb-calc-section .calc-media {
+      text-align: center;
+    }
+    
+    #drb-calc-section .calc-media img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    
+    /* Calculator Instructions */
+    #drb-calc-section .calc-instructions {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 1rem;
+      padding: 24px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+    }
+    
+    #drb-calc-section .instruction-step {
+      text-align: center;
+    }
+    
+    #drb-calc-section .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: #FF783E;
+      color: white;
+      border-radius: 50%;
+      font-weight: 700;
+      font-size: 1.25rem;
+      margin-bottom: 12px;
+    }
+    
+    #drb-calc-section .instruction-step h3 {
+      color: white;
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 0 0 8px 0;
+    }
+    
+    #drb-calc-section .instruction-step p {
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 0.875rem;
+      line-height: 1.5;
+      margin: 0;
+    }
+    
+    /* Calculator Form Styles */
+    #drb-calc-section #building-cost-calculator {
+      margin-top: 2rem;
+      grid-column: 1 / -1;
+    }
+    
+    #drb-calc-section .clc-form {
+      font-family: 'Poppins', sans-serif;
+      background: white;
+      padding: 32px;
+      border-radius: 12px;
+      max-width: 600px;
+      margin: 0 auto;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    }
+    
+    #drb-calc-section .clc-form label {
+      font-weight: 600;
+      margin-top: 10px;
+      display: block;
+      color: #333;
+      font-size: 14px;
+    }
+    
+    #drb-calc-section .clc-form input,
+    #drb-calc-section .clc-form select {
+      width: 100%;
+      padding: 12px 16px;
+      margin-top: 6px;
+      border: 2px solid #E2E8F0;
+      border-radius: 8px;
+      font-size: 15px;
+      transition: border-color 0.3s ease;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    #drb-calc-section .clc-form input:focus {
+      outline: none;
+      border-color: #FF783E;
+    }
+    
+    #drb-calc-section .form-group {
+      margin-bottom: 1.25rem;
+    }
+    
+    #drb-calc-section .building-button {
+      background-color: #F2F3F6;
+      border: 2px solid #B6B6B9;
+      padding: 10px 28px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #303131;
+      margin-right: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    #drb-calc-section .building-button:hover,
+    #drb-calc-section .building-button.active-inspection {
+      background-color: #FDF0E6;
+      border-color: #FF783E;
+      color: #E66300;
+    }
+    
+    #drb-calc-section .submit-btn {
+      background-color: #FF783E;
+      color: white;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 8px;
+      margin-top: 20px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 1rem;
+      line-height: 1.5;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    #drb-calc-section .submit-btn:hover {
+      background-color: #e06814;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(255, 120, 62, 0.3);
+    }
+    
+    #drb-calc-section .error-message {
+      color: #dc3545;
+      font-size: 13px;
+      display: none;
+      margin-top: 5px;
+    }
+    
+    #drb-calc-section .result-message {
+      margin-top: 20px;
+      padding: 20px;
+      background: #d4edda;
+      border: 1px solid #c3e6cb;
+      border-radius: 8px;
+      color: #155724;
+      font-weight: 600;
+      font-size: 16px;
+      text-align: center;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      #drb-calc-section .calc-cta {
+        grid-template-columns: 1fr;
+        padding: 24px;
+        gap: 24px;
+      }
+      
+      #drb-calc-section .calc-cta h2 {
+        font-size: 1.5rem;
+      }
+      
+      #drb-calc-section .calc-cta p {
+        font-size: 0.95rem;
+      }
+      
+      #drb-calc-section .calc-media {
+        order: -1;
+      }
+      
+      #drb-calc-section .calc-instructions {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 20px;
+      }
+      
+      #drb-calc-section #building-cost-calculator {
+        grid-column: 1;
+      }
+      
+      #drb-calc-section .clc-form {
+        padding: 24px;
+      }
+      
+      #drb-calc-section .building-button {
+        padding: 8px 20px;
+        font-size: 13px;
+        margin-right: 8px;
+      }
+    }
+  </style>
+
+  <div class="calc-cta">
+    <div>
+      <h2>Calculate Your Inspection Cost</h2>
+      <p>Get an instant estimate with our Balcony Inspection Cost Calculator. Input your property details and receive accurate pricing — takes less than 2 minutes.</p>
+    </div>
+    
+    <div class="calc-media">
+      <img src="https://drbalcony.com/wp-content/uploads/2025/07/discount-drbalcony-1-e1753271898411.png.webp" alt="Cost calculator" loading="lazy">
+    </div>
+
+    <!-- Instructions -->
+    <div class="calc-instructions">
+      <div class="instruction-step">
+        <div class="step-number">1</div>
+        <h3>Select Building Type</h3>
+        <p>Choose SB721 or SB326 based on your property type</p>
+      </div>
+      
+      <div class="instruction-step">
+        <div class="step-number">2</div>
+        <h3>Enter Number of Units</h3>
+        <p>Provide the total units in your building</p>
+      </div>
+      
+      <div class="instruction-step">
+        <div class="step-number">3</div>
+        <h3>Get Your Estimate</h3>
+        <p>Enter your contact info and click Calculate</p>
+      </div>
+    </div>
+
+    <!-- Embedded Calculator -->
+    <div id="building-cost-calculator">
+      <form class="clc-form" onsubmit="return false;">
+        <div class="form-group bld-type">
+          <label>Building Type:</label>
+          <div style="margin-top: 10px;">
+            <button type="button" class="building-button active-inspection" data-type="sb721" onclick="changeBuildingType(this)">SB721</button>
+            <button type="button" class="building-button" data-type="sb326" onclick="changeBuildingType(this)">SB326</button>
+          </div>
+          <input type="hidden" id="inspectionType" value="sb721">
+        </div>
+        
+        <div class="form-group">
+          <label for="unitCount">Units *</label>
+          <input type="number" id="unitCount" min="1" placeholder="Enter number of units" required>
+          <div class="error-message" id="unitCount-error">Please enter the number of units.</div>
+        </div>
+        
+        <div class="form-group">
+          <label for="emailAddress">Email Address *</label>
+          <input type="email" id="emailAddress" placeholder="someone@example.com" required>
+          <div class="error-message" id="emailAddress-error">Please enter a valid email.</div>
+        </div>
+        
+        <div class="form-group">
+          <label for="phoneNumber">Phone Number *</label>
+          <input type="tel" id="phoneNumber" placeholder="(000) 000 0000" required>
+          <div class="error-message" id="phoneNumber-error">Please enter a valid phone number.</div>
+        </div>
+        
+        <button type="button" class="submit-btn" onclick="calculateCost()">Calculate</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function changeBuildingType(button) {
+      document.getElementById('inspectionType').value = button.getAttribute('data-type');
+      document.querySelectorAll('.building-button').forEach(btn => btn.classList.remove('active-inspection'));
+      button.classList.add('active-inspection');
+    }
+
+    function redactEmail(email) {
+      return email.replace(/(.{2}).+(@.+)/, '$1***$2');
+    }
+
+    function redactPhone(phone) {
+      const digits = phone.replace(/\D/g, '');
+      if (digits.length <= 4) return digits;
+      return digits.slice(0, 2) + '***' + digits.slice(-4);
+    }
+
+    function calculateCost() {
+      const inspectionType = document.getElementById('inspectionType').value;
+      const unitCount = parseInt(document.getElementById('unitCount').value);
+      const email = document.getElementById('emailAddress').value.trim();
+      const phone = document.getElementById('phoneNumber').value.trim();
+
+      document.getElementById('unitCount-error').style.display = 'none';
+      document.getElementById('emailAddress-error').style.display = 'none';
+      document.getElementById('phoneNumber-error').style.display = 'none';
+
+      const oldResult = document.getElementById('result');
+      if (oldResult) oldResult.remove();
+
+      let hasError = false;
+
+      if (isNaN(unitCount) || unitCount < 1) {
+        document.getElementById('unitCount-error').style.display = 'block';
+        hasError = true;
+      }
+
+      if (!validateEmail(email)) {
+        document.getElementById('emailAddress-error').style.display = 'block';
+        hasError = true;
+      }
+
+      if (phone === '') {
+        document.getElementById('phoneNumber-error').style.display = 'block';
+        hasError = true;
+      }
+
+      if (hasError) return;
+
+      let costRange = { min: 0, max: 0 };
+      let resultText = '';
+
+      if (inspectionType === "sb721") {
+        if (unitCount >= 1 && unitCount <= 8) {
+          costRange = { min: 600, max: 1500 };
+        } else if (unitCount >= 9 && unitCount <= 20) {
+          costRange = { min: 1200, max: 2200 };
+        } else if (unitCount > 20 && unitCount <= 100) {
+          costRange = { min: 1800, max: 8900 };
+        } else {
+          resultText = "Unit count out of range for SB 721.";
+        }
+      } else if (inspectionType === "sb326") {
+        if (unitCount >= 1 && unitCount <= 8) {
+          costRange = { min: 1800, max: 2200 };
+        } else if (unitCount >= 9 && unitCount <= 20) {
+          costRange = { min: 2200, max: 4800 };
+        } else if (unitCount > 20 && unitCount <= 100) {
+          costRange = { min: 4200, max: 12000 };
+        } else {
+          resultText = "Unit count out of range for SB 326.";
+        }
+      } else {
+        resultText = "Invalid inspection type.";
+      }
+
+      if (resultText === '') {
+        resultText = `The cost range for ${inspectionType.toUpperCase()} with ${unitCount} units is $${costRange.min} - $${costRange.max}.`;
+      }
+
+      const form = document.querySelector('#building-cost-calculator .clc-form');
+      const resultEl = document.createElement('div');
+      resultEl.id = 'result';
+      resultEl.className = 'result-message';
+      resultEl.setAttribute('aria-live', 'polite');
+      resultEl.textContent = resultText;
+      form.appendChild(resultEl);
+
+      // Track form submission
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'form_submit',
+        form_id: 'building_cost_calculator',
+        form_name: 'Calculate Cost',
+        inspectionType,
+        unitCount,
+        email_redacted: redactEmail(email),
+        phone_redacted: redactPhone(phone),
+        costMin: costRange.min,
+        costMax: costRange.max
+      });
+
+      // Track calculation completion
+      window.dataLayer.push({
+        event: 'building_cost_calculated',
+        inspectionType,
+        unitCount,
+        costMin: costRange.min,
+        costMax: costRange.max
+      });
+    }
+
+    function validateEmail(email) {
+      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return re.test(email);
+    }
+
+    // Track form start on first interaction
+    let formStarted = false;
+    document.querySelector('#building-cost-calculator .clc-form').addEventListener('input', function onFirstInput() {
+      if (formStarted) return;
+      formStarted = true;
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'form_start',
+        form_id: 'building_cost_calculator',
+        form_name: 'Calculate Cost'
+      });
+    }, { once: true });
+  </script>
+</div>
+
+<!-- Trust Section -->
+<div id="drb-trust-section">
+  <div class="trust-container">
+    <h2>Why Property Owners Choose DrBalcony®</h2>
+    <p class="trust-intro">Unmatched expertise and credentials you can trust</p>
+
+    <div class="trust-grid">
+      <div class="trust-item">
+        <div class="trust-icon">🎓</div>
+        <h3>Licensed Engineers</h3>
+        <p>All inspections performed by California-licensed structural engineers.</p>
+      </div>
+
+      <div class="trust-item">
+        <div class="trust-icon">🗺️</div>
+        <h3>Statewide Service</h3>
+        <p>Comprehensive coverage throughout California.</p>
+      </div>
+
+      <div class="trust-item">
+        <div class="trust-icon">⚡</div>
+        <h3>Fast Turnaround</h3>
+        <p>Reports delivered within 5-7 business days.</p>
+      </div>
+
+      <div class="trust-item">
+        <div class="trust-icon">💰</div>
+        <h3>Transparent Pricing</h3>
+        <p>Clear, upfront quotes with no hidden fees.</p>
+      </div>
+    </div>
+
+    <!-- Reviews -->
+    <div class="trust-reviews">
+      <h3>What Our Clients Say</h3>
+      
+      <div class="trust-reviews-grid">
+        <div class="trust-testimonial">
+          <div class="trust-testimonial-stars">★★★★★</div>
+          <p class="trust-testimonial-text">Joseph came out and did our inspection, he did an amazing job, he was very efficient and polite, all of my tenants who met him had great things to say about his professionalism.</p>
+          <div class="trust-testimonial-author">Renee - Claraday Apartments</div>
+        </div>
+
+        <div class="trust-testimonial">
+          <div class="trust-testimonial-stars">★★★★★</div>
+          <p class="trust-testimonial-text">Rico was very helpful in getting my balcony inspections completed in a timely manner. The process was smooth from start to finish. Thank you!</p>
+          <div class="trust-testimonial-author">Gino Poore - Property Owner</div>
+        </div>
+
+        <div class="trust-testimonial">
+          <div class="trust-testimonial-stars">★★★★★</div>
+          <p class="trust-testimonial-text">Very thorough and very detailed inspection with many pictures and easy to understand details. Very professional and friendly staff. Great choice.</p>
+          <div class="trust-testimonial-author">Barbara Morden - HOA Board Member</div>
+        </div>
+
+        <div class="trust-testimonial">
+          <div class="trust-testimonial-stars">★★★★★</div>
+          <p class="trust-testimonial-text">Reasonably priced, a competitor quoted almost double. The inspector was punctual and professional!</p>
+          <div class="trust-testimonial-author">Charles Im - Property Manager</div>
+        </div>
+
+        <div class="trust-testimonial">
+          <div class="trust-testimonial-stars">★★★★★</div>
+          <p class="trust-testimonial-text">Every part of the process went super smoothly and I'm very happy with the detailed final report as well. Would definitely recommend.</p>
+          <div class="trust-testimonial-author">Verified Customer - HOA</div>
+        </div>
+
+        <div class="trust-testimonial">
+          <div class="trust-testimonial-stars">★★★★★</div>
+          <p class="trust-testimonial-text">Great service at a great price! DrBalcony was a great choice to provide the necessary documentation to meet California laws on balconies.</p>
+          <div class="trust-testimonial-author">Verified Customer</div>
+        </div>
+      </div>
+
+      <div class="trust-review-platforms">
+        <div class="trust-review-item">
+          <img src="https://drbalcony.com/wp-content/uploads/2025/10/Google-Review-Logo-300x169.png" alt="Google Reviews" class="trust-review-logo" loading="lazy">
+          <div class="trust-review-stars">★★★★★</div>
+          <div class="trust-review-rating">4.6 out of 5</div>
+          <div class="trust-review-count">197 reviews</div>
+        </div>
+
+        <div class="trust-review-item">
+          <img src="https://drbalcony.com/wp-content/uploads/2025/10/Yelp_Logo.svg-300x121.png" alt="Yelp Reviews" class="trust-review-logo" loading="lazy">
+          <div class="trust-review-stars">★★★★☆</div>
+          <div class="trust-review-rating">4.0 out of 5</div>
+          <div class="trust-review-count">56 reviews</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ Section -->
+<div id="drb-faq-section">
+  <div class="faq-container">
+    <h2>Frequently Asked Questions</h2>
+    
+    <details class="faq-item">
+      <summary>What properties require SB-721 or SB-326 inspections?</summary>
+      <div class="faq-answer">
+        SB-721 applies to apartments and multifamily rental properties with 3+ units. SB-326 applies to condominiums and HOAs.
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>How often do inspections need to be performed?</summary>
+      <div class="faq-answer">
+        Initial inspections by January 1, 2025. SB-721 requires inspections every 6 years; SB-326 every 9 years.
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>What does the inspection include?</summary>
+      <div class="faq-answer">
+        Comprehensive inspection of all exterior elevated elements including balconies, decks, stairways, and railings.
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>How much do inspections cost?</summary>
+      <div class="faq-answer">
+        Most inspections range from $1,500 to $5,000 depending on property size and complexity.
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>What happens if issues are found?</summary>
+      <div class="faq-answer">
+        We provide a detailed report with prioritized recommendations. You'll have time to plan repairs, and we can connect you with qualified contractors.
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>How long does the process take?</summary>
+      <div class="faq-answer">
+        On-site inspections typically complete in 1-3 days. Comprehensive reports are delivered within 5-7 business days.
+      </div>
+    </details>
+  </div>
+</div>
+
+<!-- Final CTA -->
+<div id="drb-final-cta">
+  <h2>Ready to Ensure Your Property is Compliant?</h2>
+  <p>Start with a free 2-minute compliance assessment to understand your requirements.</p>
+
+  <div class="final-actions">
+    <a href="#drb-quiz-section" class="btn-primary">Start Your Free Compliance Check</a>
+    <a href="tel:(800)123-4567" class="btn-secondary">Call for Immediate Service</a>
+  </div>
+</div>
+
+<!-- Footer -->
+<div id="drb-footer">
+  <p>&copy; 2025 DrBalcony®. Licensed California Structural Engineers.</p>
+  <p>SB-721 and SB-326 compliance inspections for apartments, condos, and HOAs throughout California.</p>
+</div>
+<!-- /wp:html -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->
