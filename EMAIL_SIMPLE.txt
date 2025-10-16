@@ -1,0 +1,20 @@
+Hey guys,
+
+I know we've been waiting for these sections to be redone. I reworked them a little bit going into some detail.
+
+I updated both the services section and value proposition section with:
+- DrBalcony brand colors and Poppins font
+- Better mobile responsiveness 
+- Larger, more readable text
+- Fixed all the links to point to logical pages
+
+Live previews:
+Services Section: https://drbalcony-services-section-evrq1cri2-shoutgeorge1s-projects.vercel.app/services-section-homepage.html
+
+Value Proposition Section: https://drbalcony-services-section-evrq1cri2-shoutgeorge1s-projects.vercel.app/value-proposition-section.html
+
+If these are good to go, you can copy and paste the HTML into an HTML block and then delete the old section.
+
+Let me know if you need me to make any changes or if you want me to handle the integration directly.
+
+Thanks
