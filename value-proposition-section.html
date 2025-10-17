@@ -1,349 +1,488 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DrBalcony Value Proposition Section</title>
-    <style>
-        /* Reset and Base Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #1a1a1a;
-        }
-
-        /* Value Proposition Section */
-        .drb-value-proposition-section {
-            padding: 80px 20px;
-            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .drb-value-proposition-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(255, 120, 62, 0.05) 0%, rgba(255, 120, 62, 0.02) 100%);
-            pointer-events: none;
-        }
-
-        .value-proposition-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-
-        .value-proposition-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .value-proposition-header h2 {
-            font-size: 3rem;
-            font-weight: 700;
-            color: #1a1a1a;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-
-        .value-proposition-header p {
-            font-size: 1.25rem;
-            color: #666;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .value-proposition-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .value-prop-card {
-            background: #ffffff;
-            border-radius: 16px;
-            padding: 32px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-            text-decoration: none;
-            color: inherit;
-            display: block;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .value-prop-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #ff783e, #dc6e3e);
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
-        }
-
-        .value-prop-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        .value-prop-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .value-prop-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, #ff783e, #dc6e3e);
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 24px;
-            font-size: 2.5rem;
-            color: white;
-            transition: transform 0.3s ease;
-        }
-
-        .value-prop-card:hover .value-prop-icon {
-            transform: scale(1.1);
-        }
-
-        .value-prop-card h3 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #1a1a1a;
-            margin-bottom: 16px;
-            line-height: 1.3;
-        }
-
-        .value-prop-card p {
-            color: #666;
-            margin-bottom: 24px;
-            line-height: 1.6;
-        }
-
-        .value-prop-card .learn-more {
-            color: #ff783e;
-            font-weight: 600;
-            font-size: 1rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.3s ease;
-        }
-
-        .value-prop-card:hover .learn-more {
-            color: #dc6e3e;
-            transform: translateX(4px);
-        }
-
-        .value-prop-card.featured {
-            background: linear-gradient(135deg, #ff783e, #dc6e3e);
-            color: white;
-            position: relative;
-        }
-
-        .value-prop-card.featured::before {
-            display: none;
-        }
-
-        .value-prop-card.featured .value-prop-icon {
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-        }
-
-        .value-prop-card.featured h3 {
-            color: white;
-        }
-
-        .value-prop-card.featured p {
-            color: rgba(255, 255, 255, 0.9);
-        }
-
-        .value-prop-card.featured .learn-more {
-            color: white;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 8px 16px;
-            border-radius: 8px;
-            backdrop-filter: blur(10px);
-        }
-
-        .value-prop-card.featured:hover .learn-more {
-            background: rgba(255, 255, 255, 0.3);
-        }
-
-        .featured-note {
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.8);
-            margin-top: 16px;
-            font-style: italic;
-        }
-
-        /* Special styling for the webinar image card */
-        .webinar-image-card {
-            background: linear-gradient(135deg, #2c5aa0, #1e3a5f);
-            color: white;
-            text-align: center;
-        }
-
-        .webinar-image-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 12px;
-            margin-bottom: 20px;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .drb-value-proposition-section {
-                padding: 60px 16px;
-            }
-            
-            .value-proposition-header h2 {
-                font-size: 2.5rem;
-            }
-            
-            .value-proposition-grid {
-                grid-template-columns: 1fr;
-                gap: 24px;
-            }
-            
-            .value-prop-card {
-                padding: 24px;
-            }
-            
-            .value-prop-icon {
-                width: 60px;
-                height: 60px;
-                font-size: 2rem;
-            }
-            
-            .value-prop-card h3 {
-                font-size: 1.25rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .value-proposition-header h2 {
-                font-size: 2rem;
-            }
-            
-            .value-prop-card {
-                padding: 20px;
-            }
-        }
-
-        /* Focus states for accessibility */
-        .value-prop-card:focus {
-            outline: 3px solid #ff783e;
-            outline-offset: 2px;
-        }
-    </style>
-</head>
-<body>
-    <section class="drb-value-proposition-section" aria-labelledby="value-proposition-heading">
-        <div class="value-proposition-container">
-            
-            <!-- Header -->
-            <div class="value-proposition-header">
-                <h2 id="value-proposition-heading">Why Choose DrBalcony®?</h2>
-                <p>Industry-leading inspection services with cutting-edge technology and unmatched expertise.</p>
-            </div>
-            
-            <!-- Value Proposition Grid -->
-            <div class="value-proposition-grid">
-                
-                <!-- Card 1: Webinar Value Props Image -->
-                <a href="/comprehensive-guide-to-balcony-repair-costs-assistance-and-best-practices/" class="value-prop-card webinar-image-card" data-gtm="value_props:calculator" aria-label="View our cost calculator and pricing guide">
-                    <img src="https://drbalcony.com/wp-content/uploads/2025/10/webinar-value-props-slide.png" alt="DrBalcony Value Propositions from Webinar" loading="lazy">
-                    <h3>Cost Calculator & Pricing Guide</h3>
-                    <p>Get instant estimates for your balcony inspection and repair costs. Transparent pricing with no hidden fees.</p>
-                    <span class="learn-more">Calculate Costs →</span>
-                </a>
-                
-                <!-- Card 2: Inspection Industry Disruptor -->
-                <a href="https://drbalcony.com/patented-solutions/" class="value-prop-card" data-gtm="value_props:patented_solutions" aria-label="Learn about our patented inspection solutions">
-                    <div class="value-prop-icon">🚀</div>
-                    <h3>Inspection Industry Disruptor</h3>
-                    <p>Revolutionary inspection methodology that sets new industry standards for accuracy and efficiency.</p>
-                    <span class="learn-more">Learn More →</span>
-                </a>
-                
-                <!-- Card 3: 4-Step Quality Control -->
-                <a href="https://drbalcony.com/3e-inspection/" class="value-prop-card" data-gtm="value_props:quality_control" aria-label="View our 4-step quality control process">
-                    <div class="value-prop-icon">✅</div>
-                    <h3>4-Step Quality Control</h3>
-                    <p>Rigorous quality assurance process ensures every inspection meets the highest standards of accuracy and completeness.</p>
-                    <span class="learn-more">View Process →</span>
-                </a>
-                
-                <!-- Card 4: 5000+ Inspections -->
-                <a href="https://drbalcony.com/balcony-inspections-in-california/" class="value-prop-card" data-gtm="value_props:experience" aria-label="Learn about our extensive inspection experience">
-                    <div class="value-prop-icon">📊</div>
-                    <h3>5000+ Inspections</h3>
-                    <p>Proven track record with thousands of successful inspections across California. Experience you can trust.</p>
-                    <span class="learn-more">Learn More →</span>
-                </a>
-                
-                <!-- Card 5: Servicing All of California -->
-                <a href="#top" class="value-prop-card" data-gtm="value_props:get_started" aria-label="Get started with a free proposal">
-                    <div class="value-prop-icon">🗺️</div>
-                    <h3>Servicing All of California</h3>
-                    <p>Statewide coverage with local expertise. No matter where your property is located, we're here to help.</p>
-                    <span class="learn-more">Get Started →</span>
-                </a>
-                
-                <!-- Card 6: Schedule Now -->
-                <a href="/contact-us/" class="value-prop-card" data-gtm="value_props:schedule" aria-label="Schedule your inspection now">
-                    <div class="value-prop-icon">📅</div>
-                    <h3>Schedule Now</h3>
-                    <p>Quick and easy scheduling process. Get your inspection scheduled within 24 hours of your request.</p>
-                    <span class="learn-more">Schedule Now →</span>
-                </a>
-                
-                <!-- Card 7: Quick Report Turnaround -->
-                <a href="https://drbalcony.com/balcony-inspection-report/" class="value-prop-card" data-gtm="value_props:report_turnaround" aria-label="Learn about our fast report delivery">
-                    <div class="value-prop-icon">⚡</div>
-                    <h3>Quick Report Turnaround</h3>
-                    <p>Fast, detailed reports delivered within 24-48 hours. Get your results quickly without compromising quality.</p>
-                    <span class="learn-more">Learn More →</span>
-                </a>
-                
-                <!-- Card 8: Powered by AI Technology -->
-                <a href="#" class="value-prop-card" data-gtm="value_props:ai_technology" aria-label="Learn about our AI-powered inspection technology">
-                    <div class="value-prop-icon">🤖</div>
-                    <h3>Powered by AI Technology</h3>
-                    <p>Cutting-edge artificial intelligence enhances our inspection accuracy and provides deeper insights into property conditions.</p>
-                    <span class="learn-more">See Technology →</span>
-                </a>
-                
-                <!-- Card 9: Only Inspections - No Repairs -->
-                <a href="https://drbalcony.com/3e-inspection/" class="value-prop-card" data-gtm="value_props:inspection_only" aria-label="Learn about our inspection-only services">
-                    <div class="value-prop-icon">🔍</div>
-                    <h3>Only Inspections - No Repairs</h3>
-                    <p>Unbiased, objective inspections without repair conflicts of interest. Pure inspection expertise you can trust.</p>
-                    <span class="learn-more">Learn More →</span>
-                </a>
-                
-            </div>
-            
-        </div>
-    </section>
-</body>
-</html>
+<!-- How to paste into WP: Copy this entire block into a Custom HTML block in WordPress -->
+<section class="drb-final-unified" aria-labelledby="services-heading">
+  <style>
+    .drb-final-unified {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: clamp(80px, 10vw, 120px) clamp(20px, 4vw, 60px);
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .drb-final-unified::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 20% 20%, rgba(255, 140, 0, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(9, 9, 9, 0.05) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    
+    .drb-final-unified .section-header {
+      text-align: center;
+      margin-bottom: clamp(50px, 8vw, 80px);
+      position: relative;
+      z-index: 2;
+    }
+    
+    .drb-final-unified .section-title {
+      font-size: clamp(36px, 6vw, 56px);
+      font-weight: 800;
+      color: #ffffff;
+      margin: 0 0 24px 0;
+      line-height: 1.1;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      letter-spacing: -0.02em;
+    }
+    
+    .drb-final-unified .section-kicker {
+      font-size: clamp(18px, 3vw, 22px);
+      color: rgba(255, 255, 255, 0.9);
+      margin: 0;
+      line-height: 1.5;
+      max-width: 800px;
+      margin: 0 auto;
+      font-weight: 400;
+    }
+    
+    .drb-final-unified .price-guarantee {
+      display: inline-block;
+      background: linear-gradient(135deg, #ff8c00, #ff6b00);
+      color: #fff;
+      padding: 16px 32px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 18px;
+      margin: 20px 0;
+      box-shadow: 0 8px 32px rgba(255, 140, 0, 0.3);
+      position: relative;
+      overflow: hidden;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .drb-final-unified .price-guarantee:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(255, 140, 0, 0.4);
+      color: #fff;
+    }
+    
+    .drb-final-unified .price-guarantee::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.6s ease;
+    }
+    
+    .drb-final-unified .price-guarantee:hover::before {
+      left: 100%;
+    }
+    
+    .drb-final-unified .services-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+      margin-top: 60px;
+      position: relative;
+      z-index: 2;
+    }
+    
+    @media (min-width: 768px) {
+      .drb-final-unified .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+      }
+    }
+    
+    @media (min-width: 1200px) {
+      .drb-final-unified .services-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 36px;
+      }
+    }
+    
+    .drb-final-unified .service-card {
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 24px;
+      padding: 40px 32px;
+      transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      backdrop-filter: blur(10px);
+    }
+    
+    .drb-final-unified .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, #ff8c00, #ff6b00, #ff8c00);
+      transform: scaleX(0);
+      transition: transform 0.5s ease;
+      border-radius: 24px 24px 0 0;
+    }
+    
+    .drb-final-unified .service-card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(255, 140, 0, 0.05) 0%, rgba(255, 140, 0, 0.02) 100%);
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      pointer-events: none;
+    }
+    
+    .drb-final-unified .service-card:hover,
+    .drb-final-unified .service-card:focus-within {
+      transform: translateY(-12px);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.2);
+      border-color: rgba(255, 140, 0, 0.4);
+    }
+    
+    .drb-final-unified .service-card:hover::before {
+      transform: scaleX(1);
+    }
+    
+    .drb-final-unified .service-card:hover::after {
+      opacity: 1;
+    }
+    
+    .drb-final-unified .service-card.highlighted {
+      background: linear-gradient(135deg, #ff8c00 0%, #ff6b00 50%, #ff8c00 100%);
+      color: #fff;
+      border-color: #ff8c00;
+      position: relative;
+      box-shadow: 0 16px 48px rgba(255, 140, 0, 0.3);
+    }
+    
+    .drb-final-unified .service-card.highlighted::before {
+      display: none;
+    }
+    
+    .drb-final-unified .service-card.highlighted::after {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+      opacity: 1;
+    }
+    
+    .drb-final-unified .service-card.highlighted:hover,
+    .drb-final-unified .service-card.highlighted:focus-within {
+      transform: translateY(-16px);
+      box-shadow: 0 32px 80px rgba(255, 140, 0, 0.4);
+    }
+    
+    .drb-final-unified .service-icon {
+      width: 88px;
+      height: 88px;
+      background: linear-gradient(135deg, #ff8c00, #ff6b00);
+      border-radius: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 28px;
+      font-size: 40px;
+      color: white;
+      transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      box-shadow: 0 12px 32px rgba(255, 140, 0, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .drb-final-unified .service-icon::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .drb-final-unified .service-card:hover .service-icon {
+      transform: scale(1.15) rotate(8deg);
+      box-shadow: 0 16px 40px rgba(255, 140, 0, 0.4);
+    }
+    
+    .drb-final-unified .service-card:hover .service-icon::before {
+      opacity: 1;
+    }
+    
+    .drb-final-unified .service-card.highlighted .service-icon {
+      background: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+    }
+    
+    .drb-final-unified .service-title {
+      font-size: 24px;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin: 0 0 20px 0;
+      line-height: 1.3;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      letter-spacing: -0.01em;
+    }
+    
+    .drb-final-unified .service-card.highlighted .service-title {
+      color: #fff;
+    }
+    
+    .drb-final-unified .service-description {
+      font-size: 17px;
+      color: #666;
+      line-height: 1.6;
+      margin: 0 0 24px 0;
+      font-weight: 400;
+    }
+    
+    .drb-final-unified .service-card.highlighted .service-description {
+      color: rgba(255, 255, 255, 0.9);
+    }
+    
+    .drb-final-unified .service-link {
+      color: #ff8c00;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.4s ease;
+      padding: 14px 24px;
+      background: rgba(255, 140, 0, 0.08);
+      border-radius: 16px;
+      border: 1px solid rgba(255, 140, 0, 0.2);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .drb-final-unified .service-link::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 140, 0, 0.1), transparent);
+      transition: left 0.6s ease;
+    }
+    
+    .drb-final-unified .service-link:hover {
+      color: #e67e00;
+      background: rgba(255, 140, 0, 0.12);
+      border-color: rgba(255, 140, 0, 0.3);
+      transform: translateX(6px);
+    }
+    
+    .drb-final-unified .service-link:hover::before {
+      left: 100%;
+    }
+    
+    .drb-final-unified .service-card.highlighted .service-link {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.15);
+      border-color: rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(10px);
+    }
+    
+    .drb-final-unified .service-card.highlighted .service-link:hover {
+      background: rgba(255, 255, 255, 0.25);
+      border-color: rgba(255, 255, 255, 0.5);
+    }
+    
+    .drb-final-unified .highlight-badge {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      background: rgba(255, 255, 255, 0.25);
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 24px;
+      font-size: 13px;
+      font-weight: 700;
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      letter-spacing: 0.5px;
+    }
+    
+    .drb-final-unified .value-highlight {
+      display: inline-block;
+      background: rgba(255, 140, 0, 0.1);
+      color: #ff8c00;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 600;
+      margin-top: 16px;
+    }
+    
+    .drb-final-unified .service-card.highlighted .value-highlight {
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+    }
+    
+    @media (prefers-reduced-motion: reduce) {
+      .drb-final-unified .service-card,
+      .drb-final-unified .service-icon,
+      .drb-final-unified .service-link {
+        transition: none;
+      }
+      
+      .drb-final-unified .service-card:hover,
+      .drb-final-unified .service-card:focus-within {
+        transform: none;
+      }
+      
+      .drb-final-unified .service-card:hover .service-icon {
+        transform: none;
+      }
+      
+      .drb-final-unified .service-link:hover {
+        transform: none;
+      }
+    }
+    
+    /* Focus styles for accessibility */
+    .drb-final-unified .service-card:focus-within {
+      outline: 3px solid #ff8c00;
+      outline-offset: 3px;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .drb-final-unified .service-card {
+        padding: 32px 24px;
+      }
+      
+      .drb-final-unified .service-icon {
+        width: 72px;
+        height: 72px;
+        font-size: 32px;
+      }
+      
+      .drb-final-unified .service-title {
+        font-size: 22px;
+      }
+      
+      .drb-final-unified .service-description {
+        font-size: 18px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .drb-final-unified .service-card {
+        padding: 28px 20px;
+      }
+      
+      .drb-final-unified .service-icon {
+        width: 64px;
+        height: 64px;
+        font-size: 28px;
+      }
+      
+      .drb-final-unified .service-description {
+        font-size: 17px;
+      }
+    }
+  </style>
+  
+  <div class="section-header">
+    <h2 id="services-heading" class="section-title">Why Choose DrBalcony</h2>
+    <p class="section-kicker">Trusted SB721 and SB326 inspection services across California. Complete compliance solutions for your property.</p>
+    <a href="https://drbalcony.com/balcony-inspection-cost-calculator/" class="price-guarantee">WE BEAT ANY PRICE</a>
+  </div>
+  
+  <div class="services-grid">
+    <!-- 01: Inspection Industry Disruptor -->
+    <div class="service-card" itemscope itemtype="https://schema.org/Service">
+      <span class="service-icon">🚀</span>
+      <h3 class="service-title" itemprop="name">Inspection Industry Disruptor</h3>
+      <p class="service-description" itemprop="description">Revolutionizing balcony inspections with cutting-edge technology and streamlined processes for SB-326 and SB-721 compliance.</p>
+      <a href="https://drbalcony.com/patented-solutions/" class="service-link">Learn More →</a>
+      <div class="value-highlight">Industry innovation leader</div>
+    </div>
+    
+    <!-- 02: 4-Step Quality Control -->
+    <div class="service-card" itemscope itemtype="https://schema.org/Service">
+      <span class="service-icon">🔬</span>
+      <h3 class="service-title" itemprop="name">4-Step Quality Control</h3>
+      <p class="service-description" itemprop="description">Rigorous quality control process ensuring accurate, thorough inspections for HOA and apartment building compliance.</p>
+      <a href="https://drbalcony.com/3e-inspection/" class="service-link">View Process →</a>
+      <div class="value-highlight">Systematic quality assurance</div>
+    </div>
+    
+    <!-- 03: 5000+ Inspections Completed -->
+    <div class="service-card" itemscope itemtype="https://schema.org/Service">
+      <span class="service-icon">📊</span>
+      <h3 class="service-title" itemprop="name">5000+ Inspections Completed</h3>
+      <p class="service-description" itemprop="description">Proven track record with over 5,000 successful inspections across California, ensuring your property meets all compliance standards.</p>
+      <a href="https://drbalcony.com/balcony-inspections-in-california/" class="service-link">Learn More →</a>
+      <div class="value-highlight">Proven expertise</div>
+    </div>
+    
+    <!-- 04: Servicing ALL of California (Highlighted) -->
+    <div class="service-card highlighted" itemscope itemtype="https://schema.org/Service">
+      <span class="highlight-badge">Featured</span>
+      <span class="service-icon">🗺️</span>
+      <h3 class="service-title" itemprop="name">Servicing ALL of California</h3>
+      <p class="service-description" itemprop="description">Statewide coverage from Los Angeles to San Francisco, San Diego to Sacramento—we're ready to inspect your property wherever you are.</p>
+      <a href="#top" class="service-link">Get Started →</a>
+      <div class="value-highlight">Statewide coverage</div>
+    </div>
+    
+    <!-- 05: Fast Scheduling -->
+    <div class="service-card" itemscope itemtype="https://schema.org/Service">
+      <span class="service-icon">⚡</span>
+      <h3 class="service-title" itemprop="name">Schedule Now</h3>
+      <p class="service-description" itemprop="description">No long wait times for inspections. Quick scheduling to meet your SB-326 and SB-721 deadlines without delays.</p>
+      <a href="https://drbalcony.com/contact-us/" class="service-link">Schedule Now →</a>
+      <div class="value-highlight">No long wait times</div>
+    </div>
+    
+    <!-- 06: Quick Report Turnaround -->
+    <div class="service-card" itemscope itemtype="https://schema.org/Service">
+      <span class="service-icon">📋</span>
+      <h3 class="service-title" itemprop="name">Quick Report Turnaround</h3>
+      <p class="service-description" itemprop="description">Fast, detailed reports delivered promptly to keep your projects on schedule and within compliance timelines.</p>
+      <a href="https://drbalcony.com/balcony-inspection-report/" class="service-link">Learn More →</a>
+      <div class="value-highlight">Prompt delivery</div>
+    </div>
+    
+    <!-- 07: Powered by AI Technology -->
+    <div class="service-card" itemscope itemtype="https://schema.org/Service">
+      <span class="service-icon">🤖</span>
+      <h3 class="service-title" itemprop="name">Powered by AI Technology</h3>
+      <p class="service-description" itemprop="description">Advanced AI technology enhances inspection accuracy and efficiency for superior SB-326 and SB-721 compliance results.</p>
+      <a href="#" class="service-link">See Technology →</a>
+      <div class="value-highlight">AI-enhanced accuracy</div>
+    </div>
+    
+    <!-- 08: Only Inspections - No Repairs (Highlighted) -->
+    <div class="service-card highlighted" itemscope itemtype="https://schema.org/Service">
+      <span class="highlight-badge">Featured</span>
+      <span class="service-icon">🛡️</span>
+      <h3 class="service-title" itemprop="name">Only Inspections – No Repairs</h3>
+      <p class="service-description" itemprop="description">No conflict of interest—we provide unbiased inspections only. No repair services means objective, trustworthy assessments.</p>
+      <a href="https://drbalcony.com/3e-inspection/" class="service-link">Learn More →</a>
+      <div class="value-highlight">No conflict of interest</div>
+    </div>
+  </div>
+</section>
